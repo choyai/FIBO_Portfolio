@@ -6,31 +6,93 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
   </head>
   <body>
 	<!-- Header -->
 	<!-- padding: top px right px bottom px left px; -->
-    	<p1 style="color:blue; padding: 50px 50px 0px 100px; font-size: 300%; color:Gray;" > Crate activity  </p1>
+    	<p1 style="padding: 50px 50px 0px 100px; font-size: 300%; color:Gray;" > Create activity  </p1>
 	    <b1 style= "padding: 50px 5px 0px 0px">  <button type="button" class="btn btn-success">Submit</button> </b1>
 	    <b1 style= "padding: 50px 5px 0px 0px">  <button type="button" class="btn btn-danger">Cancle</button>  </b1>
   <!-- form -->
   <form>
-    <div class="form-group">
-      <label class="form-control-label" for="formGroupExampleInput">Another label</label>
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Another input">
-    </div>
-  <div class="form-group">
-    <label class="form-control-label" for="formGroupExampleInput2">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-  </div>
+
+                  <div class="form-group">
+                    <label class="form-control-label" for="activityname">Name*</label>
+                    <input type="text" class="form-control" id="activityname" placeholder="Activity name">
+                  </div>
+
+                  <div class="form-group">
+                   <label for="activitycategory">Category*</label>
+                   <select class="form-control" id="activitycategory">
+                     <option>กิจกรรมนักศึกษา</option>
+                     <option>โปรเจ็ค</option>
+                     <option>กาารแข่งขัน</option>
+                     <option>งานแสดง/นิทรรศการ</option>
+                     <option>อื่นๆ</option>
+                   </select>
+                 </div>
+
+                 <div class="form-group">
+                  <label for="activitydescription">Description*</label>
+                  <textarea class="form-control" id="activitydescription" rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-control-label" for="activitylocation">Location*</label>
+                  <input type="text" class="form-control" id="activityname" placeholder="Activity name">
+                </div>
+
+                <div class="form-group">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Participants</div>
+                    <div class="panel-body">
+
+                        <form action="action.php" >
+
+                      	<div class="input-group control-group after-add-more">
+                          <input type="text" name="addmore[]" class="form-control" placeholder="Enter Name Here">
+                          <div class="input-group-btn">
+                            <button class="btn btn-success add-more" type="button"><i class="glyphicon glyphicon-plus"></i> Add</button>
+                          </div>
+                        </div>
+
+                        </form>
+
+                        <!-- Copy Fields -->
+                        <div class="copy hide">
+                          <div class="control-group input-group" style="margin-top:10px">
+                            <input type="text" name="addmore[]" class="form-control" placeholder="Enter Name Here">
+                            <div class="input-group-btn">
+                              <button class="btn btn-danger remove" type="button"><i class="glyphicon glyphicon-remove"></i> Remove</button>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+                <script type="text/javascript">
+
+                    $(document).ready(function() {
+                      $(".add-more").click(function(){
+                          var html = $(".copy").html();
+                          $(".after-add-more").after(html);
+                      });
+                      $("body").on("click",".remove",function(){
+                          $(this).parents(".control-group").remove();
+                      });
+                    });
+                </script>
+
+
+
 </form>
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
