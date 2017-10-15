@@ -1,3 +1,10 @@
 from django.shortcuts import render
 
-# Create your views here.
+def index(request):
+    return render(request, 'activities/ActivityPage.html')
+
+def createActivity(request):
+    return render(request, 'activities/createActivity.html')
+
+#def activity(request):
+#    return render(request, 'activities/ActivityPage.html')
