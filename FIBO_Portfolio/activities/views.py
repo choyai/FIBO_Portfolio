@@ -5,4 +5,4 @@ def create(request):
     return render(request, 'activities/createActivity.html')
 
 def activities_home(request):
-    return render(request, 'activities/ActivityPage.html')
+    return render(request, 'activities/ActivitiesPage.html')
