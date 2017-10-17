@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Gonna cry
+* 	Activities Page
 *
 * ======================================================= */
 body {
@@ -144,9 +144,6 @@ header {
   color: #000 !important;
 }
 
-
-
-
 .portfolio-wrapper {
   overflow: hidden;
   position: relative !important;
@@ -228,9 +225,6 @@ header {
   -o-transform: scale(1.2);
   transform: scale(1.2);
 }
-
-
-
 
 #portfoliolist .portfolio {
   -webkit-box-sizing: border-box;
@@ -536,4 +530,55 @@ a.label:hover, a.label:focus {
   background-color: #5e5e5e;
 }
 
+/* =======================================================
+*
+* 	Each activity page
+*
+* ======================================================= */
+.bannerpic {
+  margin-top: 20px;
+  text-align: center;
+}
+.topicinfo {
+  margin-bottom: 20px;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.infodes {
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+.containerdes {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 250px;
+  padding-right: 300px;
+}
+.containerb4slider {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.containerbottonSubmit {
+  padding-left: 1150px;
+}
 
+.orangebutton {
+  background-color: #F36E21; /* orange */
+  border: none;
+  color: white;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Roboto", Arial, serif;
+}
+
+.endpage{
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
