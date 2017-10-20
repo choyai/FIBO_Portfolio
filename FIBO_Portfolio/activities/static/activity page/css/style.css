@@ -582,3 +582,88 @@ a.label:hover, a.label:focus {
   margin-top: 30px;
   margin-bottom: 100px;
 }
+
+/* =======================================================
+*
+*   Home page
+*
+* ======================================================= */
+.containerboxsearch{
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 50px;
+  padding-left: 760px; 
+}
+
+
+.boxsearch {
+  background-color: #4F4F4F;
+  width: 300px;
+  height: 125px;
+  padding-top: 10px;
+  padding-left: 20px; 
+  border: 1px #4F4F4F;
+  box-sizing: border-box;
+  font-size: 30px;
+  font-family: "Roboto", Arial, serif;
+  color: white;
+}
+
+
+/*-------------------------------------*/
+
+.form-wrapper-2 input {
+width: 210px;
+height: 20px;
+padding: 10px 5px;
+float: left;
+font: 15px "Roboto", Arial, serif;
+border: 0;
+background: #eee;
+-moz-border-radius: 3px 0 0 3px;
+-webkit-border-radius: 3px 0 0 3px;
+border-radius: 3px 0 0 3px;
+}
+.form-wrapper-2 input:focus {
+outline: 0;
+background: #fff;
+-moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+-webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+}
+.form-wrapper-2 input::-webkit-input-placeholder {
+color: #999;
+font-weight: normal;
+font-style: italic;
+}
+.form-wrapper-2 input:-moz-placeholder {
+color: #999;
+font-weight: normal;
+font-style: italic;
+}
+.form-wrapper-2 input:-ms-input-placeholder {
+color: #999;
+font-weight: normal;
+font-style: italic;
+}
+.form-wrapper-2 button {
+overflow: visible;
+margin-top: 10px;
+margin-right: 20px;
+float: right;
+border: 0;
+padding: 0;
+cursor: pointer;
+height: 30px;
+width: 110px;
+font: bold 15px "Roboto", Arial, serif;
+color: #fff;
+background: #F36E22;
+border-radius: 0 3px 3px 0;
+}
+.form-wrapper-2 button:hover{
+background: #4F4F4F;
+}
+.form-wrapper-2 button:active,
+.form-wrapper-2 button:focus{
+background: #c42f2f;
+}
