@@ -7,10 +7,10 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="favicon.ico">
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Navigation==========================================-->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
     <!-- Bootstrap  -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Modernizr JS -->
@@ -118,6 +118,44 @@
 
 <!—header section —>
     <header>
+
+    <!-- Navigation==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="Home.html">PORT<font color="#F36E21">FOLIO</font></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="#tf-about">Profile</a></li>
+            <li class="dropdown">
+                <a href="ActivityPage.html" class="dropbtn">Activity</a>
+                <div class="dropdown-content">
+                  <a href="#">MY ACTIVITY</a>
+                  <a href="#">CREATE ACTIVITY</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Organization</a>
+                <div class="dropdown-content">
+                  <a href="#">EXECUTIVE TEAM</a>
+                  <a href="#">Lecturer/Researcher</a>
+                  <a href="#">Adjunct Lecturer</a>
+                  <a href="#">Engineer</a>
+                  <a href="#">Officer</a>
+                  <a href="#">STUDENT</a>
+                </div>
+            </li>
+            <li><a href="#tf-works">About</a></li>
+ 
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
     </header>
 <!—end header section —>
 
@@ -155,22 +193,43 @@
                 </svg>
             </div>
         </div>
-<!—end slider section—>        
+<!—end slider section—>
 
-<!—search section—>  
-        <br>
-        <div class="containerboxsearch">
-            <div class="boxsearch">Search<br>
-                <form class="form-wrapper-2">
-                    <input type="text" placeholder="Student ID/Acitivity's Name" required>
-                    <button type="submit">Search</button>
-                </form>
+<!—activity info section —>
+        <div class="Row">
+            <div class="Column">
+                <div class="containerhomedes">
+                    <h2 class="infodeshome"><br>
+                    <hr>
+                      <h2><b>New Activity</b></h2>
+                    <p><font size="2"><img src="#" style="float:left;width:134px;height:134px;">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+                    <br><a href="#"><font color="#f36E21">Readmore</font></a></p></h>
+                <br>
+              <p><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+              <br><a href="#"><font color="#f36E21">Readmore</font></font></a></p>
+                  <br><hr>
+                  <h2><b>Popular Activity</b></h2>
+                <p><font size="2"><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+                <br><a href="#"><font color="#f36E21">Readmore</font></a></p>
+                <br>
+                <p><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+                <br><a href="#"><font color="#f36E21">Readmore</font></font></a></p></div>
+            </div>
+            <div class="Column">
+                <div class="containerboxsearch"><br>
+                    <div class="boxsearch">Search<br>
+                        <form class="form-wrapper-2">
+                            <input type="text" placeholder="Student ID/Acitivity's Name" required>
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-<!—end search section—>  
         <div class="endpage"></div>
     <!-- Main JS -->
     <script type="text/javascript">jssor_1_slider_init();</script>
 
     </body>
 </html>
+
