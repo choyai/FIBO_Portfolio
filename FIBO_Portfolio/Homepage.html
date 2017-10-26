@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Navigation==========================================-->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <script src="js/jssor.slider-26.3.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
+
+            var jssor_1_SlideoTransitions = [
+              [{b:0,d:600,y:-290,e:{y:27}}],
+              [{b:0,d:1000,y:185},{b:1000,d:500,o:-1},{b:1500,d:500,o:1},{b:2000,d:1500,r:360},{b:3500,d:1000,rX:30},{b:4500,d:500,rX:-30},{b:5000,d:1000,rY:30},{b:6000,d:500,rY:-30},{b:6500,d:500,sX:1},{b:7000,d:500,sX:-1},{b:7500,d:500,sY:1},{b:8000,d:500,sY:-1},{b:8500,d:500,kX:30},{b:9000,d:500,kX:-30},{b:9500,d:500,kY:30},{b:10000,d:500,kY:-30},{b:10500,d:500,c:{x:87.50,t:-87.50}},{b:11000,d:500,c:{x:-87.50,t:87.50}}],
+              [{b:0,d:600,x:410,e:{x:27}}],
+              [{b:-1,d:1,o:-1},{b:0,d:600,o:1,e:{o:5}}],
+              [{b:-1,d:1,c:{x:175.0,t:-175.0}},{b:0,d:800,c:{x:-175.0,t:175.0},e:{c:{x:7,t:7}}}],
+              [{b:-1,d:1,o:-1},{b:0,d:600,x:-570,o:1,e:{x:6}}],
+              [{b:-1,d:1,o:-1,r:-180},{b:0,d:800,o:1,r:180,e:{r:7}}],
+              [{b:0,d:1000,y:80,e:{y:24}},{b:1000,d:1100,x:570,y:170,o:-1,r:30,sX:9,sY:9,e:{x:2,y:6,r:1,sX:5,sY:5}}],
+              [{b:2000,d:600,rY:30}],
+              [{b:0,d:500,x:-105},{b:500,d:500,x:230},{b:1000,d:500,y:-120},{b:1500,d:500,x:-70,y:120},{b:2600,d:500,y:-80},{b:3100,d:900,y:160,e:{y:24}}],
+              [{b:0,d:1000,o:-0.4,rX:2,rY:1},{b:1000,d:1000,rY:1},{b:2000,d:1000,rX:-1},{b:3000,d:1000,rY:-1},{b:4000,d:1000,o:0.4,rX:-1,rY:-1}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $Idle: 2000,
+              $Align: 0,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions,
+                $Breaks: [
+                  [{d:2000,b:1000}]
+                ]
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 980;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+    </script>
+    <style>
+        /* jssor slider loading skin spin css */
+        .jssorl-009-spin img {
+            animation-name: jssorl-009-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        @keyframes jssorl-009-spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .jssorb052 .i {position:absolute;cursor:pointer;}
+        .jssorb052 .i .b {fill:#000;fill-opacity:0.3;}
+        .jssorb052 .i:hover .b {fill-opacity:.7;}
+        .jssorb052 .iav .b {fill-opacity: 1;}
+        .jssorb052 .i.idn {opacity:.3;}
+
+        .jssora053 {display:block;position:absolute;cursor:pointer;}
+        .jssora053 .a {fill:none;stroke:#fff;stroke-width:640;stroke-miterlimit:10;}
+        .jssora053:hover {opacity:.8;}
+        .jssora053.jssora053dn {opacity:.5;}
+        .jssora053.jssora053ds {opacity:.3;pointer-events:none;}
+    </style>
+
+    </head>
+
+    <body>
+    <div id="fh5co-page">
+
+<!—header section —>
+    <header>
+
+    <!-- Navigation==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="Home.html">PORT<font color="#F36E21">FOLIO</font></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="#tf-about">Profile</a></li>
+            <li class="dropdown">
+                <a href="ActivityPage.html" class="dropbtn">Activity</a>
+                <div class="dropdown-content">
+                  <a href="#">MY ACTIVITY</a>
+                  <a href="#">CREATE ACTIVITY</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Organization</a>
+                <div class="dropdown-content">
+                  <a href="#">EXECUTIVE TEAM</a>
+                  <a href="#">Lecturer/Researcher</a>
+                  <a href="#">Adjunct Lecturer</a>
+                  <a href="#">Engineer</a>
+                  <a href="#">Officer</a>
+                  <a href="#">STUDENT</a>
+                </div>
+            </li>
+            <li><a href="#tf-works">About</a></li>
+ 
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    </header>
+<!—end header section —>
+
+<!—slider section —>
+        <div class="container">
+            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+            <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                <div>
+                    <img data-u="image" src="images/002.jpg" />
+                </div>
+                <div data-p="170.00">
+                    <img data-u="image" src="images/002.jpg" />
+                </div>
+                <div>
+                    <img data-u="image" src="images/003.jpg" />
+                </div>
+            </div>
+            <!- Bullet Navigator ->
+            <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <!- Arrow Navigator ->
+            <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+        </div>
+<!—end slider section—>
+
+<!—activity info section —>
+        <div class="Row">
+            <div class="Column">
+                <div class="containerhomedes">
+                    <h2 class="infodeshome"><br>
+                    <hr>
+                      <h2><b>New Activity</b></h2>
+                    <p><font size="2"><img src="#" style="float:left;width:134px;height:134px;">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+                    <br><a href="#"><font color="#f36E21">Readmore</font></a></p></h>
+                <br>
+              <p><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+              <br><a href="#"><font color="#f36E21">Readmore</font></font></a></p>
+                  <br><hr>
+                  <h2><b>Popular Activity</b></h2>
+                <p><font size="2"><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+                <br><a href="#"><font color="#f36E21">Readmore</font></a></p>
+                <br>
+                <p><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
+                <br><a href="#"><font color="#f36E21">Readmore</font></font></a></p></div>
+            </div>
+            <div class="Column">
+                <div class="containerboxsearch"><br>
+                    <div class="boxsearch">Search<br>
+                        <form class="form-wrapper-2">
+                            <input type="text" placeholder="Student ID/Acitivity's Name" required>
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="endpage"></div>
+    <!-- Main JS -->
+    <script type="text/javascript">jssor_1_slider_init();</script>
+
+    </body>
+</html>
+
