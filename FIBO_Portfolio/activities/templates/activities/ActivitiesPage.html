@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 	<head>
+	{% load staticfiles %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Activity Page</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+	<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
+	<link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/bootstrap.css' %}">
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
 
 	<!-- Navigation==========================================-->
-	<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/bootstrap.css' %}">
 
 	</head>
 
@@ -145,18 +146,17 @@
 
 <!—end Choose activity section—>		
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="{% static 'activity page/js/jquery.min.js' %}"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="{% static 'activity page/js/jquery.easing.1.3.js' %}"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{% static 'activity page/js/bootstrap.min.js' %}"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="{% static 'activity page/js/jquery.waypoints.min.js' %}"></script>
 	<!-- Portfolio Filter Mixitup -->
-	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript" src="{% static 'activity page/js/jquery.mixitup.min.js' %}"></script>
 	<!-- Main JS -->
-	<script src="js/main.js"></script>
-
+	<script src="{% static 'activity page/js/main.js' %}"></script>
 	<script type="text/javascript">
 	$(function () {
 		
