@@ -4,5 +4,8 @@ from django.shortcuts import render
 def create(request):
     return render(request, 'activities/createActivity.html')
 
-def activities_home(request):
+def home(request):
     return render(request, 'activities/ActivitiesPage.html')
+
+def activity(request):
+    return render(request, 'activities/activity.html')
