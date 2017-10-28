@@ -7,14 +7,8 @@ from django.template import loader
 
 def create(request):
     return render(request, 'activities/createActivity.html')
-
-<<<<<<< Updated upstream
-def activities_home(request):
-    return render(request, 'activities/ActivitiesPage.html')
-=======
-def home(request):
-    return render(request, 'activities/index.html')
-
 def activity(request):
     return render(request, 'activities/activity.html')
->>>>>>> Stashed changes
+def home(request):
+    return render(request, 'activities/ActivitiesPage.html')
+

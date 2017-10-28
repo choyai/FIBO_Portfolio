@@ -11,8 +11,6 @@ def profile(request, user_id):
 
 def edit(request, user_id):
     return HttpResponse('This will be the profile edit page')
-<<<<<<< Updated upstream
-=======
 
 def academic(request, user_id):
     return render(request, 'profiles/academic.html')
@@ -26,10 +24,9 @@ def profilepage(request, user_id):
     return render(request, 'profiles/profilepage.html')
 def work(request, user_id):
     return render(request, 'profiles/work.html')
-
 def organization(request):
     return render(request, 'profiles/organization.html')
 
 def aboutus(request):
     return render(request, 'profiles/aboutus.html')
->>>>>>> Stashed changes
+
