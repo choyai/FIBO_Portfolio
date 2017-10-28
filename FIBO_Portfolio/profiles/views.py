@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
+from django.template import loader
 
 def home(request):
     return render(request, 'profiles/index.html')
@@ -23,7 +24,9 @@ def profilepage(request, user_id):
     return render(request, 'profiles/profilepage.html')
 def work(request, user_id):
     return render(request, 'profiles/work.html')
-
-
 def organization(request):
     return render(request, 'profiles/organization.html')
+
+def aboutus(request):
+    return render(request, 'profiles/aboutus.html')
+
