@@ -18,3 +18,10 @@ class Participation(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
     ifVerified = models.BooleanField(default = False)
+
+def activity_dir_path(instance, filename):
+    return 'activity_{0}/{1}'.format(instance.activity.id, filename)
+
+class ActivityImage(models.Model):
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    image = models.FileField(upload_to = activity_dir_path)
