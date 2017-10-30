@@ -1,9 +1,12 @@
 from django.conf.urls import url
 from . import views
 
+app_name = 'profiles'
+
 urlpatterns = [
     url(r'^$', views.home, name='home'),
-    url(r'^login', views.login, name='login'),
+    url(r'^register$', views.UserFormView.as_view(), name='register'),
+    url(r'^login', views.login1, name='login'),
     url(r'^forgotpassword/(?P<user_id>[0-9]+)$', views.forgotpassword, name='forgotpassword'),
     url(r'^changepassword/(?P<user_id>[0-9]+)$', views.changepassword, name='changepassword'),
 
