@@ -1,18 +1,21 @@
 <!DOCTYPE html>
   <head>
+    {% load staticfiles %}
     <!-- Basic Page Needs
     ================================================== -->
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nav</title>
-
+    <title>{% block title %}Nav{% endblock %}</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-
+    <link rel="stylesheet" href="{% static 'activity page/css/bootstrap.css' %">
     <!-- Stylesheet
     ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="css/style.css">
+    <link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/style.css' %}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
+  {% block another %}
+  {% endblock %}
 
   </head>
   <body>
@@ -49,20 +52,16 @@
                 </div>
             </li>
             <li><a href="#">About</a></li>
- 
+
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
-
-
-
-
-
+    {% block body %}
+    {% endblock %}
     <!-- Javascripts
     ================================================== -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="{% static 'activity page/js/main.js' %}"></script>
 
   </body>
 </html>

@@ -22,7 +22,7 @@ urlpatterns = [
 
     url(r'^profile/(?P<user_id>[0-9]+)/profilepage$', views.edit, name='profilepage'),
 
-    url(r'^organization', views.organization, name='organization')
+    url(r'^organization', views.organization, name='organization'),
     url(r'^aboutus', views.aboutus, name='aboutus')
 
 ]
