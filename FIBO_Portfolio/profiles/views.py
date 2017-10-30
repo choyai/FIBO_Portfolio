@@ -48,3 +48,6 @@ def organization(request):
 
 def aboutus(request):
     return render(request, 'profiles/aboutus.html')
+
+def edit(request):
+    return HttpResponse('Edit page')
