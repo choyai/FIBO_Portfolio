@@ -5,12 +5,15 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
-    image = models.FileField(verbose_name = ("Profile Picture"), upload_to ="profiles", max_length = 255, null=True, blank=True)
-    bio = models.TextField(max_length = 500, default = True, blank = True)
+    avatar = models.FileField(verbose_name = ("Profile Picture"), upload_to ="profiles", max_length = 255)
+    bio = models.TextField(max_length = 500)
     birthDate = models.DateField(null=True, blank=True)
-    location = models.CharField(max_length=255, default = True, blank=True)
-    phone = models.CharField(max_length=63, default = True, blank = True)
+    location = models.CharField(max_length=255)
+    phone = models.CharField(max_length=50)
+    emergencyPhone = models.CharField(max_length=50)
+    congenitalDisease = models.CharField(max_length = 50, default="none")
     emailConfirmed = models.BooleanField(default=False)
+    position = models.CharField(max_length = 100)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -20,4 +23,19 @@ class Profile(models.Model):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
-        
+
+class Ability(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    name = models.CharField(max_length = 100)
+
+class Grade(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    semester = models.CharField(max_length = 10)
+    creditTotal = models.DecimalField(max_digits=3, decimal_places=1)
+    GPA = models.DecimalField(max_digits=3, decimal_places=2)
+
+class EducationBackground(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    degree = models.CharField(max_length = 100)
+    major = models.CharField(max_length = 100)
+    school = models.CharField(max_length = 100)
