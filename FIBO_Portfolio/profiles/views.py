@@ -12,14 +12,14 @@ def login(request):
     return render(request, 'profiles/login.html')
 
 def forgotpassword(request, user_id):
-    return render(request, 'profiles/profilepage.html')
+    return render(request, 'profiles/forgotpassword.html')
 
 def changepassword(request, user_id):
     return render(request, 'profiles/changepassword.html')
 
 
 def profile(request, user_id):
-    return render(request, 'profiles/profilepage.html')
+    return render(request, 'profiles/profile.html')
 def privacy(request, user_id):
     return render(request, 'profiles/privacy.html')
 

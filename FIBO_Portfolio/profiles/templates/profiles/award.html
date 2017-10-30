@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}Award{% endblock %}
 {% block another %}
+    {% load staticfiles %}
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -41,8 +42,8 @@
         <div class="col"></div>
         <div class="col"></div>
         <div class="col"></div>
-        <div class="col"><a href="#">edit privacy</a></div>
-        <div class="col"><a href="#">change password</a></div>
+        <div class="col"><a href="/profiles/profile/123/privacy">edit privacy</a></div>
+        <div class="col"><a href="/profiles/changepassword/123">change password</a></div>
         </br>
 
       </div>
@@ -50,8 +51,8 @@
       <div class="row">
         <div class="col-12" style= "background-color:LightGray; hight:60px;"><h1><img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:60px;height:60px;    -webkit-filter: grayscale(100%);
             filter: grayscale(100%);"><span style="color:#2F2E2E;"><b>About</b></span></h1></div>
-        <div class="col-3" ><br></br><a href="#"><b>Personal</b></a><br><a href="#"><b>Academic</b></a><br><a href="#"><b>Work and Experience</b></a><br><a href="#"><font color="#f36E21"><b> Award </b></font></a></div>
-        <div class="col-9" "color:#3B3D4C;"><br></br><b>Award</b><span style="float:right;"><a href="#">edit</a></span>
+        <div class="col-3" ><br></br><a href="/profiles/profile/123/profilepage"><b>Personal</b></a><br><a href="/profiles/profile/123/academic"><b>Academic</b></a><br><a href="/profiles/profile/123/work"><b>Work and Experience</b></a><br><a><font color="#f36E21"><b> Award </b></font></a></div>
+        <div class="col-9" "color:#3B3D4C;"><br></br><b>Award</b><span style="float:right;"><a href="/profiles/profile/123/awardedit">edit</a></span>
 <hr></hr></div>
       </div>
 
