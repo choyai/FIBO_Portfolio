@@ -39,3 +39,10 @@ class EducationBackground(models.Model):
     degree = models.CharField(max_length = 100)
     major = models.CharField(max_length = 100)
     school = models.CharField(max_length = 100)
+
+def user_dir_path(instance, filename):
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
+
+class UserImage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.FileField(upload_to=user_dir_path)
