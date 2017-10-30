@@ -13,12 +13,19 @@ class Activity(models.Model):
         through='Supervision',
         related_name='supervisor',
     )
+
     name = models.CharField(max_length=250)
     category = models.CharField(max_length=250, blank=True, null=True)
     description = models.CharField(max_length=5000, blank=True, null=True)
     location = models.CharField(max_length=250, blank=True, null=True)
     startDate = models.DateField(blank=True, null=True)
     endDate = models.DateField(blank=True, null=True)
+
+    def get_absolute_url(selfself):
+        return reverse('activities:detail', kwargs={'pk': self.pk})
+
+    def __str__(self):
+        return self.name
 
 class Supervision(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
