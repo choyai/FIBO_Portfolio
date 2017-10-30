@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^organization', views.organization, name='organization'),
     url(r'^aboutus', views.aboutus, name='aboutus'),
 
+
 ]

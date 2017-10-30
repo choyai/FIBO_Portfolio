@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+  <head>
+    {% load staticfiles %}
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Nav{% endblock %}</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'activity page/css/bootstrap.css' %">
+    <!-- Stylesheet
+    ================================================== -->
+    <link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/style.css' %}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
+  {% block another %}
+  {% endblock %}
+
+  </head>
+  <body>
+    <!-- Navigation
+    ==========================================-->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="Home.html">PORT<font color="#F36E21">FOLIO</font></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Activity</a>
+                <div class="dropdown-content">
+                  <a href="#">MY ACTIVITY</a>
+                  <a href="#">CREATE ACTIVITY</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Organization</a>
+                <div class="dropdown-content">
+                  <a href="#">EXECUTIVE TEAM</a>
+                  <a href="#">Lecturer/Researcher</a>
+                  <a href="#">Adjunct Lecturer</a>
+                  <a href="#">Engineer</a>
+                  <a href="#">Officer</a>
+                  <a href="#">STUDENT</a>
+                </div>
+            </li>
+            <li><a href="#">About</a></li>
+
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <!-- Javascripts
+    ================================================== -->
+    <script type="text/javascript" src="{% static 'activity page/js/main.js' %}"></script>
+
+  </body>
+</html>
