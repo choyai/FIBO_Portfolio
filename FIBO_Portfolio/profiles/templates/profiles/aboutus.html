@@ -4,24 +4,7 @@
     {% load staticfiles %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-{% endblock %}
-{% block body %}
-       <body bgcolor ="#FFFFFF">  </body>
-       <table<tr><td>
-       <img src="about1.jpg" style="position:absolute;z-index:-1;width:1350px;height:800px;">
-  <!slide>
-  <div class="container" style="position:absolute;margin=50px;top:138%;left:4%;>
-  <div class="w3-content w3-display-container">
-
-    <img class="mySlides" src="1-1.jpg" style="width:40%">
-    <img class="mySlides" src="2-2.jpg" style="width:40%">
-    <img class="mySlides" src="3-3.jpg" style="width:40%">
-
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;
-  </div>
-  </div>
-  <script>
+    <script>
   var slideIndex = 1;
   showDivs(slideIndex);
 
@@ -40,6 +23,30 @@
     x[slideIndex-1].style.display = "block";
   }
   </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+{% endblock %}
+{% block body %}
+       <body bgcolor ="#FFFFFF">  </body>
+       <table<tr><td>
+       <img src="about1.jpg" style="position:absolute;z-index:-1;width:1350px;height:800px;">
+  <!slide>
+  <div class="container" style="position:absolute;margin=50px;top:138%;left:4%;>
+  <div class="w3-content w3-display-container">
+
+    <img class="mySlides" src="1-1.jpg" style="width:40%">
+    <img class="mySlides" src="2-2.jpg" style="width:40%">
+    <img class="mySlides" src="3-3.jpg" style="width:40%">
+
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;
+  </div>
+  </div>
+  
   <!end slide>
 
    <img src="about2.jpg" width="1000" height="700" hspace="400" vspace="800">
@@ -59,12 +66,4 @@
 
   	</td></tr></table>
 
-
-
-
-    <!-- Optional JavaScript -->
-      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 {% endblock %}

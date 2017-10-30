@@ -54,41 +54,43 @@
   {% endblock %}
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="container-fluid ">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="container-fluid ">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
+          </div>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">MY ACTIVITY</a></li>
-                <li><a href="#">CREATE ACTIVITY</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Organization<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">EXECUTIVE TEAM</a></li>
-                <li><a href="#">Lecturer/Researcher</a></li>
-                <li><a href="#">Adjunct Lecturer</a></li>
-                <li><a href="#">Engineer</a></li>
-                <li><a href="#">Officer</a></li>
-                <li><a href="#">STUDENT</a></li>
-              </ul>
-            </li>
-            <li><a href="#">About</a></li>
-        </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Profile</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">MY ACTIVITY</a></li>
+                  <li><a href="#">CREATE ACTIVITY</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Organization<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">EXECUTIVE TEAM</a></li>
+                  <li><a href="#">Lecturer/Researcher</a></li>
+                  <li><a href="#">Adjunct Lecturer</a></li>
+                  <li><a href="#">Engineer</a></li>
+                  <li><a href="#">Officer</a></li>
+                  <li><a href="#">STUDENT</a></li>
+                </ul>
+              </li>
+              <li><a href="#">About</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  {% block body %}
-  {% endblock %}
+    </nav>
+  </header>
+{% block body %}
+{% endblock %}
 </body>
 
 </html>
