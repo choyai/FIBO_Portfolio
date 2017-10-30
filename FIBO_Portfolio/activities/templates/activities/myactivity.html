@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}My Activity{% endblock %}
+{% block title %}My Activities{% endblock %}
 {% block another %}
-	{% load staticfiles %}
+
+{% load staticfiles %}
+
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="{% static 'activity page/css/icomoon.css' %}" />
+	<link rel="stylesheet" href="{% static 'activities page/css/icomoon.css' %}" />
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="{% static 'activities page/js/modernizr-2.6.2.min.js' %}"></script>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -255,27 +257,27 @@
 {% block body%}
 
 	<div id="fh5co-page">
-<!—Title of my activity section —>
+<!—Title of my Activities section —>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 animate-box">
 				<br></br>
-				<h1>My Activity</h1>
+				<h1>My Activities</h1>
 			</div>
 		</div>
 	</div>
 
-<!—end Title of my activity section —>
+<!—end Title of my Activities section —>
 
 
-<!—Current activity section —>
+<!—Current Activities section —>
 	<section>
 	  <div class="container">
 
 	  <!--  <div class="row"> -->
 		<div class="row">
 	      <div class="col-md-8 animate-box">
-	        <h1 class="topic"><br>Current Activity</h1>
+	        <h1 class="topic"><br>Current Activities</h1>
 	        <div class="roww">
 	          <div class="column">
 	            <img src="images/portfolio_pic4.jpg" style="width:100%"
@@ -300,7 +302,7 @@
 	  <span class="close cursor" onclick="closeModal()">&times;</span>
 	<!-- end close button-->
 
-	<!--start number page current activity-->
+	<!--start number page current Activities-->
 	  <div class="modal-content">
 	    <div class="mySlides">
 	      <div class="numbertext">1 / 3</div>
@@ -354,16 +356,16 @@
 	    </div>
 
 	</section>
-<!—end Current activity section —>
+<!—end Current Activities section —>
 
 
-<!—Completed activity section —>
+<!—Completed Activities section —>
 
 	<section>
 		  <div class="container">
 		    <div class="row">
 		      <div class="col-md-8 animate-box">
-		        <h1 class="topic"><br>Completed Activity</h1>
+		        <h1 class="topic"><br>Completed Activities</h1>
 						<div class="roww">
 		          <div class="column">
 		            <img src="images/portfolio_pic4.jpg" style="width:100%"
@@ -383,7 +385,7 @@
 			   <span class="close cursor" onclick="closeModal2()">&times;</span>
 			 <!-- end close button-->
 
-			 <!--start number page current activity-->
+			 <!--start number page current Activities-->
 			   <div class="modal-content">
 					 <div class="mySlides2">
 						 <div class="numbertext">1 / 2</div>
@@ -425,11 +427,11 @@
 
 <!—end Completed activity section —>
 
-<!—Unverified activity section —>
+<!—Unverified Activities section —>
   <div class="container">
     <div class="row">
       <div class="col-md-8 animate-box">
-        <h2 class="topic"><br>Unverified Activity</h2>
+        <h2 class="topic"><br>Unverified Activities</h2>
 				<div class="roww">
 					<div class="column">
 						<img src="images/portfolio_pic4.jpg" style="width:100%"
@@ -494,20 +496,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="{% static 'activity page/js/jquery.min.js' %}"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="{% static 'activity page/js/jquery.easing.1.3.js' %}"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{% static 'activity page/js/bootstrap.min.js' %}"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="{% static 'activity page/js/jquery.waypoints.min.js' %}"></script>
 	<!-- Portfolio Filter Mixitup -->
-	<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+	<script type="text/javascript" src="{% static 'activity page/js/jquery.mixitup.min.js' %}"></script>
 	<!-- Main JS -->
-	<script src="js/main.js"></script>
-  <script src="path/to/lightbox.js"></script>
-  <script src="js/jquery-1.7.1"></script>
-  <script src="js/lightbox-plus-jquery"></script>
+	<script src="{% static 'activity page/js/main.js' %}"></script>
+  <script src="{% static 'activity page/js/jquery-1.7.1' %}"></script>
+  <script src="{% static 'activity page/js/lightbox-plus-jquery' %}"></script>
 	<script>
 		//section1
 

@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
-# Create your views here.
 
 def create(request):
     return render(request, 'activities/createActivity.html')
@@ -16,5 +15,5 @@ def activity(request):
 def home(request):
     return render(request, 'activities/ActivitiesPage.html')
 
-def myactivity(request):
+def myactivities(request, user_id):
     return render(request, 'activities/myactivity.html')
