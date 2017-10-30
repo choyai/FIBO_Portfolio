@@ -1,193 +1,131 @@
-<!DOCTYPE html>
-	<head>
-	{% load staticfiles %}
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Activity Page</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
-	<link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/bootstrap.css' %}">
-	<!-- Modernizr JS -->
-	<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
+	{% extends 'base.html' %}
+	{% block title %}Activity Page{% endblock %}
+	{% block another %}
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+		<!-- Modernizr JS -->
+		<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
+	{% endblock %}
+	{% block body %}
 
-	<!-- Navigation==========================================-->
-	<link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/bootstrap.css' %}">
+		<div id="fh5co-page">
 
-	</head>
-
-	<body>
-
-	<div id="fh5co-page">
-
-<!—header section —>
-	<header>
-
-	<!-- Navigation==========================================-->
-    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="Home.html">PORT<font color="#F36E21">FOLIO</font></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="#tf-about">Profile</a></li>
-            <li class="dropdown">
-                <a href="ActivityPage.html" class="dropbtn">Activity</a>
-                <div class="dropdown-content">
-                  <a href="#">MY ACTIVITY</a>
-                  <a href="#">CREATE ACTIVITY</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Organization</a>
-                <div class="dropdown-content">
-                  <a href="#">EXECUTIVE TEAM</a>
-                  <a href="#">Lecturer/Researcher</a>
-                  <a href="#">Adjunct Lecturer</a>
-                  <a href="#">Engineer</a>
-                  <a href="#">Officer</a>
-                  <a href="#">STUDENT</a>
-                </div>
-            </li>
-            <li><a href="#tf-works">About</a></li>
- 
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-	</header>
-<!—end header section —>
-
-<!—Title of activity section —>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8 animate-box">
-				<h2 class="intro-heading">Activity</h2>
-			</div>
-		</div>
-	</div>
-
-<!—end Title of activity section —>
-
-<!—Choose activity section —>
-		<div id="fh5co-portfolio-section">
-			<div class="container">
-				<ul id="filters" class="clearfix animate-box">
-					<li><span class="filter active" data-filter=".all">All Acitivity</span></li>
-					<li><span class="filter" data-filter=".robot">Robot</span></li>
-					<li><span class="filter" data-filter=".tafibo">TA</span></li>
-					<li><span class="filter" data-filter=".uni_event">University event</span></li>
-					<li><span class="filter" data-filter=".other">Other</span></li>
-				</ul>
-
-				<div id="portfoliolist" class="animate-box">
-					
-					<div class="portfolio all robot" data-cat="robot">
-						<div class="portfolio-wrapper">				
-							<img src="images/portfolio_pic1.jpg" alt="" />
-							<div class="label">
-								<div class="label-text">
-									<a class="text-title">Food Robot</a>
-									<span class="text-category">This is a Food Robot</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>				
-					<div class="portfolio all robot" data-cat="robot">
-						<div class="portfolio-wrapper">				
-							<img src="images/portfolio_pic1.jpg" alt="" />
-							<div class="label">
-								<div class="label-text">
-									<a class="text-title">Hungry Robot</a>
-									<span class="text-category">This is a Hungry Robot</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio all tafibo" data-cat="tafibo">
-						<div class="portfolio-wrapper">				
-							<img src="images/portfolio_pic1.jpg" alt="" />
-							<div class="label">
-								<div class="label-text">
-									<a class="text-title">TA FRA221</a>
-									<span class="text-category">This is TA Ja</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-					<div class="portfolio all uni_event" data-cat="uni_event">
-						<div class="portfolio-wrapper">				
-							<img src="images/portfolio_pic1.jpg" alt="" />
-							<div class="label">
-								<div class="label-text">
-									<a class="text-title">KMUTT Tour</a>
-									<span class="text-category">Tour</span>
-								</div>
-								<div class="label-bg"></div>
-							</div>
-						</div>
-					</div>
-
-																														
+	<!—Title of activity section —>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 animate-box">
+					<h2 class="intro-heading">Activity</h2>
 				</div>
 			</div>
 		</div>
 
-<!—end Choose activity section—>		
-	<!-- jQuery -->
-	<script src="{% static 'activity page/js/jquery.min.js' %}"></script>
-	<!-- jQuery Easing -->
-	<script src="{% static 'activity page/js/jquery.easing.1.3.js' %}"></script>
-	<!-- Bootstrap -->
-	<script src="{% static 'activity page/js/bootstrap.min.js' %}"></script>
-	<!-- Waypoints -->
-	<script src="{% static 'activity page/js/jquery.waypoints.min.js' %}"></script>
-	<!-- Portfolio Filter Mixitup -->
-	<script type="text/javascript" src="{% static 'activity page/js/jquery.mixitup.min.js' %}"></script>
-	<!-- Main JS -->
-	<script src="{% static 'activity page/js/main.js' %}"></script>
-	<script type="text/javascript">
-	$(function () {
-		
-		var filterList = {
-		
-			init: function () {
+	<!—end Title of activity section —>
 
-				$('#portfoliolist').mixItUp({
-  				selectors: {
-    			  target: '.portfolio',
-    			  filter: '.filter'	
-    		  },
-    		  load: {
-      		  filter: '.all'  
-      		}     
-				});								
-			
-			}
+	<!—Choose activity section —>
+			<div id="fh5co-portfolio-section">
+				<div class="container">
+					<ul id="filters" class="clearfix animate-box">
+						<li><span class="filter active" data-filter=".all">All Acitivity</span></li>
+						<li><span class="filter" data-filter=".robot">Robot</span></li>
+						<li><span class="filter" data-filter=".tafibo">TA</span></li>
+						<li><span class="filter" data-filter=".uni_event">University event</span></li>
+						<li><span class="filter" data-filter=".other">Other</span></li>
+					</ul>
 
-		};
-		
+					<div id="portfoliolist" class="animate-box">
 
-		filterList.init();
+						<div class="portfolio all robot" data-cat="robot">
+							<div class="portfolio-wrapper">
+								<img src="images/portfolio_pic1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Food Robot</a>
+										<span class="text-category">This is a Food Robot</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>
+						<div class="portfolio all robot" data-cat="robot">
+							<div class="portfolio-wrapper">
+								<img src="images/portfolio_pic1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">Hungry Robot</a>
+										<span class="text-category">This is a Hungry Robot</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>
+						<div class="portfolio all tafibo" data-cat="tafibo">
+							<div class="portfolio-wrapper">
+								<img src="images/portfolio_pic1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">TA FRA221</a>
+										<span class="text-category">This is TA Ja</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>
+						<div class="portfolio all uni_event" data-cat="uni_event">
+							<div class="portfolio-wrapper">
+								<img src="images/portfolio_pic1.jpg" alt="" />
+								<div class="label">
+									<div class="label-text">
+										<a class="text-title">KMUTT Tour</a>
+										<span class="text-category">Tour</span>
+									</div>
+									<div class="label-bg"></div>
+								</div>
+							</div>
+						</div>
 
-		
-		
-	});	
-	</script>
 
-	</body>
-</html>
+					</div>
+				</div>
+			</div>
+
+	<!—end Choose activity section—>
+		<!-- jQuery -->
+		<script src="{% static 'activity page/js/jquery.min.js' %}"></script>
+		<!-- jQuery Easing -->
+		<script src="{% static 'activity page/js/jquery.easing.1.3.js' %}"></script>
+		<!-- Bootstrap -->
+		<script src="{% static 'activity page/js/bootstrap.min.js' %}"></script>
+		<!-- Waypoints -->
+		<script src="{% static 'activity page/js/jquery.waypoints.min.js' %}"></script>
+		<!-- Portfolio Filter Mixitup -->
+		<script type="text/javascript" src="{% static 'activity page/js/jquery.mixitup.min.js' %}"></script>
+		<!-- Main JS -->
+		<script src="{% static 'activity page/js/main.js' %}"></script>
+		<script type="text/javascript">
+		$(function () {
+
+			var filterList = {
+
+				init: function () {
+
+					$('#portfoliolist').mixItUp({
+	  				selectors: {
+	    			  target: '.portfolio',
+	    			  filter: '.filter'
+	    		  },
+	    		  load: {
+	      		  filter: '.all'
+	      		}
+					});
+
+				}
+
+			};
+
+
+			filterList.init();
 
 
 
+		});
+		</script>
+	{% endblock %}

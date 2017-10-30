@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>My Activity</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+{% extends 'base.html' %}
+{% block title %}My Activity{% endblock %}
+{% block another %}
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-	<!-- Animate.css -->
-	{% load staticfiles %}
-	<link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}" />
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="{% static 'activity page/css/icomoon.css' %}" />
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}" />
-
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- Required meta tags -->
@@ -258,35 +248,11 @@
 	  padding-left: 15px;
 	  padding-right: 15px;
 	}
-</style>
+	</style>
+{% endblock %}
 
+{% block body%}
 
-	</head>
-
-	<body>
-<!—header section —>
-		<font>
-			<div class="headerimage">
-		      <img src="https://www.uppic.org/image-E51D_59F1B7A7.jpg" style="width:1400px"></div>
-		      <div class="row">
-		        <div class="contianer-head-image">
-		          <img src="https://static.wixstatic.com/media/f8a2df_d091283ac5264a669a7745143edfd203~mv2_d_1946_1946_s_2.jpg" style="width:231px;height:231px;"></div>
-		          <div class="contianer-head-title">
-		            <div align="center"><h1>Mr.Nutped</h1></div>
-		          </div>
-		        <div class="contianer-head-button">
-		          <div class="form-head-button">
-		            <button type="submit"><b>CV</b></button>
-		            <button type="submit"><b>Resume</b></button>
-		            <button type="submit"><b>Get Link</b></button>
-		          </div>
-
-		        </div>
-		      </div>
-				</font>
-</body>
-<!—end header section —>
-<body>
 	<div id="fh5co-page">
 <!—Title of my activity section —>
 	<div class="container">
@@ -302,156 +268,159 @@
 
 
 <!—Current activity section —>
-<section>
-  <div class="container">
+	<section>
+	  <div class="container">
 
-  <!--  <div class="row"> -->
-	<div class="row">
-      <div class="col-md-8 animate-box">
-        <h2 class="topic"><br>Current Activity</h2>
-        <div class="roww">
-          <div class="column">
-            <img src="images/portfolio_pic4.jpg" style="width:100%"
-            onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-          </div>
-          <div class="column">
-            <img src="images/portfolio_pic4.jpg" style="width:100%"
-            onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
-          </div>
-					<div class="column">
-            <img src="images/portfolio_pic4.jpg" style="width:100%"
-            onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
-          </div>
-      </div>
-      </div>
+	  <!--  <div class="row"> -->
+		<div class="row">
+	      <div class="col-md-8 animate-box">
+	        <h1 class="topic"><br>Current Activity</h1>
+	        <div class="roww">
+	          <div class="column">
+	            <img src="images/portfolio_pic4.jpg" style="width:100%"
+	            onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+	          </div>
+	          <div class="column">
+	            <img src="images/portfolio_pic4.jpg" style="width:100%"
+	            onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+	          </div>
+						<div class="column">
+	            <img src="images/portfolio_pic4.jpg" style="width:100%"
+	            onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+	          </div>
+	      </div>
+	      </div>
+			</div>
+
 		</div>
-	</div>
 
-<!-- strat close button-->
-  <div id="myModal" class="modal">
-  <span class="close cursor" onclick="closeModal()">&times;</span>
-<!-- end close button-->
+	<!-- strat close button-->
+	  <div id="myModal" class="modal">
+	  <span class="close cursor" onclick="closeModal()">&times;</span>
+	<!-- end close button-->
 
-<!--start number page current activity-->
-  <div class="modal-content">
-    <div class="mySlides">
-      <div class="numbertext">1 / 3</div>
-      <img src="images/portfolio_pic4.jpg" style="width:100%">
-			<div class="detailpic">
-				<div class="detailtop">
-					<a2>Tour KMUTT</a2>
-				</div>
-				<div class="detailtext">
-					<a3>detail about this activity</a3>
-				</div>
-     </div>
-    </div>
-
-
-    <div class="mySlides">
-      <div class="numbertext">2 / 3</div>
-      <img src="images/portfolio_pic4.jpg" style="width:100%">
-			<div class="detailpic">
-				<div class="detailtop">
-					<a2>Food Robot</a2>
-				</div>
-				<div class="detailtext">
-					<a3>detail about this activity</a3>
-				</div>
-     </div>
-    </div>
-
-		<div class="mySlides">
-      <div class="numbertext">3 / 3</div>
-      <img src="images/portfolio_pic4.jpg" style="width:100%">
-			<div class="detailpic">
-				<div class="detailtop">
-					<a2>Project A</a2>
-				</div>
-				<div class="detailtext">
-					<a3>detail about this activity</a3>
-				</div>
-     </div>
-    </div>
+	<!--start number page current activity-->
+	  <div class="modal-content">
+	    <div class="mySlides">
+	      <div class="numbertext">1 / 3</div>
+	      <img src="images/portfolio_pic4.jpg" style="width:100%">
+				<div class="detailpic">
+					<div class="detailtop">
+						<a2>Tour KMUTT</a2>
+					</div>
+					<div class="detailtext">
+						<a3>detail about this activity</a3>
+					</div>
+	     </div>
+	    </div>
 
 
-<!--end number page current-->
+	    <div class="mySlides">
+	      <div class="numbertext">2 / 3</div>
+	      <img src="images/portfolio_pic4.jpg" style="width:100%">
+				<div class="detailpic">
+					<div class="detailtop">
+						<a2>Food Robot</a2>
+					</div>
+					<div class="detailtext">
+						<a3>detail about this activity</a3>
+					</div>
+	     </div>
+	    </div>
 
-<!--next and previous button-->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<div class="mySlides">
+	      <div class="numbertext">3 / 3</div>
+	      <img src="images/portfolio_pic4.jpg" style="width:100%">
+				<div class="detailpic">
+					<div class="detailtop">
+						<a2>Project A</a2>
+					</div>
+					<div class="detailtext">
+						<a3>detail about this activity</a3>
+					</div>
+	     </div>
+	    </div>
 
-    <div class="caption-container">
-      <p id="caption"></p>
-    </div>
 
-</section>
+	<!--end number page current-->
+
+	<!--next and previous button-->
+	    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+	    <div class="caption-container">
+	      <p id="caption"></p>
+	    </div>
+
+	</section>
 <!—end Current activity section —>
 
 
 <!—Completed activity section —>
-<section>
-	  <div class="container">
-	    <div class="row">
-	      <div class="col-md-8 animate-box">
-	        <h2 class="topic"><br>Completed Activity</h2>
-					<div class="roww">
-	          <div class="column">
-	            <img src="images/portfolio_pic4.jpg" style="width:100%"
-	            onclick="openModal2();currentSlide2(1)" class="hover-shadow cursor">
-	          </div>
-	          <div class="column">
-	            <img src="images/portfolio_pic4.jpg" style="width:100%"
-	            onclick="openModal2();currentSlide2(2)" class="hover-shadow cursor">
-	          </div>
-	       </div>
-	      </div>
-	     </div>
-	   </div>
 
-		 <!-- strat close button-->
-		   <div id="myModal2" class="modal">
-		   <span class="close cursor" onclick="closeModal2()">&times;</span>
-		 <!-- end close button-->
+	<section>
+		  <div class="container">
+		    <div class="row">
+		      <div class="col-md-8 animate-box">
+		        <h1 class="topic"><br>Completed Activity</h1>
+						<div class="roww">
+		          <div class="column">
+		            <img src="images/portfolio_pic4.jpg" style="width:100%"
+		            onclick="openModal2();currentSlide2(1)" class="hover-shadow cursor">
+		          </div>
+		          <div class="column">
+		            <img src="images/portfolio_pic4.jpg" style="width:100%"
+		            onclick="openModal2();currentSlide2(2)" class="hover-shadow cursor">
+		          </div>
+		       </div>
+		      </div>
+		     </div>
+		   </div>
 
-		 <!--start number page current activity-->
-		   <div class="modal-content">
-				 <div class="mySlides2">
-					 <div class="numbertext">1 / 2</div>
-					 <img src="images/portfolio_pic4.jpg" style="width:100%">
-					<div class="detailpic">
-						<div class="detailtop">
-							<a2>Project B</a2>
+			 <!-- strat close button-->
+			   <div id="myModal2" class="modal">
+			   <span class="close cursor" onclick="closeModal2()">&times;</span>
+			 <!-- end close button-->
+
+			 <!--start number page current activity-->
+			   <div class="modal-content">
+					 <div class="mySlides2">
+						 <div class="numbertext">1 / 2</div>
+						 <img src="images/portfolio_pic4.jpg" style="width:100%">
+						<div class="detailpic">
+							<div class="detailtop">
+								<a2>Project B</a2>
+							</div>
+							<div class="detailtext">
+								<a3>detail about this activity</a3>
+							</div>
+
 						</div>
-						<div class="detailtext">
-							<a3>detail about this activity</a3>
+					 </div>
+
+					 <div class="mySlides2">
+						 <div class="numbertext">2 / 2</div>
+						 <img src="images/portfolio_pic4.jpg" style="width:100%">
+						 <div class="detailpic">
+							 <div class="detailtop">
+								 <a2>Project C</a2>
+							 </div>
+							 <div class="detailtext">
+								 <a3>detail about this activity</a3>
+							 </div>
 						</div>
-					</div>
-				 </div>
-
-				 <div class="mySlides2">
-					 <div class="numbertext">2 / 2</div>
-					 <img src="images/portfolio_pic4.jpg" style="width:100%">
-					 <div class="detailpic">
-						 <div class="detailtop">
-							 <a2>Project C</a2>
-						 </div>
-						 <div class="detailtext">
-							 <a3>detail about this activity</a3>
-						 </div>
-					</div>
-				 </div>
-				 <div style="background-color:black">
-				 <br></br></div>
+					 </div>
+					 <div style="background-color:black">
+					 <br></br></div>
 
 
-<!--end number page completed-->
+	<!--end number page completed-->
 
-<!--next and previous button-->
-    <a class="prev" onclick="plusSlides2(-1)">&#10096;</a>
-    <a class="next" onclick="plusSlides2(1)">&#10097;</a>
+	<!--next and previous button-->
+	    <a class="prev" onclick="plusSlides2(-1)">&#10096;</a>
+	    <a class="next" onclick="plusSlides2(1)">&#10097;</a>
 
-</section>
+	</section>
 
 <!—end Completed activity section —>
 
@@ -539,127 +508,123 @@
   <script src="js/jquery-1.7.1"></script>
   <script src="js/lightbox-plus-jquery"></script>
 	<script>
-	//section1
+		//section1
 
-	function openModal() {
-	  document.getElementById('myModal').style.display = "block";
-	}
+		function openModal() {
+		  document.getElementById('myModal').style.display = "block";
+		}
 
-	function closeModal() {
-	  document.getElementById('myModal').style.display = "none";
-	}
+		function closeModal() {
+		  document.getElementById('myModal').style.display = "none";
+		}
 
-	var slideIndex = 1;
-	showSlides(slideIndex);
-
-
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
-
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
-
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  var dots = document.getElementsByClassName("demo");
-	  var captionText = document.getElementById("caption");
-	  if (n > slides.length) {slideIndex = 1}
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-	      slides[i].style.display = "none";
-	  }
-	  for (i = 0; i < dots.length; i++) {
-	      dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "block";
-	  dots[slideIndex-1].className += " active";
-	  captionText.innerHTML = dots[slideIndex-1].alt;
-
-	}
-	//end section1
-
-	//section2
-	function openModal2() {
-	  document.getElementById('myModal2').style.display = "block";
-	}
-
-	function closeModal2() {
-	  document.getElementById('myModal2').style.display = "none";
-	}
-
-	var slideIndex2 = 1;
-	showSlides2(slideIndex2);
-
-	function plusSlides2(n) {
-	  showSlides2(slideIndex2 += n);
-	}
-
-	function currentSlide2(n) {
-	  showSlides2(slideIndex2 = n);
-	}
-
-	function showSlides2(n) {
-	  var j;
-	  var slides2 = document.getElementsByClassName("mySlides2");
-	  var dots2 = document.getElementsByClassName("demo2");
-	  var captionText2 = document.getElementById("caption2");
-	  if (n > slides2.length) {slideIndex2 = 1}
-	  if (n < 1) {slideIndex2 = slides2.length}
-	  for (j = 0; j < slides2.length; j++) {
-	      slides2[j].style.display = "none";
-	  }
-	  for (j = 0; j < dots2.length; j++) {
-	      dots2[j].className = dots2[j].className.replace(" active", "");
-	  }
-	  slides2[slideIndex2-1].style.display = "block";
-	  dots2[slideIndex2-1].className += " active";
-	  captionText2.innerHTML = dots2[slideIndex2-1].alt;
-	}
-	//end section2
-
-	// section3
-	function openModal3() {
-	  document.getElementById('myModal3').style.display = "block";
-	}
-
-	function closeModal3() {
-	  document.getElementById('myModal3').style.display = "none";
-	}
-
-	var slideIndex3 = 1;
-	showSlides3(slideIndex3);
-
-	function plusSlides3(n) {
-	  showSlides3(slideIndex3 += n);
-	}
-
-	function currentSlide3(n) {
-	  showSlides3(slideIndex3 = n);
-	}
-
-	function showSlides3(n) {
-	  var k;
-	  var slides3 = document.getElementsByClassName("mySlides3");
-	  var dots3 = document.getElementsByClassName("demo3");
-	  var captionText3 = document.getElementById("caption3");
-	  if (n > slides3.length) {slideIndex3 = 1}
-	  if (n < 1) {slideIndex3 = slides3.length}
-	  for (k = 0; k < slides3.length; k++) {
-	      slides3[k].style.display = "none";
-	  }
-	  for (k = 0; k < dots3.length; k++) {
-	      dots3[k].className = dots3[k].className.replace(" active", "");
-	  }
-	  slides3[slideIndex3-1].style.display = "block";
-	  dots3[slideIndex3-1].className += " active";
-	  captionText3.innerHTML = dots3[slideIndex3-1].alt;
-	}
-</script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
 
 
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
 
-	</body>
-</html>
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+
+		}
+		//end section1
+
+		//section2
+		function openModal2() {
+		  document.getElementById('myModal2').style.display = "block";
+		}
+
+		function closeModal2() {
+		  document.getElementById('myModal2').style.display = "none";
+		}
+
+		var slideIndex2 = 1;
+		showSlides2(slideIndex2);
+
+		function plusSlides2(n) {
+		  showSlides2(slideIndex2 += n);
+		}
+
+		function currentSlide2(n) {
+		  showSlides2(slideIndex2 = n);
+		}
+
+		function showSlides2(n) {
+		  var j;
+		  var slides2 = document.getElementsByClassName("mySlides2");
+		  var dots2 = document.getElementsByClassName("demo2");
+		  var captionText2 = document.getElementById("caption2");
+		  if (n > slides2.length) {slideIndex2 = 1}
+		  if (n < 1) {slideIndex2 = slides2.length}
+		  for (j = 0; j < slides2.length; j++) {
+		      slides2[j].style.display = "none";
+		  }
+		  for (j = 0; j < dots2.length; j++) {
+		      dots2[j].className = dots2[j].className.replace(" active", "");
+		  }
+		  slides2[slideIndex2-1].style.display = "block";
+		  dots2[slideIndex2-1].className += " active";
+		  captionText2.innerHTML = dots2[slideIndex2-1].alt;
+		}
+		//end section2
+
+		// section3
+		function openModal3() {
+		  document.getElementById('myModal3').style.display = "block";
+		}
+
+		function closeModal3() {
+		  document.getElementById('myModal3').style.display = "none";
+		}
+
+		var slideIndex3 = 1;
+		showSlides3(slideIndex3);
+
+		function plusSlides3(n) {
+		  showSlides3(slideIndex3 += n);
+		}
+
+		function currentSlide3(n) {
+		  showSlides3(slideIndex3 = n);
+		}
+
+		function showSlides3(n) {
+		  var k;
+		  var slides3 = document.getElementsByClassName("mySlides3");
+		  var dots3 = document.getElementsByClassName("demo3");
+		  var captionText3 = document.getElementById("caption3");
+		  if (n > slides3.length) {slideIndex3 = 1}
+		  if (n < 1) {slideIndex3 = slides3.length}
+		  for (k = 0; k < slides3.length; k++) {
+		      slides3[k].style.display = "none";
+		  }
+		  for (k = 0; k < dots3.length; k++) {
+		      dots3[k].className = dots3[k].className.replace(" active", "");
+		  }
+		  slides3[slideIndex3-1].style.display = "block";
+		  dots3[slideIndex3-1].className += " active";
+		  captionText3.innerHTML = dots3[slideIndex3-1].alt;
+		}
+	</script>
+{% endblock %}
