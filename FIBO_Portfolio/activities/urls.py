@@ -11,6 +11,6 @@ urlpatterns = [
     url(r'^activities/createActivities/$', views.ActivitiesCreate.as_view(), name='create')
 
     url(r'^edit', views.edit, name='edit'),
-    url(r'^ActivityPage', views.activity, name='activity'),
+    url(r'^activity/(?P<activity_id>[0-9]+)$', views.activity, name='activity'),
     url(r'^(?P<user_id>[0-9]+)/activities', views.myactivities, name='myactivities'),
 ]

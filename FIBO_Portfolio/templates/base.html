@@ -1,67 +1,97 @@
+
 <!DOCTYPE html>
-  <head>
-    {% load staticfiles %}
-    <!-- Basic Page Needs
-    ================================================== -->
-    <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block title %}Nav{% endblock %}</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="{% static 'activity page/css/bootstrap.css' %">
-    <!-- Stylesheet
-    ================================================== -->
-    <link rel="stylesheet" type="text/css"  href="{% static 'activity page/css/style.css' %}">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
+<html lang="en">
+<head>
+  <title>{% block title %}Nav Bar{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <style>
+    a.navbar-brand {
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 900;
+    }
+    li a, .dropbtn {
+      display: inline-block;
+      text-transform: none;
+      text-align: left;
+      padding: 14px 16px;
+    }
+    .navbar-default {
+      padding: 20px;
+      background-color: #3B3D4C;
+      border-color: #3B3D4C;
+    }
+    .navbar-default > li.dropdown:hover > a, 
+    .navbar-default > li.dropdown:hover > a:hover,
+    .navbar-default > li.dropdown:hover > a:focus {
+      background-color: #3B3D4C;
+      color: #F36E21;
+    }
+    .navbar-default > li > a, 
+    .navbar-default > li > a:hover,
+    .navbar-default > li > a:focus {
+      background-color: #3B3D4C;
+      color: #F36E21;
+    }
+    .dropdown >.dropdown-menu > li > a {
+      text-transform: uppercase;
+    }
+    li.dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+    .navbar-default .navbar-nav > li > a {
+      text-transform: uppercase;
+      color: #FFF;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+  </style>
   {% block another %}
   {% endblock %}
-  <div id="fh5co-page">
-  </head>
-  <body>
-    <!-- Navigation
-    ==========================================-->
-    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a class="navbar-brand" href="Home.html">PORT<font color="#F36E21">FOLIO</font></a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Activity</a>
-                <div class="dropdown-content">
-                  <a href="#">MY ACTIVITY</a>
-                  <a href="#">CREATE ACTIVITY</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Organization</a>
-                <div class="dropdown-content">
-                  <a href="#">EXECUTIVE TEAM</a>
-                  <a href="#">Lecturer/Researcher</a>
-                  <a href="#">Adjunct Lecturer</a>
-                  <a href="#">Engineer</a>
-                  <a href="#">Officer</a>
-                  <a href="#">STUDENT</a>
-                </div>
-            </li>
-            <li><a href="#">About</a></li>
-
+        <div class="container-fluid ">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
+          </div>
+          <ul class="nav navbar-right">
+            <ul class="nav navbar-right">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Profile</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activity</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">MY ACTIVITY</a></li>
+                  <li><a href="#">CREATE ACTIVITY</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Organization</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">EXECUTIVE TEAM</a></li>
+                  <li><a href="#">Lecturer/Researcher</a></li>
+                  <li><a href="#">Adjunct Lecturer</a></li>
+                  <li><a href="#">Engineer</a></li>
+                  <li><a href="#">Officer</a></li>
+                  <li><a href="#">STUDENT</a></li>
+                </ul>
+              </li>
+              <li><a href="#">About</a></li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
-    {% block body %}
-    {% endblock %}
-    <!-- Javascripts
-    ================================================== -->
-    <script type="text/javascript" src="{% static 'activity page/js/main.js' %}"></script>
-
-  </body>
+  </header>
+{% block body %}
+{% endblock %}
+</body>
 </html>
+

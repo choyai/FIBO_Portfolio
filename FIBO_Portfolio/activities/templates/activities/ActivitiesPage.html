@@ -1,13 +1,24 @@
 	{% extends 'base.html' %}
 	{% block title %}Activity Page{% endblock %}
 	{% block another %}
-	{% load staticfiles %}
+		{% load staticfiles %}
 		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+		<!-- Modernizr JS -->
+		<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
+			<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet'>
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="{% static 'activity page/css/icomoon.css' %}">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
 		<!-- Modernizr JS -->
 		<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
 	{% endblock %}
 	{% block body %}
-
+	
 
 
 	<!—Title of activity section —>
