@@ -4,9 +4,15 @@ from profiles.models import Profile
 
 class Activity(models.Model):
     participants = models.ManyToManyField(
-        Profile,
+        User,
         through='Participation',
+        related_name='participant',
         )
+    supervisors = models.ManyToManyField(
+        User,
+        through='Supervision',
+        related_name='supervisor',
+    )
     name = models.CharField(max_length=250)
     category = models.CharField(max_length=250, blank=True, null=True)
     description = models.CharField(max_length=5000, blank=True, null=True)
@@ -14,14 +20,18 @@ class Activity(models.Model):
     startDate = models.DateField(blank=True, null=True)
     endDate = models.DateField(blank=True, null=True)
 
+class Supervision(models.Model):
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    supervisor = models.ForeignKey(User, on_delete=models.CASCADE)
+
 class Participation(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-    user = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    participant = models.ForeignKey(User, on_delete=models.CASCADE)
     ifVerified = models.BooleanField(default = False)
 
 def activity_dir_path(instance, filename):
-    return 'activity_{0}/{1}'.format(instance.activity.id, filename)
+    return 'activity_{0}/{1}'.format(instance.acti)
 
 class ActivityImage(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-    image = models.FileField(upload_to = activity_dir_path)
+    image = models.ImageField(upload_to = activity_dir_path)
