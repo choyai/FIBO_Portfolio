@@ -15,3 +15,6 @@ def activity(request):
     return render(request, 'activities/activity.html')
 def home(request):
     return render(request, 'activities/ActivitiesPage.html')
+
+def myactivity(request):
+    return render(request, 'activities/myactivity.html')
