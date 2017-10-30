@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import HttpResponse
+from reportlab.pdfgen import canvas
+from io import  BytesIO
 from django.template import loader
 
 def home(request):
@@ -30,3 +32,20 @@ def organization(request):
 def aboutus(request):
     return render(request, 'profiles/aboutus.html')
 
+def pdf_view(request):
+    response = HttpResponse(content_type='profiles/application/pdf')
+    response['Content-Disposition'] = 'attachment; filename ="somefilename.pdf"'
+
+    buffer = BytesIO
+
+    p = canvas.Canvas(response)
+
+    p.drawString(100, 100, "My PDF")
+
+    p.showPage()
+    p.save()
+
+    pdf = buffer.getvalue()
+    buffer.close()
+    response.write(pdf)
+    return response
