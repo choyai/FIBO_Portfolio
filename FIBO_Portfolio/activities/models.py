@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User, Permission, Group
 from profiles.models import Profile
 
@@ -21,7 +22,7 @@ class Activity(models.Model):
     startDate = models.DateField(blank=True, null=True)
     endDate = models.DateField(blank=True, null=True)
 
-    def get_absolute_url(selfself):
+    def get_absolute_url(self):
         return reverse('activities:detail', kwargs={'pk': self.pk})
 
     def __str__(self):
@@ -37,7 +38,7 @@ class Participation(models.Model):
     ifVerified = models.BooleanField(default = False)
 
 def activity_dir_path(instance, filename):
-    return 'activity_{0}/{1}'.format(instance.acti)
+    return 'activity_{0}/{1}'.format(instance, filename)
 
 class ActivityImage(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
