@@ -3,15 +3,13 @@ from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import View
-from .forms import UserForm
+from .forms import UserForm, LoginForm
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from io import  BytesIO
 from django.template import loader
 from django.contrib.auth import authenticate, login
 
-def home(request):
-    return render(request, 'profiles/index.html')
 
 class UserFormView(View):
     form_class = UserForm
@@ -36,11 +34,12 @@ class UserFormView(View):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect('profiles:organization')
+                    return redirect('profiles:home')
         return render(request, self.template_name, {'form': form})
 
-def login1(request):
-    return render(request, 'profiles/login.html')
+
+def home(request):
+    return render(request, 'profiles/home.html')
 
 def forgotpassword(request, user_id):
     return render(request, 'profiles/forgotpassword.html')

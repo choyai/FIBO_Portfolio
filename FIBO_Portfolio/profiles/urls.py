@@ -1,12 +1,14 @@
 from django.conf.urls import url
 from . import views
+from django.contrib.auth import views as auth_views
 
 app_name = 'profiles'
 
 urlpatterns = [
     url(r'^$', views.home, name='home'),
+    url(r'^login/$', auth_views.login, {'template_name':'profiles/login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^register$', views.UserFormView.as_view(), name='register'),
-    url(r'^login', views.login1, name='login'),
     url(r'^forgotpassword/(?P<user_id>[0-9]+)$', views.forgotpassword, name='forgotpassword'),
     url(r'^changepassword/(?P<user_id>[0-9]+)$', views.changepassword, name='changepassword'),
 
