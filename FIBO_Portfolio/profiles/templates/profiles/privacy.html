@@ -1,30 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Personal Edit{% endblock %}
+{% block title %}Privacy{% endblock %}
 {% block another %}
     {% load staticfiles %}
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <style>
-    font {
-      font-family: "Roboto", Arial, serif;
-      line-height: 1.8;
-      font-size: 16px;
-      font-weight: 300;
-      }
-      button {
-        background-color: #F36E21; /* orange */
-        border: none;
-        color: white;
-        padding: 10px 30px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        font-family: "Roboto", Arial, serif;
-      }
-
-
-    </style>
+    <script src="{% static 'profiles/css/style.css' %}"></script>
 {% endblock %}
 {% block body %}
   <font>
