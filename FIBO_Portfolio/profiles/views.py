@@ -9,6 +9,7 @@ from reportlab.pdfgen import canvas
 from io import  BytesIO
 from django.template import loader
 from django.contrib.auth import authenticate, login
+from .models import *
 
 
 class UserFormView(View):
@@ -47,33 +48,29 @@ def forgotpassword(request, user_id):
 def changepassword(request, user_id):
     return render(request, 'profiles/changepassword.html')
 
+class ProfileView(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/profilepage.html'
 
-def profile(request, user_id):
-    return render(request, 'profiles/profilepage.html')
+class AcademicView(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/academic.html'
+
+class AwardView(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/award.html'
+
+class WorkView(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/work.html'
+
+class ProfileUpdate(UpdateView):
+    model = Profile
+    template_name = 'profiles/personaledit.html'
+    fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
+
 def privacy(request, user_id):
     return render(request, 'profiles/privacy.html')
-
-def personaledit(request, user_id):
-    return render('profile/personaledit.html')
-def academicedit(request, user_id):
-    return render(request, 'profiles/academicedit.html')
-def awardedit(request, user_id):
-    return render(request, 'profiles/awardedit.html')
-def workedit(request, user_id):
-    return render(request, 'profiles/worknexperienceedit.html')
-
-
-
-def academic(request, user_id):
-    return render(request, 'profiles/academic.html')
-def award(request, user_id):
-    return render(request, 'profiles/award.html')
-def work(request, user_id):
-    return render(request, 'profiles/work.html')
-
-def profilepage(request, user_id):
-    return render(request, 'profiles/profilepage.html')
-
 
 def organization(request):
     return render(request, 'profiles/organization.html')
