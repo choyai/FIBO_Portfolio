@@ -1,0 +1,51 @@
+//academic
+col > a:link {
+	color: #3B3D4C;
+	text-decoration: none;
+}
+col > a:visited {
+	color: #3B3D4C;
+	text-decoration: none;
+}
+col > a:hover {
+	color: #f36E21;
+	text-decoration: none;
+}
+font {
+	font-family: "Roboto", Arial, serif;
+	line-height: 1.8;
+	font-size: 16px;
+	font-weight: 300;
+}
+button {
+      background-color: #F36E21; /* orange */
+      border: none;
+      color: white;
+      padding: 10px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-family: "Roboto", Arial, serif;
+}
+.orangebutton {
+    background-color: #F36E21; /* orange */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "Roboto", Arial, serif;}
+    
+.graybutton {
+      background-color: gray; /* gray */
+      border: none;
+      color: white;
+      padding: 10px 30px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      font-family: "Roboto", Arial, serif;}
