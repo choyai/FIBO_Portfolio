@@ -5,3 +5,6 @@
 *.idea
 *.cpython-35.pyc
 .idea/workspace.xml
+.idea/workspace.xml
+*.sqlite3
+*.swp

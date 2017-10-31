@@ -1,14 +1,25 @@
 {% extends 'base.html' %}
-{% block title %}Tour KMUTT | Activity Page {% endblock %}
+{% block title %}{{activity.name}} | Activity Page {% endblock %}
 {% block another %}
-	 {% load staticfiles %}
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+	{% load staticfiles %}
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-		<!-- Modernizr JS -->
+	<!-- Modernizr JS -->
 	<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
 	<script src="{% static 'activity page/js/jssor.slider-26.3.0.min.js' %}"></script>
+	<!-- Modernizr JS -->
+	<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet'>
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'activity page/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
+	<!-- Modernizr JS -->
+	<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
 	<script>
 			jssor_1_slider_init = function() {
 
@@ -135,7 +146,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 animate-box">
-					<h1 class="intro-heading">Tour KMUTT</h1>
+					<h1 class="intro-heading">{{activity.name}}</h1>
 				</div>
 			</div>
 		</div>
@@ -161,10 +172,7 @@
 			</div>
 		</div>
 		<div class="containerdes">
-			<h2 class="infodes">Lorem ipsum dolor sit amet, neque ligula, ut vehicula sem elit, est est porta massa vestibulum,
-		libero fermentum eget at, quis urna. Ut in in pulvinar congue mauris, aliquam tincidunt augue elementum, non dictumst
-		sodales ligula integer arcu augue, nullam lorem sit eget morbi in nullam. Pede sapien neque orci quam. Fringilla nullam,
-		leo neque pulvinar sapien integer velit nisl, mi vel venenatis vel volutpat.</h>
+			<h2 class="infodes">{{activity.description}}</h>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -172,7 +180,7 @@
 			</div>
 		</div>
 		<div class="containerdes">
-			<h2 class="infodes">18 September 2017</h>
+			<h2 class="infodes">{{activity.startDate}} - {{activity.endDate}}</h>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -180,15 +188,15 @@
 			</div>
 		</div>
 		<div class="containerdes">
-			<h2 class="infodes">King Mongkut's University of Technology Thonburi</h>
+			<h2 class="infodes">{{activity.location}}</h>
 		</div>
 		<div class="container">
 			<div class="row">
-				<h2 class="topicinfo">Supervisor</h>
+				<h2 class="topicinfo">Supervisors</h>
 			</div>
 		</div>
 		<div class="containerdes">
-			<h2 class="infodes">Ms.Kookkik Jingjing</h>
+			<h2 class="infodes">{{activity.supervisors.name}}</h>
 		</div>
 		<div class="container">
 			<div class="row">
@@ -196,7 +204,14 @@
 			</div>
 		</div>
 		<div class="containerdes">
-			<h2 class="infodes">Ms.Kookkik Jingjing</h>
+			<h2 class="infodes">{{activity.participants.name}}</h>
+		</div>
+		<div class="container">
+			<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
+				{% csrf_token %}
+				<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
+				<button type="submit" class="btn btn-default btn-sm">Delete</button>
+			</form>
 		</div>
 	<!—end activity info section —>
 
@@ -281,7 +296,7 @@
 		</div>
 	<!—end activity slider section —>
 		<div class="containerbottonSubmit">
-			<button class="orangebutton">Submit to verify</button>
+
 		</div>
 
 		<div class="endpage"></div>
@@ -295,7 +310,7 @@
 		<!-- Waypoints -->
 		<script src="{% static 'activity page/js/jquery.waypoints.min.js' %}"></script>
 		<!-- Portfolio Filter Mixitup -->
-		<script type="text/javascript" src="{% static 'activity page/jquery.mixitup.min.js' %}js/"></script>
+		<script type="text/javascript" src="{% static 'activity page/js/jquery.mixitup.min.js' %}"></script>
 		<!-- Main JS -->
 		<script src="{% static 'activity page/js/main.js' %}"></script>
 
