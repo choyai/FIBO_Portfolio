@@ -19,27 +19,26 @@
         <div class="col"></div>
         <div class="col"></div>
         <div class="col"></div>
-        <div class="col"><a href="/profiles/profile/123/privacy">edit privacy</a></div>
+        <div class="col"><a href="{% url 'profiles:privacy' user.id %}">edit privacy</a></div>
         <div class="col"><a href="/profiles/changepassword/123">change password</a></div>
         </br>
 
       </div>
 
       <div class="row">
-        <div class="col-12" style= "background-color:LightGray; hight:60px;"><h1><img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:60px;height:60px;filter: grayscale(100%)"><span style="color:#2F2E2E;"><b>About</b></span></h1></div>
-        <div class="col-3" ><br></br><a><font color="#f36E21"><b>Personal</b></font></a><br><a href="/profiles/profile/123/academic"><b>Academic</b></a><br><a href="/profiles/profile/123/work"><b>Work and Experience</b></a><br><a href="/profiles/profile/123/award"><b> Award </b></a></div>
-        <div class="col-9" "color:#3B3D4C;"><br></br><b>Contact information</b><span style="float:right;"><a href="#">edit</a></span><hr></hr>Phone Number : <br>Email : <br>Facebook : </div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Congenital disease</b><span style="float:right;"><a href="#">edit</a></span>
-          <hr></hr>Asthma</div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Emergency contact</b><span style="float:right;"><a href="#">edit</a></span>
-          <hr></hr>Mother's Phone Number : </div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Birthday</b><span style="float:right;"><a href="#">edit</a></span>
-          <hr></hr>02/05/1997</div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Life Goals</b><span style="float:right;"><a href="#">edit</a></span>
-          <hr></hr></div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Ability</b><span style="float:right;"><a href="#">edit</a></span>
-          <hr></hr><center><img src="#" hspace="20"><img src="#"  hspace="20"><img src="#" hspace="20"></center></div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Image(Informal)</b><span style="float:right;"><a href="#">edit</a></span>
+        <div class="col-12" style= "background-color:LightGray; hight:60px;"><h1><img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:60px;height:60px;filter: grayscale(100%)"><span style="color:#2F2E2E;"><b>{{profile.username}}</b></span></h1></div>
+        <div class="col-3" ><br></br><a href="{% url 'profiles:profile' profile.pk %}"><font color="#f36E21"><b>Personal</b></font></a><br><a href="{% url 'profiles:academic' profile.pk%}"><b>Academic</b></a><br><a href="{% url 'profiles:work' profile.pk %}"><b>Work and Experience</b></a><br><a href="{% url 'profiles:award' profile.pk %}"><b> Award </b></a></div>
+        <div class="col-9" "color:#3B3D4C;"><br></br><b>Contact information</b><span style="float:right;"><a href="{% url 'profiles:personaledit' profile.pk %}">edit</a></span><hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{user.email}}</div>
+        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Congenital disease</b>
+          <hr></hr>{{profile.congenitalDisease}}</div>
+        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Emergency contact</b>
+          <hr></hr>Emergency Phone Number : {{profile.emergencyPhone}}</div>
+        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Birthdate</b>
+          <hr></hr>{{profile.birthDate}}</div>
+        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Ability</b><span style="float:right;"><a href="{% url 'profiles:personaledit' profile.pk %}">edit</a></span>
+          <hr></hr><center><img src="#" hspace="20"></center>
+        </div>
+        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Image(Informal)</b><span style="float:right;"><a href="{% url 'profiles:personaledit' profile.pk %}">edit</a></span>
           <hr></hr>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

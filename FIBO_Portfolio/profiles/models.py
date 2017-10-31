@@ -11,7 +11,7 @@ class Profile(models.Model):
     birthDate = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=255)
     phone = models.CharField(max_length=50)
-    emergencyPhone = models.CharField(max_length=50)
+    emergencyPhone = models.CharField(max_length=50, default = "-")
     congenitalDisease = models.CharField(max_length = 50, default="none")
     emailConfirmed = models.BooleanField(default=False)
     position = models.CharField(max_length = 100)
