@@ -1,34 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="english">
     <head>
+        <!-- Required meta tags -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Organization</title>
+
+        <style>
+            div.container {
+                width: 100%;
+                border: hidden;
+            }
+            header{
+                padding: 1em;
+                background-color: none;
+                clear: left;
+                text-align: center;
+            }
+            font{
+                font-family: Roboto,Arial,sanserif;
+            }
+            a:visited {
+                color: #3B3D4C;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #f36E21;
+                text-decoration: none;
+            }
+            nav {
+                float: left;
+                max-width: 210px;
+                margin: 0;
+                padding-left: 1em;
+            }
+            nav ul {
+                list-style-type: none;
+                padding-left: 2em;
+            }
+            nav ul a {
+                text-decoration: none;
+            }
+            article {
+                margin-left: 220px;
+                border-left: none;
+                padding-left: 1em;
+                overflow: hidden;
+            }
+        </style>
     </head>
-    <style>
-    a:link {
-      color: #3B3D4C;
-      text-decoration: none;
-    }
-    a:visited {
-      color: #3B3D4C;
-      text-decoration: none;
-    }
-    a:hover {
-      color: #f36E21;
-      text-decoration: none;
-    }
-    </style>
+
     <body>
-        <div class="container" style="height:80px;background-color:#3B3D4C;"></div>
+        <div class="container-fluid" style="height:100px;background-color:#3B3D4C;"></div>
+        <br><br>
         <div class="container">
+            <header>
+                <center><h1><b>Organization</b></h1></center>
+            </header>
             <br><br>
-            <div class="row"><div class="col-12"><h1><span style="color:#2F2E2E;"><b>Organization</b></span></h1></div><br><br></div><br>
-            <div class="row"><div class="col-3"><b>Categories</b></div></div>
-            <div class="row"><div class="col-3"><a href="https:www.google.com"><font color="#f36E21">Executive Team</font></a><br><a href="#">Lecturer/Researcher</a><br><a href="#">Adjunct Lecturer</a><br><a href="#">Engineer</a><br><a href="#">Officer</a><br><a href="#">Student</a><br><a href="#">&nbsp;&nbsp;&nbsp;Doctoral's degree</a><br><a href="#">&nbsp;&nbsp;&nbsp;Master's degree</a><br><a href="#">&nbsp;&nbsp;&nbsp;Bacheler's degree</a></div><br></div>
+            <nav>
+                <h3>&ensp;Categories</h3><br>
+                <ul>
+                <li><p><a href="#">Executive Team</a></p></li>
+                <li><p><a href="#">Lecturer/Researcher</a></p></li>
+                <li><p><a href="#">Adjunct Lecturer</a></p></li>
+                <li><p><a href="#">Engineer</a></p></li>
+                <li><p><a href="#">Officer</a></p></li>
+                <li><p><a href="#">Students</a></p>
+                    <pre><a href="#">&ensp;Doctoral's Degree</a></pre>
+                    <pre><a href="#">&ensp;Master's Degree</a></pre>
+                    <pre><a href="#">&ensp;Bacheler's Degree</a></pre>
+                    <pre><a href="#">&emsp;&ensp;&#8594;1st year</a></pre>
+                    <pre><a href="#">&emsp;&ensp;&#8594;2nd year</a></pre>
+                    <pre><a href="#">&emsp;&ensp;&#8594;3rd year</a></pre>
+                    <pre><a href="#">&emsp;&ensp;&#8594;4th year</a></pre>
+                </li>
+                </ul>
+            </nav>
+            <article>
+                <center><h3>FIBO Executive Team</h3></center>
+                <hr width="60%">
+                <div class="container"><center>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <img src="" style="width:200px;height:300px;">
+                                <h4>Assoc. Prof. Dr.Djitt Laowattana</h4>
+                                <p>Founder, Advisor and Deputy Director for Industrial Services</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <img src="" style="width:200px;height:300px;">
+                                <h4>Assoc. Prof. Dr.Siam Charoenseang</h4>
+                                <p>Director</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="" style="width:200px;height:300px;">
+                                <h4>Dr.Arbtip Dheeravongkit</h4>
+                                <p>Deputy Director for Academic Affairs and Robotics and Automation Engineering Program Chairperson</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="" style="width:200px;height:300px;">
+                                <h4>Dr.Pitiwut Teerakittikul</h4>
+                                <p>Assistant Director for Student Affairs</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="" style="width:200px;height:300px;">
+                                <h4>Dr.Supachai Vongbunyong</h4>
+                                <p>Assistant Director for Research and International Affairs</p>
+                            </div>
+                        </div>
+                </center></div>
+            </article>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     </body>
 </html>
