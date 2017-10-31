@@ -1,11 +1,72 @@
-<li><a href="">
-    Home
-</a></li>
+	{% extends 'base.html' %}
+	{% block title %}Activities Page{% endblock %}
+	{% block another %}
+		{% load staticfiles %}
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+		<!-- Modernizr JS -->
+		<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
+			<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet'>
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
+		<!-- Icomoon Icon Fonts-->
+		<link rel="stylesheet" href="{% static 'activity page/css/icomoon.css' %}">
+		<!-- Bootstrap  -->
+		<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
+		<!-- Modernizr JS -->
+		<script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
+	{% endblock %}
+	{% block body %}
 
-<li><a href="/activities/create/">
-    Create New Activity
-</a></li>
+    <ul>
+		<li class="">
+                <a href="{% url 'activities:create' %}">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Create Activity
+                </a>
+		</li>
+		{%for activity in object_list %}
+		<li><a href="{% url 'activities:detail' activity.pk %}"><h1>{{ activity.name }}</h1></a></li>
+            <form action="{% url 'activities:delete' activity.id %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <input type="hidden" name="activity_id" value="={{ activity.id }}"/>
+                <button type="submit" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </form>
+		{% endfor %}
 
-<li><a href="/profiles/profile/123">
-    Profile
-</a></li>
+    </ul>
+
+	<!—end Choose activity section—>
+		<!-- jQuery -->
+		<script src="{% static 'activity page/js/jquery.min.js' %}"></script>
+		<!-- jQuery Easing -->
+		<script src="{% static 'activity page/js/jquery.easing.1.3.js' %}"></script>
+		<!-- Bootstrap -->
+		<script src="{% static 'activity page/js/bootstrap.min.js' %}"></script>
+		<!-- Waypoints -->
+		<script src="{% static 'activity page/js/jquery.waypoints.min.js' %}"></script>
+		<!-- Portfolio Filter Mixitup -->
+		<script type="text/javascript" src="{% static 'activity page/js/jquery.mixitup.min.js' %}"></script>
+		<!-- Main JS -->
+		<script src="{% static 'activity page/js/main.js' %}"></script>
+		<script type="text/javascript">
+		$(function () {
+			var filterList = {
+				init: function () {
+					$('#portfoliolist').mixItUp({
+	  				selectors: {
+	    			  target: '.portfolio',
+	    			  filter: '.filter'
+	    		  },
+	    		  load: {
+	      		  filter: '.all'
+	      		}
+					});
+				}
+			};
+			filterList.init();
+		});
+		</script>
+	{% endblock %}
