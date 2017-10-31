@@ -8,3 +8,5 @@
 .idea/workspace.xml
 *.sqlite3
 *.swp
+*.xml
+.idea/workspace.xml
