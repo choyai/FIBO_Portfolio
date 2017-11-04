@@ -22,33 +22,26 @@
       text-align: left;
       padding: 14px 16px;
     }
-    li a, .navbar-nav {
-      display: inline-block;
-      text-transform: none;
-      text-align: left;
-      font-size: 15px;
-      letter-spacing: 1px;
-    }
     .navbar-default {
       padding : 20px;
       background-color: #3B3D4C;
       border-color: #3B3D4C;
     }
-    .navbar-default > li.dropdown:hover > a,
-    .navbar-default > li.dropdown:hover > a:hover,
-    .navbar-default > li.dropdown:hover > a:focus {
+    .navbar-nav > li.dropdown:hover > a,
+    .navbar-nav > li.dropdown:hover > a:hover,
+    .navbar-nav > li.dropdown:hover > a:focus {
       background-color: #3B3D4C;
       color: #F36E21;
     }
 
 
-    .navbar-default .navbar-right  > li > a{
+    .navbar-nav> .navbar-right  > li > a{
       text-transform: uppercase;
       background-color: #3B3D4C;
       color: #FFF;
     }
-    .navbar-default .navbar-right  > li > a:hover,
-    .navbar-default .navbar-right  > li > a:focus {
+    .navbar-nav> .navbar-right  > li > a:hover,
+    .navbar-nav> .navbar-right  > li > a:focus {
 
       background-color: #3B3D4C;
       color: #F36E21;
@@ -75,13 +68,10 @@
             <a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
           </div>
 
-          <ul class="nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
               <li><a href="{% url 'profiles:home' %}">Home</a></li>
               <li><a href="{% url 'profiles:profile' user.id %}">Profile</a></li>
 
-          <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Profile</a></li>
 
               <li class="dropdown">
                 <a href="{% url 'activities:home' %}" class="dropdown-toggle" data-toggle="dropdown">Activities</a>
