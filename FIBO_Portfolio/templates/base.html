@@ -1,6 +1,4 @@
-
 <!DOCTYPE html>
-
 <head>
   <title>{% block title %}Nav Bar{% endblock %}</title>
   {% load staticfiles %}
@@ -78,8 +76,9 @@
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
           <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
           </div>
+        </div>
 
           <ul class="nav navbar-right">
               <li><a href="{% url 'profiles:home' %}">Home</a></li>

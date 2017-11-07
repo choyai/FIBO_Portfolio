@@ -1,99 +1,209 @@
 {% extends 'base.html' %}
 {% block title %}Profile Page{% endblock %}
-{% block another %}
+{% block another1 %}
   {% load staticfiles %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{% static 'profiles/css/style.css' %}"></script>
+    <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
 {% endblock %}
-
 {% block body %}
-<div class="headerimage" style="position: absolute;z-index: -1;">
-    <img src="#" style="width:1400px"></div>
-    <div class="row">
-      <div class="contianer-head-image">
-        <img src="#" style="width:231px;height:231px;margin-top: 90px;margin-left: 200px;margin-right: 30px;"></div>
-        <div class="contianer-head-title" style="margin-top: 230px;color: white;">
-          <div align="center"><h1>Mr.Nutped</h1></div>
-        </div>
-      <div class="contianer-head-button" style="margin-top: 230px;margin-left: 330px;">
-        <div class="form-head-button">
-          <button type="submit" style="background-color: #3B3D4C;border: none;color: white;padding: 10px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;font-family: "Roboto", Arial, serif"><b>CV</b></button>
-          <button type="submit" style="background-color: #3B3D4C;border: none;color: white;padding: 10px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;font-family: "Roboto", Arial, serif"><b>Resume</b></button>
-          <button type="submit" style="background-color: #3B3D4C;border: none;color: white;padding: 10px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;font-family: "Roboto", Arial, serif"><b>Get Link</b></button>
-        </div>
 
-      </div>
-    </div>
-
-
+<div class="wrapper">
   <div class="container">
-  <font>
-    <div class="container">
-      <div class="row">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col"><a href="{% url 'profiles:privacy' user.id %}">edit privacy</a></div>
-        <div class="col"><a href="/profiles/changepassword/123">change password</a></div>
-        </br>
-
-      </div>
-
-      <div class="row">
-        <div class="col-12" style= "background-color:LightGray; hight:60px;"><h1><img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:60px;height:60px;filter: grayscale(100%)"><span style="color:#2F2E2E;"><b>{{profile.username}}</b></span></h1></div>
-        <div class="col-3" ><br></br><a href="{% url 'profiles:profile' profile.pk %}"><font color="#f36E21"><b>Personal</b></font></a><br><a href="{% url 'profiles:academic' profile.pk%}"><b>Academic</b></a><br><a href="{% url 'profiles:work' profile.pk %}"><b>Work and Experience</b></a><br><a href="{% url 'profiles:award' profile.pk %}"><b> Award </b></a></div>
-        <div class="col-9" "color:#3B3D4C;"><br></br><b>Contact information</b><span style="float:right;"><a href="{% url 'profiles:personaledit' profile.pk %}">edit</a></span><hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{user.email}}</div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Congenital disease</b>
-          <hr></hr>{{profile.congenitalDisease}}</div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Emergency contact</b>
-          <hr></hr>Emergency Phone Number : {{profile.emergencyPhone}}</div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Birthdate</b>
-          <hr></hr>{{profile.birthDate}}</div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Ability</b><span style="float:right;"><a href="{% url 'profiles:personaledit' profile.pk %}">edit</a></span>
-          <hr></hr><center><img src="#" hspace="20"></center>
-        </div>
-        <div class="col-3" ></div><div class="col-9" "color:#3B3D4C;"><br></br><b>Image(Informal)</b><span style="float:right;"><a href="{% url 'profiles:personaledit' profile.pk %}">edit</a></span>
-          <hr></hr>
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner">
-
-      <div class="item active">
-        <center><img src="" style="width:100%;"></center>
-      </div>
-
-      <div class="item">
-        <center><img src=""  style="width:100%;"></center>
-      </div>
-
-      <div class="item">
-        <center><img src="" style="width:100%;"></center>
-      </div>
-
+    <div class="row">
+      <div class="col-md-12">
+        <header id="header">
+          <div class="headerpic">
+            <div class="imagewrap">
+              <img src="https://www.uppic.org/image-E51D_59F1B7A7.jpg" class="img-fluid" alt="header image">
+              <button type="button" class="headerbutton" style="right: 10px;">Get Link</button>
+              <button type="button" class="headerbutton" style="right: 130px;">Resume</button>
+              <button type="button" class="headerbutton" style="right: 250px;">CV</button>
+            </div>
+          </div>
+          <nav class="navbar navbar2-default">
+            <div class="navbar-header">
+              <a class="navbar-brands" href="#"><img class="img-responsive" src="http://rolyart.ro/wp-content/uploads/2016/07/roland-maruntelu-freelancer-romania.jpg"></a>
+              <span class="site-name">Pimpim Parpada</span>
+              <ul class="nav navbar-right">
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+              </ul>
+            </div>
+          </nav>   
+      </header>
     </div>
+  </div>
+</div>
 
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div><br><br><br><br></div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="imagewrap">
+        <div class="graybar">
+          <img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:60px;height:60px;filter: grayscale(100%)">
+          <button type="button" class="buttoningraybar" style="right: 10px;">Edit privacy</button>
+          <button type="button" class="buttoningraybar" style="right: 130px;">Resume</button>
+        </div>
       </div>
+  </div>
+</div>
 
 
-</font>
+{% endblock %}
+{% block another2 %}
+<style>
+
+.headerbutton {
+  background-color: gray;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position:absolute;
+  bottom:1px;
+  right: 10px;
+}
+.headerbutton:hover {
+  background-color: #F36E21;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position:absolute;
+  bottom:1px;
+  right: 10px;
+}
+
+.buttoningraybar{
+  background-color: lightgray;
+  border: none;
+  color: #3B3D4C;
+  width: 120px;
+  height: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position:absolute;
+  bottom:35px;  
+}
+.buttoningraybar:hover{
+  background-color: lightgray;
+  border: none;
+  color: #F36E21;
+  width: 120px;
+  height: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position:absolute;
+  bottom:35px;  
+}
+
+.graybar{
+  margin-top: 5px;
+  background-color: lightgray; 
+  height: 60px;
+  width: 1110px;
+}
+.navbar2-default .navbar-right  > li > a{
+  color: #fff;
+}
+.navbar2-default .navbar-right > li > a:hover,
+.navbar2-default .navbar-right  > li > a:focus {
+  background-color: #3B3D4C;
+  color: #F36E21;
+}
+
+.imagewrap {display:inline-block;position:relative;}
+
+
+.headerpic {
+  text-align: center;
+  position: center;
+  width: auto;
+  height: auto;
+}
+
+.navbar-brands{
+width:160px;
+height:160px;
+float:left;
+padding:0;
+margin-top:-130px;
+overflow:hidden;
+border:3px solid #eee;
+margin-left:15px;
+background:#333;
+text-align:center;
+line-height:160px;
+color:#fff !important;
+font-size:2em;
+    -webkit-transition:  all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out ;
+
+  }
+  
+.site-name{
+  color:#fff;
+  font-size:2.4em;
+  float:left;
+  margin-top:-65px !important;
+  margin-left:15px;
+  } 
+.site-description{
+  color:#fff;
+  font-size:1.3em;
+  float:left;
+  margin-top:-30px !important;
+  margin-left:15px;
+  }
+.navbar2-default {
+      padding : 10px;
+      background-color: #3B3D4C;
+      border-color: #3B3D4C;
+    }
+@media (max-width: 768px) {
+.navbar-brand{
+  max-width: 100px;
+  max-height:100px;
+  float:left;
+  margin-top:-65px;
+  margin-left:15px;
+  -webkit-transition:  all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out ;
+  }
+
+
+@media (max-width: 490px) {
+  .site-name{
+  color:#fff;
+  font-size:1.5em;
+  float:left;
+  line-height:20px;
+  margin-top:-100px !important;
+  margin-left:125px;
+  } 
+.site-description{
+  color:#fff;
+  font-size:1.3em;
+  float:left;
+  margin-top:-80px !important;
+  margin-left:125px;
+  }
+
+</style>
 {% endblock %}
