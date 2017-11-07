@@ -10,3 +10,4 @@
 *.swp
 *.xml
 .idea/workspace.xml
+/FIBO_Portfolio/venv-1
