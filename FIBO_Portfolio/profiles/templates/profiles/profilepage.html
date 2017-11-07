@@ -1,60 +1,110 @@
-{% extends 'base.html' %}
-{% block title %}Profile Page{% endblock %}
+{% extends 'base2.html' %}
+{% block title %}Personal Profile | Profile{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
 {% endblock %}
 {% block body %}
-
-<div class="wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <header id="header">
-          <div class="headerpic">
-            <div class="imagewrap">
-              <img src="https://www.uppic.org/image-E51D_59F1B7A7.jpg" class="img-fluid" alt="header image">
-              <button type="button" class="headerbutton" style="right: 10px;">Get Link</button>
-              <button type="button" class="headerbutton" style="right: 130px;">Resume</button>
-              <button type="button" class="headerbutton" style="right: 250px;">CV</button>
-            </div>
-          </div>
-          <nav class="navbar navbar2-default">
-            <div class="navbar-header">
-              <a class="navbar-brands" href="#"><img class="img-responsive" src="http://rolyart.ro/wp-content/uploads/2016/07/roland-maruntelu-freelancer-romania.jpg"></a>
-              <span class="site-name">Pimpim Parpada</span>
-              <ul class="nav navbar-right">
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-              </ul>
-            </div>
-          </nav>   
-      </header>
-    </div>
-  </div>
-</div>
-
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <div class="imagewrap">
-        <div class="graybar">
-          <img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:60px;height:60px;filter: grayscale(100%)">
-          <button type="button" class="buttoningraybar" style="right: 10px;">Edit privacy</button>
-          <button type="button" class="buttoningraybar" style="right: 130px;">Resume</button>
+      <div class="graybar">
+        <div class="row">
+          <div class="col-1">
+            <img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:70px;height:70px;filter: grayscale(100%);margin-left: 30px">
+          </div>
+          <div class="col-8">
+            <h2 style="margin-left: 15px;margin-top: 17px">About</h2>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="bg">
+        <div class="row">
+          <div class="col-3" >
+            <br>
+            <div class="profile-usermenu">
+              <ul class="nav">
+                <li class="active">
+                  <a href="{% url 'profiles:profile' profile.pk %}">
+                  <i class="glyphicon glyphicon-home"></i> Personal Profile </a>
+                </li>
+                <li>
+                  <a href="{% url 'profiles:academic' profile.pk%}">
+                  <i class="glyphicon glyphicon-user"></i> Academic </a>
+                </li>
+                <li>
+                  <a href="{% url 'profiles:work' profile.pk %}">
+                  <i class="glyphicon glyphicon-ok"></i> Work and Experience </a>
+                </li>
+                <li>
+                  <a href="{% url 'profiles:award' profile.pk %}">
+                  <i class="glyphicon glyphicon-flag"></i> Award </a>
+                </li>
+              </ul>
+            </div>
+          </div>  
+          <div class="col-8">
+
+            <br>
+            <div class="edit-link">
+              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+            </div>
+            <b>Contact information</b>
+            <hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{user.email}}
+
+            <br><br><br>
+            <b>Congenital disease</b>
+            <hr></hr>{{profile.congenitalDisease}}
+
+            <br><br><br>
+            <b>Emergency contact</b>
+            <hr></hr>Emergency Phone Number : {{profile.emergencyPhone}}
+
+            <br><br><br>
+            <b>Birthdate</b>
+            <hr></hr>{{profile.birthDate}}
+
+            <br><br><br>
+            <div class="edit-link">
+              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+            </div>
+            <b>Ability</b>
+            <hr></hr><center><img src="#" hspace="20"></center>
 
 
+            <br><br><br>
+            <div class="edit-link">
+              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+            </div>
+            <b>Image(Informal)</b>
+            <hr></hr>
+
+
+            <br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
+
 {% block another2 %}
 <style>
+body{
+  background-color: #B4B4B4;
+}
+.imagewrap {display:inline-block;position:relative;}
+
 
 .headerbutton {
-  background-color: gray;
+  background-color: #3B3E4C;
   border: none;
   color: white;
   padding: 8px 15px;
@@ -64,146 +114,92 @@
   display: inline-block;
   font-size: 16px;
   position:absolute;
-  bottom:1px;
+  bottom:10px;
   right: 10px;
 }
 .headerbutton:hover {
   background-color: #F36E21;
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  width: 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  position:absolute;
-  bottom:1px;
-  right: 10px;
 }
 
 .buttoningraybar{
-  background-color: lightgray;
+  background-color: #fff;
   border: none;
   color: #3B3D4C;
-  width: 120px;
+
   height: 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px;
   position:absolute;
-  bottom:35px;  
+  bottom:30px;  
 }
 .buttoningraybar:hover{
-  background-color: lightgray;
+  background-color: #fff;
   border: none;
   color: #F36E21;
-  width: 120px;
+
   height: 8px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 15px;
   position:absolute;
-  bottom:35px;  
+  bottom:30px;  
 }
-
 .graybar{
-  margin-top: 5px;
-  background-color: lightgray; 
-  height: 60px;
+  background-color:#EBEBEB; 
+  height: 70px;
   width: 1110px;
 }
-.navbar2-default .navbar-right  > li > a{
-  color: #fff;
-}
-.navbar2-default .navbar-right > li > a:hover,
-.navbar2-default .navbar-right  > li > a:focus {
-  background-color: #3B3D4C;
-  color: #F36E21;
+
+.bg{
+  background-color: #fff;
 }
 
-.imagewrap {display:inline-block;position:relative;}
-
-
-.headerpic {
-  text-align: center;
-  position: center;
-  width: auto;
-  height: auto;
+.edit-link>a{
+  color:gray;
+  float:right;
+  font-size: 15px;
+}
+.edit-link>a:hover{
+  color:#F36E21;
 }
 
-.navbar-brands{
-width:160px;
-height:160px;
-float:left;
-padding:0;
-margin-top:-130px;
-overflow:hidden;
-border:3px solid #eee;
-margin-left:15px;
-background:#333;
-text-align:center;
-line-height:160px;
-color:#fff !important;
-font-size:2em;
-    -webkit-transition:  all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition:  all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out ;
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
 
-  }
-  
-.site-name{
-  color:#fff;
-  font-size:2.4em;
-  float:left;
-  margin-top:-65px !important;
-  margin-left:15px;
-  } 
-.site-description{
-  color:#fff;
-  font-size:1.3em;
-  float:left;
-  margin-top:-30px !important;
-  margin-left:15px;
-  }
-.navbar2-default {
-      padding : 10px;
-      background-color: #3B3D4C;
-      border-color: #3B3D4C;
-    }
-@media (max-width: 768px) {
-.navbar-brand{
-  max-width: 100px;
-  max-height:100px;
-  float:left;
-  margin-top:-65px;
-  margin-left:15px;
-  -webkit-transition:  all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition:  all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out ;
-  }
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
 
+.profile-usermenu ul li a {
+  color: gray;
+  font-size: 14px;
+  font-weight: 400;
+}
 
-@media (max-width: 490px) {
-  .site-name{
-  color:#fff;
-  font-size:1.5em;
-  float:left;
-  line-height:20px;
-  margin-top:-100px !important;
-  margin-left:125px;
-  } 
-.site-description{
-  color:#fff;
-  font-size:1.3em;
-  float:left;
-  margin-top:-80px !important;
-  margin-left:125px;
-  }
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #f1f1f4;
+  color: #000;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #000;
+  background-color: #f1f1f4;
+  border-left: 2px solid #3B3D4C;
+  margin-left: -2px;
+}
 
 </style>
 {% endblock %}
