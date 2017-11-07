@@ -1,5 +1,5 @@
 {% extends 'base2.html' %}
-{% block title %}Work | Profile{% endblock %}
+{% block title %}Awards | Profile{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
@@ -14,7 +14,7 @@
             <img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:70px;height:70px;filter: grayscale(100%);margin-left: 30px">
           </div>
           <div class="col-8">
-            <h2 style="margin-left: 15px;margin-top: 17px">About</h2>
+            <h2 style="margin-left: 15px;margin-top: 17px">Awards</h2>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
-            <b>Award</b>
+            <b>Awards</b>
             <hr></hr>
             
             <br><br><br>
