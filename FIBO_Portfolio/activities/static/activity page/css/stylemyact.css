@@ -1,0 +1,240 @@
+/*header*/
+
+	a:link {
+		color: #3B3D4C;
+		text-decoration: none;
+	}
+
+	a:visited {
+		color: #3B3D4C;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #f36E21;
+		text-decoration: none;
+	}
+
+	font {
+		font-family: "Roboto", Arial, serif;
+		line-height: 1.8;
+		font-size: 20px;
+		font-weight: 300;
+		}
+
+	.form-head-button button{
+			background-color: #3B3D4C;
+			border: none;
+			color: white;
+			padding: 10px 30px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			font-family: "Roboto", Arial, serif;
+		}
+
+	.form-head-button button:hover{
+		background: #4F4F4F;
+		}
+
+	.headerimage{
+		position: absolute;
+		z-index: -1;
+	}
+
+	.contianer-head-image{
+		margin-top: 100px;
+		margin-left: 150px;
+		margin-right: 30px;
+	}
+
+	.contianer-head-button{
+			margin-top: 230px;
+			margin-left: 330px;
+	}
+
+	.contianer-head-title{
+			margin-top: 230px;
+			color: white;
+	}
+
+/*end header*/
+
+
+/*myactivity*/
+
+  body {
+    font-family: "Roboto", Arial, serif;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .roww > .column {
+    padding: 0 8px;
+  }
+
+  .roww:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column {
+    float: left;
+    width: 45%;
+  }
+
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+		left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+		opacity:0.95;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+	.mySlides2{
+		display: none;
+	}
+
+  .cursor {
+    cursor: pointer
+  }
+
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  img {
+    margin-bottom: 0px;
+  }
+
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+  }
+
+  .demo {
+    opacity: 0.6;
+  }
+
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  img.hover-shadow {
+    transition: 0.3s
+  }
+
+  .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+  }
+
+	.detailpic{
+		background-color: gray;
+    width: 600px;
+    padding: 10px;
+	  }
+
+  .detailtext{
+		  text-align: center;
+			line-height: 1.5;
+			text-decoration-color: black;
+			font-size: 15px
+	  }
+
+	.detailtop{
+		  text-align: center;
+			font-size: 20px;
+			margin-bottom: 0;
+			text-emphasis-color: black
+	}
+
+	.container2 {
+	  margin-right: auto;
+	  margin-left: auto;
+	  padding-left: 15px;
+	  padding-right: 15px;
+	}
+
+  .container-slide {
+    margin: 50px
+  }
