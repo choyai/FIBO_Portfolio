@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<head>
+  <title>{% block title %}Nav Bar{% endblock %}</title>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <style>
+
+    a.navbar-brand {
+      text-transform: uppercase;
+      font-size: 30px;
+      font-weight: 900;
+    }
+    li a, .dropbtn {
+      display: inline-block;
+      text-transform: none;
+      text-align: left;
+      padding: 14px 16px;
+    }
+    li a, .navbar-nav {
+      display: inline-block;
+      text-transform: none;
+      text-align: left;
+      font-size: 15px;
+      letter-spacing: 1px;
+    }
+    .navbar-default {
+      padding : 20px;
+      background-color: #3B3D4C;
+      border-color: #3B3D4C;
+    }
+    .navbar-default > li.dropdown:hover > a,
+    .navbar-default > li.dropdown:hover > a:hover,
+    .navbar-default > li.dropdown:hover > a:focus {
+      background-color: #3B3D4C;
+      color: #F36E21;
+    }
+
+    .navbar-default .navbar-right  > li > a{
+      text-transform: uppercase;
+      background-color: #3B3D4C;
+      color: #FFF;
+    }
+    .navbar-default .navbar-right  > li > a:hover,
+    .navbar-default .navbar-right  > li > a:focus {
+
+      background-color: #3B3D4C;
+      color: #F36E21;
+    }
+    .dropdown:hover{           
+      background-color: #3B3D4C;
+      color: #3B3D4C;
+    }
+    .dropdown >.dropdown-menu > li > a {
+      color: #3B3D4C;
+      text-transform: uppercase;
+    }
+    li.dropdown:hover > .dropdown-menu {
+      display: block;
+    }
+    .endpage{
+      margin-top: 30px;
+      margin-bottom: 100px;
+    }
+.headerpic {
+  text-align: center;
+  position: center;
+  width: auto;
+  height: auto;
+}
+
+
+.navbar2-default .navbar-right  > li > a{
+  color: #fff;
+}
+.navbar2-default .navbar-right > li > a:hover,
+.navbar2-default .navbar-right  > li > a:focus {
+  background-color: #3B3D4C;
+  color: #F36E21;
+}
+.navbar-brands{
+width:160px;
+height:160px;
+float:left;
+padding:0;
+margin-top:-130px;
+overflow:hidden;
+border:3px solid #eee;
+margin-left:15px;
+background:#333;
+text-align:center;
+line-height:160px;
+color:#fff !important;
+font-size:2em;
+    -webkit-transition:  all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out ;
+
+  }
+  
+.site-name{
+  color:#fff;
+  font-size:2.4em;
+  float:left;
+  margin-top:-65px !important;
+  margin-left:15px;
+  bottom:10px;
+  } 
+
+.navbar2-default {
+      padding : 10px;
+      background-color: #fff;
+      border-color: #fff;
+    }
+@media (max-width: 768px) {
+.navbar-brand{
+  max-width: 100px;
+  max-height:100px;
+  float:left;
+  margin-top:-65px;
+  margin-left:15px;
+  -webkit-transition:  all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition:  all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out ;
+  }
+}
+@media (max-width: 490px) {
+  .site-name{
+  color:#fff;
+  font-size:1.5em;
+  float:left;
+  line-height:20px;
+  margin-top:-100px !important;
+  margin-left:125px;
+  } 
+.site-description{
+  color:#fff;
+  font-size:1.3em;
+  float:left;
+  margin-top:-80px !important;
+  margin-left:125px;
+  }
+}
+  
+  {% block another1 %}
+  {% endblock %}
+  </style>
+  {% block another2 %}
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+            <div class="navbar-header"><a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
+          </div>
+        </div>
+
+          <ul class="nav navbar-right">
+              <li><a href="{% url 'profiles:home' %}">Home</a></li>
+              <li><a href="{% url 'profiles:profile' user.id %}">Profile</a></li>
+
+              <li class="dropdown">
+                <a href="{% url 'activities:home' %}" class="dropdown-toggle" data-toggle="dropdown">Activities</a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'activities:myactivities' user.id %}">MY ACTIVITIES</a></li>
+                  <li><a href="{% url 'activities:create' %}">CREATE ACTIVITY</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="{% url 'profiles:organization' %}" class="dropdown-toggle" data-toggle="dropdown">Organization</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">EXECUTIVE TEAM</a></li>
+                  <li><a href="#">Lecturer/Researcher</a></li>
+                  <li><a href="#">Adjunct Lecturer</a></li>
+                  <li><a href="#">Engineer</a></li>
+                  <li><a href="#">Officer</a></li>
+                  <li><a href="#">STUDENT</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'profiles:aboutus' %}">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+<div class="wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <header id="header">
+              <div class="headerpic">
+                <div class="imagewrap">
+                  <img src="https://www.uppic.org/image-E51D_59F1B7A7.jpg" class="img-fluid" alt="header image">
+                  <button type="button" class="headerbutton" style="right: 10px;">Get Link</button>
+                  <button type="button" class="headerbutton" style="right: 130px;">Resume</button>
+                  <button type="button" class="headerbutton" style="right: 250px;">CV</button>
+                </div>
+              </div>
+              <nav class="navbar navbar2-default">
+                <div class="navbar-header">
+                  <a class="navbar-brands" href="#"><img class="img-responsive" src="http://rolyart.ro/wp-content/uploads/2016/07/roland-maruntelu-freelancer-romania.jpg"></a>
+                  <span class="site-name">{{profile.username}}</span>
+                  <button type="button" class="buttoningraybar" style="right: 10px;">Edit privacy</button>
+                  <button type="button" class="buttoningraybar" style="right: 130px;">Resume</button>
+                </div>
+              </nav>   
+          </header>
+        </div>
+      </div>
+    </div>
+{% block body %}
+{% endblock %}
+
+  <div class="endpage"></div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+</body>
+
+</html>
