@@ -1,176 +1,41 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock %}
-{% block another %}
+{% block another1 %}
     {% load staticfiles %}
-     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
-    <script src="{% static 'activity page/js/jssor.slider-26.3.0.min.js' %}"></script>
-    <!-- Modernizr JS -->
-    <script src="{% static 'activity page/js/modernizr-2.6.2.min.js' %}"></script>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet'>
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="{% static 'activity page/css/animate.css' %}">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="{% static 'activity page/css/icomoon.css' %}">
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
-    <script>
-        jssor_1_slider_init = function() {
-
-            var jssor_1_SlideoTransitions = [
-              [{b:0,d:600,y:-290,e:{y:27}}],
-              [{b:0,d:1000,y:185},{b:1000,d:500,o:-1},{b:1500,d:500,o:1},{b:2000,d:1500,r:360},{b:3500,d:1000,rX:30},{b:4500,d:500,rX:-30},{b:5000,d:1000,rY:30},{b:6000,d:500,rY:-30},{b:6500,d:500,sX:1},{b:7000,d:500,sX:-1},{b:7500,d:500,sY:1},{b:8000,d:500,sY:-1},{b:8500,d:500,kX:30},{b:9000,d:500,kX:-30},{b:9500,d:500,kY:30},{b:10000,d:500,kY:-30},{b:10500,d:500,c:{x:87.50,t:-87.50}},{b:11000,d:500,c:{x:-87.50,t:87.50}}],
-              [{b:0,d:600,x:410,e:{x:27}}],
-              [{b:-1,d:1,o:-1},{b:0,d:600,o:1,e:{o:5}}],
-              [{b:-1,d:1,c:{x:175.0,t:-175.0}},{b:0,d:800,c:{x:-175.0,t:175.0},e:{c:{x:7,t:7}}}],
-              [{b:-1,d:1,o:-1},{b:0,d:600,x:-570,o:1,e:{x:6}}],
-              [{b:-1,d:1,o:-1,r:-180},{b:0,d:800,o:1,r:180,e:{r:7}}],
-              [{b:0,d:1000,y:80,e:{y:24}},{b:1000,d:1100,x:570,y:170,o:-1,r:30,sX:9,sY:9,e:{x:2,y:6,r:1,sX:5,sY:5}}],
-              [{b:2000,d:600,rY:30}],
-              [{b:0,d:500,x:-105},{b:500,d:500,x:230},{b:1000,d:500,y:-120},{b:1500,d:500,x:-70,y:120},{b:2600,d:500,y:-80},{b:3100,d:900,y:160,e:{y:24}}],
-              [{b:0,d:1000,o:-0.4,rX:2,rY:1},{b:1000,d:1000,rY:1},{b:2000,d:1000,rX:-1},{b:3000,d:1000,rY:-1},{b:4000,d:1000,o:0.4,rX:-1,rY:-1}]
-            ];
-
-            var jssor_1_options = {
-              $AutoPlay: 1,
-              $Idle: 2000,
-              $Align: 0,
-              $CaptionSliderOptions: {
-                $Class: $JssorCaptionSlideo$,
-                $Transitions: jssor_1_SlideoTransitions,
-                $Breaks: [
-                  [{d:2000,b:1000}]
-                ]
-              },
-              $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-              },
-              $BulletNavigatorOptions: {
-                $Class: $JssorBulletNavigator$
-              }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            /*#region responsive code begin*/
-
-            var MAX_WIDTH = 980;
-
-            function ScaleSlider() {
-                var containerElement = jssor_1_slider.$Elmt.parentNode;
-                var containerWidth = containerElement.clientWidth;
-
-                if (containerWidth) {
-
-                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
-
-                    jssor_1_slider.$ScaleWidth(expectedWidth);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-
-            ScaleSlider();
-
-            $Jssor$.$AddEvent(window, "load", ScaleSlider);
-            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
-            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
-            /*#endregion responsive code end*/
-        };
-    </script>
-    <style>
-        /* jssor slider loading skin spin css */
-        .jssorl-009-spin img {
-            animation-name: jssorl-009-spin;
-            animation-duration: 1.6s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-        }
-        @keyframes jssorl-009-spin {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-        .jssorb052 .i {position:absolute;cursor:pointer;}
-        .jssorb052 .i .b {fill:#000;fill-opacity:0.3;}
-        .jssorb052 .i:hover .b {fill-opacity:.7;}
-        .jssorb052 .iav .b {fill-opacity: 1;}
-        .jssorb052 .i.idn {opacity:.3;}
-
-        .jssora053 {display:block;position:absolute;cursor:pointer;}
-        .jssora053 .a {fill:none;stroke:#fff;stroke-width:640;stroke-miterlimit:10;}
-        .jssora053:hover {opacity:.8;}
-        .jssora053.jssora053dn {opacity:.5;}
-        .jssora053.jssora053ds {opacity:.3;pointer-events:none;}
-    </style>
-    <!-- Main JS -->
-    <script type="text/javascript">jssor_1_slider_init();</script>
-
+        <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
 {% endblock %}
 {% block body %}
-    <div id="fh5co-page">
-
-<!—slider section —>
-        <div class="container">
-            <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
-            <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
-                <div>
-                    <img data-u="image" src="images/002.jpg" />
-                </div>
-                <div data-p="170.00">
-                    <img data-u="image" src="images/002.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="images/003.jpg" />
-                </div>
-            </div>
-            <!- Bullet Navigator ->
-            <div data-u="navigator" class="jssorb052" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
-                <div data-u="prototype" class="i" style="width:16px;height:16px;">
-                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
-                    </svg>
-                </div>
-            </div>
-            <!- Arrow Navigator ->
-            <div data-u="arrowleft" class="jssora053" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
-                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
-                </svg>
-            </div>
-            <div data-u="arrowright" class="jssora053" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
-                </svg>
-            </div>
-        </div>
-<!—end slider section—>
-
 <!—activity info section —>
-        <div class="Row">
-            <div class="Column">
-                <div class="containerhomedes">
-                    <h2 class="infodeshome"><br>
-                    <hr>
-                      <h2><b>New Activity</b></h2>
-                    <p><font size="2"><img src="#" style="float:left;width:134px;height:134px;">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
-                    <br><a href="#"><font color="#f36E21">Readmore</font></a></p></h>
+    <div class="container">
+        <br><br>
+<!space of Carousel>
+        <div class="row">
+            <div class="col-7">
                 <br>
-                  <br><hr>
-                  <h2><b>Popular Activity</b></h2>
-                <p><font size="2"><img src="#" style="float:left;width:134px;height:134px">date<br>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me and you can start adding your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page.
-                <br><a href="#"><font color="#f36E21">Readmore</font></a></p>
+                <h2><b>New Activity</b></h2>
+                <hr>
+                <div class="media">
+                  <img class="d-flex align-self-start mr-3" src="#" style="float:left;width:134px;height:134px;"> <!add pic of activity in #>
+                  <div class="media-body">
+                    <h5 class="mt-0">Activity's Name</h5>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <p href="#"><font color="#f36E21">Readmore</font></p> <!add link of activity in #>
+                  </div>
+                </div>
                 <br>
+                <h2><b>Popular Activity</b></h2>
+                <hr>
+                <div class="media">
+                  <img class="d-flex align-self-start mr-3" src="#" style="float:left;width:134px;height:134px;"> <!add pic of activity in #>
+                  <div class="media-body">
+                    <h5 class="mt-0">Activity's Name</h5>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                    <p href="#"><font color="#f36E21">Readmore</font></p> <!add link of activity in #>
+                  </div>
+                </div>
             </div>
-            <div class="Column">
+            <div class="col-4">
+                <br>
                 <div class="containerboxsearch"><br>
                     <div class="boxsearch">Search<br>
                         <form class="form-wrapper-2">
@@ -179,8 +44,85 @@
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="endpage"></div>
 
+            </div>
+    </div>
+{% endblock %}
+{% block another2 %}
+<style>
+    .containerboxsearch{
+        padding-left: 50px; 
+    }
+    .boxsearch {
+      background-color: #4F4F4F;
+      width: 300px;
+      height: 125px;
+      padding-top: 10px;
+      padding-left: 20px; 
+      box-sizing: border-box;
+      font-size: 30px;
+      color: white;
+    }
+    .form-wrapper-2 input {
+    width: 210px;
+    height: 20px;
+    padding: 10px 5px;
+    float: left;
+    font: 15px "Roboto", Arial, serif;
+    border: 0;
+    background: #eee;
+    -moz-border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    border-radius: 3px 0 0 3px;
+    }
+    .form-wrapper-2 input:focus {
+    outline: 0;
+    background: #fff;
+    -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    }
+    .form-wrapper-2 input::-webkit-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+    }
+    .form-wrapper-2 input:-moz-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+    }
+    .form-wrapper-2 input:-ms-input-placeholder {
+    color: #999;
+    font-weight: normal;
+    font-style: italic;
+    }
+    .form-wrapper-2 button {
+    overflow: visible;
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    height: 30px;
+    width: 110px;
+    font: bold 15px "Roboto", Arial, serif;
+    color: #fff;
+    background: #F36E22;
+    border-radius: 0 3px 3px 0;
+    }
+    .form-wrapper-2 button:hover{
+    background: #4F4F4F;
+    }
+    .form-wrapper-2 button:active,
+    .form-wrapper-2 button:focus{
+    background: #c42f2f;
+    }
+    .containerboxsearch_home{
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 50px;
+      padding-left: 70px; 
+    }
+</style>
 {% endblock %}
