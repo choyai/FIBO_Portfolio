@@ -66,7 +66,7 @@ class WorkView(generic.DetailView):
 
 class ProfileUpdate(UpdateView):
     model = Profile
-    template_name = 'profiles/personaledit.html'
+    template_name = 'profiles/profiles_form.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
 def privacy(request, user_id):
