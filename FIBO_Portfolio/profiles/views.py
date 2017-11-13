@@ -69,6 +69,31 @@ class ProfileUpdate(UpdateView):
     template_name = 'profiles/personaledit.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
+class ExecutiveTeamView(generic.DetailView):
+    model = Profile
+    template_name = 'prfiles/organization/executive_team.html'
+
+class LecturerAndResearcher(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/organization/lecturerandresearcher.html'
+
+class AdjunctionLecturer(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/organization/adjunct_lecturer.html'
+
+class Engineer(generic.DetailView):
+    model = Profile
+    template_name = 'profiles/organization/engineer.html'
+
+class Officer(generic.DetailView):
+    module = Profile
+    template_name = 'profiles/organization/officer.html'
+
+class Student(generic.DetailView):
+    module = Profile
+    template_name = 'profiles/organization/#'
+
+
 def privacy(request, user_id):
     return render(request, 'profiles/privacy.html')
 
