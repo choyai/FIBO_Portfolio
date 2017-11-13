@@ -6,6 +6,7 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
+    firstName = models.CharField(max_length = 255)
     avatar = models.FileField(verbose_name = ("Profile Picture"), upload_to ="profiles", max_length = 255)
     bio = models.TextField(max_length = 500)
     birthDate = models.DateField(null=True, blank=True)
