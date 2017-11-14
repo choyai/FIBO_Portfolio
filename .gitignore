@@ -11,3 +11,4 @@
 *.xml
 .idea/workspace.xml
 /FIBO_Portfolio/venv-1
+/FIBO_Portfolio/profiles/migrations

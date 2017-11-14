@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_view_permission',
     'profiles.apps.ProfilesConfig',
     'activities.apps.ActivitiesConfig',
     'django.contrib.admin',
