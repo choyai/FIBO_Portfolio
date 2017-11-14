@@ -71,27 +71,27 @@ class ProfileUpdate(UpdateView):
 
 class ExecutiveTeamView(generic.DetailView):
     model = Profile
-    template_name = 'prfiles/organization/executive_team.html'
+    template_name = 'prfiles/executive_team.html'
 
-class LecturerAndResearcher(generic.DetailView):
+class LecturerAndResearcherView(generic.DetailView):
     model = Profile
-    template_name = 'profiles/organization/lecturerandresearcher.html'
+    template_name = 'profiles/lecturerandresearcher.html'
 
-class AdjunctionLecturer(generic.DetailView):
+class AdjunctionLecturerView(generic.DetailView):
     model = Profile
-    template_name = 'profiles/organization/adjunct_lecturer.html'
+    template_name = 'profiles/adjunct_lecturer.html'
 
-class Engineer(generic.DetailView):
+class EngineersView(generic.DetailView):
     model = Profile
-    template_name = 'profiles/organization/engineer.html'
+    template_name = 'profiles/engineer.html'
 
-class Officer(generic.DetailView):
+class OfficerView(generic.DetailView):
     module = Profile
-    template_name = 'profiles/organization/officer.html'
+    template_name = 'profiles/officer.html'
 
-class Student(generic.DetailView):
+class StudentView(generic.DetailView):
     module = Profile
-    template_name = 'profiles/organization/#'
+    template_name = 'profiles/#'
 
 
 def privacy(request, user_id):

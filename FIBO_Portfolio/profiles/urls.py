@@ -15,7 +15,6 @@ urlpatterns = [
 
     url(r'^profile/(?P<pk>[0-9]+)$', views.ProfileView.as_view(), name='profile'),
     url(r'^profile/(?P<user_id>[0-9]+)/privacy$', views.privacy, name='privacy'),
-
     url(r'^profile/(?P<pk>[0-9]+)/edit$', views.ProfileUpdate.as_view(), name='personaledit'),
 
 
@@ -24,6 +23,14 @@ urlpatterns = [
     url(r'^profile/(?P<pk>[0-9]+)/work$', views.WorkView.as_view(), name='work'),
 
     url(r'^organization', views.organization, name='organization'),
+    url(r'^organization/executive_team$', views.ExecutiveTeamView.as_view(), name='executive_team'),
+    url(r'^organization/lecturers_and_researchers$', views.LecturerAndResearcherView.as_view(), name='lecturers_and_researchers'),
+    url(r'^organization/adjunct_lecturers$', views.AdjunctionLecturerView.as_view(), name='adjunct_lecturers'),
+    url(r'^organization/engineers$', views.EngineersView.as_view(), name='engineers'),
+    url(r'^organization/officers$', views.OfficerView.as_view(), name='officers'),
+    url(r'^organization/students$', views.StudentView.as_view(), name='students'),
+
+
     url(r'^aboutus', views.aboutus, name='aboutus'),
 
 
