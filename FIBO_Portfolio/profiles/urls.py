@@ -9,8 +9,17 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name':'profiles/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^register$', views.UserFormView.as_view(), name='register'),
-    url(r'^forgotpassword/$', views.forgotpassword, name='forgotpassword'),
     url(r'^changepassword/(?P<pk>[0-9]+)$', views.changepassword, name='changepassword'),
+
+    url(r'^password_reset/$', auth_views.password_reset,{
+                                                    'post_reset_redirect':'profiles:password_reset_done',
+                                                    'from_email':'accounts@django.com',
+                                                    },
+                                                    name='password_reset'),
+    url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^password_reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)$', auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^password_reset/complete/$', auth_views.password_reset_complete, name='password_reset_complete'),
+
 
 
     url(r'^profile/(?P<pk>[0-9]+)$', views.ProfileView.as_view(), name='profile'),
