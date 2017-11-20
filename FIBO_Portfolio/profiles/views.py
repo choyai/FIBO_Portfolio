@@ -3,7 +3,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import View
-from .forms import UserForm, LoginForm
+from .forms import *
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
 from io import  BytesIO
@@ -42,7 +42,7 @@ class UserFormView(View):
 def home(request):
     return render(request, 'profiles/home.html')
 
-def forgotpassword(request, user_id):
+def forgotpassword(request):
     return render(request, 'profiles/forgotpassword.html')
 
 def changepassword(request, user_id):
@@ -66,7 +66,7 @@ class WorkView(generic.DetailView):
 
 class ProfileUpdate(UpdateView):
     model = Profile
-    template_name = 'profiles/personaledit.html'
+    template_name = 'profiles/profiles_form.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
 class ExecutiveTeamView(View):
