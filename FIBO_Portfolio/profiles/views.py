@@ -69,29 +69,35 @@ class ProfileUpdate(UpdateView):
     template_name = 'profiles/personaledit.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
-class ExecutiveTeamView(generic.DetailView):
-    model = Profile
-    template_name = 'prfiles/executive_team.html'
+class ExecutiveTeamView(View):
+    template_name = 'profiles/executive_team.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-class LecturerAndResearcherView(generic.DetailView):
-    model = Profile
+class LecturerAndResearcherView(View):
     template_name = 'profiles/lecturerandresearcher.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-class AdjunctionLecturerView(generic.DetailView):
-    model = Profile
+class AdjunctionLecturerView(View):
     template_name = 'profiles/adjunct_lecturer.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-class EngineersView(generic.DetailView):
-    model = Profile
+class EngineersView(View):
     template_name = 'profiles/engineer.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
-class OfficerView(generic.DetailView):
-    module = Profile
+class OfficerView(View):
     template_name = 'profiles/officer.html'
+    def get(self, request):
+        return render(request, self.template_name)
 
 class StudentView(generic.DetailView):
-    module = Profile
     template_name = 'profiles/#'
+    def get(self, request):
+        return render(request, self.template_name)
 
 
 def privacy(request, user_id):
