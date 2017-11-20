@@ -10,11 +10,15 @@ class UserForm(forms.ModelForm):
         fields = ['username', 'email', 'password']
 
 class LoginForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input'}))
 
     class Meta:
         model = User
-        fields = ['username', 'password']
+        fields = ['username','password']
+        widget={
+            'username': forms.TextInput(attrs={'class':'input'})
+        }
+
 
 class ProfileForm(forms.ModelForm):
     class Meta:
