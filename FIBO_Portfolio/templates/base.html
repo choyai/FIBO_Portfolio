@@ -4,67 +4,33 @@
   {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <style>
-
-    a.navbar-brand {
-      text-transform: uppercase;
+    a.navbar-brand{text-transform: uppercase;
       font-size: 30px;
-      font-weight: 900;
-    }
-    li a, .dropbtn {
-      display: inline-block;
-      text-transform: none;
-      text-align: left;
-      padding: 14px 16px;
-    }
-    li a, .navbar-nav {
-      display: inline-block;
-      text-transform: none;
-      text-align: left;
-      font-size: 15px;
-      letter-spacing: 1px;
-    }
-    .navbar-default {
-      padding : 20px;
-      background-color: #3B3D4C;
-      border-color: #3B3D4C;
-    }
-    .navbar-default > li.dropdown:hover > a,
-    .navbar-default > li.dropdown:hover > a:hover,
-    .navbar-default > li.dropdown:hover > a:focus {
-      background-color: #3B3D4C;
-      color: #F36E21;
-    }
-
-    .navbar-default .navbar-right  > li > a{
-      text-transform: uppercase;
-      background-color: #3B3D4C;
-      color: #FFF;
-    }
-    .navbar-default .navbar-right  > li > a:hover,
-    .navbar-default .navbar-right  > li > a:focus {
-
-      background-color: #3B3D4C;
-      color: #F36E21;
-    }
-    .dropdown:hover{
-      background-color: #3B3D4C;
-      color: #3B3D4C;
-    }
-    .dropdown >.dropdown-menu > li > a {
-      color: #3B3D4C;
+      font-weight: 700;}
+    a.nav-link,
+    a.dropdown-item{
       text-transform: uppercase;
     }
     li.dropdown:hover > .dropdown-menu {
       display: block;
     }
+    a.dropdown-item:hover{
+      color: #F36E21;
+      background-color: #FFF;
+    }
+    a.nav-link:hover,
+    a.nav-link:focus{
+      color: #F36E21;
+    }
     .endpage{
       margin-top: 30px;
       margin-bottom: 100px;
     }
-
   {% block another1 %}
   {% endblock %}
   </style>
@@ -73,87 +39,99 @@
   {% if user.is_authenticated == True %}
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background: #3B3D4C";>
       <div class="container">
-          <div class="navbar-header">
-            <div class="navbar-header"><a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
-          </div>
-        </div>
-
-          <ul class="nav navbar-right">
-              <li><a href="{% url 'profiles:home' %}">Home</a></li>
-              <li><a href="{% url 'profiles:profile' user.id %}">Profile</a></li>
-
-              <li class="dropdown">
-                <a href="{% url 'activities:home' %}" class="dropdown-toggle" data-toggle="dropdown">Activities</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">MY ACTIVITIES</a></li>
-                  <li><a href="{% url 'activities:create' %}">CREATE ACTIVITY</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="{% url 'profiles:organization' %}" class="dropdown-toggle" data-toggle="dropdown">Organization</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">EXECUTIVE TEAM</a></li>
-                  <li><a href="#">Lecturer/Researcher</a></li>
-                  <li><a href="#">Adjunct Lecturer</a></li>
-                  <li><a href="#">Engineer</a></li>
-                  <li><a href="#">Officer</a></li>
-                  <li><a href="#">STUDENT</a></li>
-                </ul>
-              </li>
-              <li><a href="{% url 'profiles:aboutus' %}">About</a></li>
-              <li><a href="{% url 'profiles:logout' %}"> Logout</a></li>
+        <a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:profile' user.id %}">Profile</a></a>
+            </li>   
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'activities:home' %}" id="navbardrop" data-toggle="dropdown">Activities</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">MY ACTIVITIES</a>
+                <a class="dropdown-item" href="{% url 'activities:create' %}">CREATE ACTIVITY</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'profiles:organization' %}" id="navbardrop" data-toggle="dropdown">Organization</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">EXECUTIVE TEAM</a>
+                <a class="dropdown-item" href="#">Lecturer/Researcher</a>
+                <a class="dropdown-item" href="#">Adjunct Lecturer</a>
+                <a class="dropdown-item" href="#">Engineer</a>
+                <a class="dropdown-item" href="#">Officer</a>
+                <a class="dropdown-item" href="#">STUDENT</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:aboutus' %}">About</a></a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:logout' %}">Logout</a></a>
+            </li> 
           </ul>
-        </div>
+
+        </div>  
       </div>
     </nav>
-  </header>
   {% else %}
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark" style="background: #3B3D4C";>
       <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
-          </div>
-          <ul class="nav navbar-right">
-              <li><a href="{% url 'profiles:home' %}">Home</a></li>
-              <li><a href="{% url 'profiles:login' %}">Login</a></li>
-
-              <li class="dropdown">
-                <a href="{% url 'activities:home' %}" class="dropdown-toggle" data-toggle="dropdown">Activities</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">MY ACTIVITIES</a></li>
-                  <li><a href="{% url 'activities:create' %}">CREATE ACTIVITY</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="{% url 'profiles:organization' %}" class="dropdown-toggle" data-toggle="dropdown">Organization</a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">EXECUTIVE TEAM</a></li>
-                  <li><a href="#">Lecturer/Researcher</a></li>
-                  <li><a href="#">Adjunct Lecturer</a></li>
-                  <li><a href="#">Engineer</a></li>
-                  <li><a href="#">Officer</a></li>
-                  <li><a href="#">STUDENT</a></li>
-                </ul>
-              </li>
-              <li><a href="{% url 'profiles:aboutus' %}">About</a></li>
+        <a class="navbar-brand" href="{% url 'profiles:home' %}"><font color='#ffffff'>PORT</font><font color="#F36E21">FOLIO</font></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:home' %}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'activities:home' %}" id="navbardrop" data-toggle="dropdown">Activities</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">MY ACTIVITIES</a>
+                <a class="dropdown-item" href="{% url 'activities:create' %}">CREATE ACTIVITY</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{% url 'profiles:organization' %}" id="navbardrop" data-toggle="dropdown">Organization</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">EXECUTIVE TEAM</a>
+                <a class="dropdown-item" href="#">Lecturer/Researcher</a>
+                <a class="dropdown-item" href="#">Adjunct Lecturer</a>
+                <a class="dropdown-item" href="#">Engineer</a>
+                <a class="dropdown-item" href="#">Officer</a>
+                <a class="dropdown-item" href="#">STUDENT</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:aboutus' %}">About</a></a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profiles:login' %}">Login</a></a>
+            </li> 
           </ul>
-        </div>
+
+        </div>  
       </div>
     </nav>
-  </header>
   {% endif %}
 {% block body %}
+
 {% endblock %}
   <div class="endpage"></div>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-</body>
 
+</body>
 </html>
+
