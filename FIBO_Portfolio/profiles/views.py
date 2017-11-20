@@ -42,8 +42,8 @@ class UserFormView(View):
 def home(request):
     return render(request, 'profiles/home.html')
 
-def forgotpassword(request):
-    return render(request, 'profiles/forgotpassword.html')
+#def password_reset(request):
+#    return render(request, 'profiles/password_reset.html')
 
 def changepassword(request, user_id):
     return render(request, 'profiles/changepassword.html')
@@ -98,7 +98,6 @@ class StudentView(generic.DetailView):
     template_name = 'profiles/#'
     def get(self, request):
         return render(request, self.template_name)
-
 
 def privacy(request, user_id):
     return render(request, 'profiles/privacy.html')
