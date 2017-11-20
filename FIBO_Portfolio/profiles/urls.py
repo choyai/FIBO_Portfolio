@@ -1,8 +1,6 @@
 from django.conf.urls import url
 from . import views
 from django.contrib.auth import views as auth_views
-from django.contrib.auth.views import (password_reset, password_reset_done, password_reset_confirm
-, password_reset_commplete)
 
 app_name = 'profiles'
 
@@ -13,10 +11,14 @@ urlpatterns = [
     url(r'^register$', views.UserFormView.as_view(), name='register'),
     url(r'^changepassword/(?P<pk>[0-9]+)$', views.changepassword, name='changepassword'),
 
-    url(r'^reset-password/$'), change_password, name='change_password'),
-    url(r'^reset-password/done/$'), change_password_done, name='change_password_done'),
-    url(r'^reset-password/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)$'), change_password_confirm, name='change_password_confirm'),
-    url(r'^reset-password/complete/$'), change_password_complete, name='change_password_complete'),
+    url(r'^password_reset/$', auth_views.password_reset,{
+                                                    'post_reset_redirect':'profiles:password_reset_done',
+                                                    'from_email':'accounts@django.com',
+                                                    },
+                                                    name='password_reset'),
+    url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^password_reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)$', auth_views.password_reset_confirm, name='password_reset_confirm'),
+    url(r'^password_reset/complete/$', auth_views.password_reset_complete, name='password_reset_complete'),
 
 
 
