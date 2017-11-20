@@ -42,8 +42,8 @@ class UserFormView(View):
 def home(request):
     return render(request, 'profiles/home.html')
 
-def forgotpassword(request):
-    return render(request, 'profiles/forgotpassword.html')
+#def password_reset(request):
+#    return render(request, 'profiles/password_reset.html')
 
 def changepassword(request, user_id):
     return render(request, 'profiles/changepassword.html')
@@ -68,37 +68,6 @@ class ProfileUpdate(UpdateView):
     model = Profile
     template_name = 'profiles/profiles_form.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
-
-class ExecutiveTeamView(View):
-    template_name = 'profiles/executive_team.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
-class LecturerAndResearcherView(View):
-    template_name = 'profiles/lecturerandresearcher.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
-class AdjunctionLecturerView(View):
-    template_name = 'profiles/adjunct_lecturer.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
-class EngineersView(View):
-    template_name = 'profiles/engineer.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
-class OfficerView(View):
-    template_name = 'profiles/officer.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
-class StudentView(generic.DetailView):
-    template_name = 'profiles/#'
-    def get(self, request):
-        return render(request, self.template_name)
-
 
 def privacy(request, user_id):
     return render(request, 'profiles/privacy.html')

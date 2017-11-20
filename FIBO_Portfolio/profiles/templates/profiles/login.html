@@ -45,11 +45,7 @@
   <form class = "form-horizontal" action = "" method = "post" enctype="multipart/form-data">
     {% csrf_token %}
     {% include 'profiles/form-template.html' %}
-<<<<<<< HEAD
-    <a href="{% url 'profiles:forgotpassword' %}"> Forgot Password</a>
-=======
     <li><a href="{% url 'profiles:password_reset' %}"> Forgot Password</a></li>
->>>>>>> master
     <div class="col-sm-offset-2 col-sm-10"
       <b1 style= "padding: 50px 5px 0px 0px">  <button type="submit" class="orangebutton">Login</button> </b1>
       <b1 style= "padding: 50px 5px 0px 0px">  <button type="cancel" class="graybutton">Cancel</button>  </b1>
