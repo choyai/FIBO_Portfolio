@@ -11,12 +11,12 @@ urlpatterns = [
     url(r'^register$', views.UserFormView.as_view(), name='register'),
     url(r'^changepassword/(?P<pk>[0-9]+)$', views.changepassword, name='changepassword'),
 
-    url(r'^password_reset/$', auth_views.password_reset,{
+    url(r'^password_reset/$', auth_views.password_reset,{'template_name':'profiles/reset_password.html',
                                                     'post_reset_redirect':'profiles:password_reset_done',
-                                                    'from_email':'accounts@django.com',
+                                                    'from_email':'fibo.portfolio@gmail.com'
                                                     },
                                                     name='password_reset'),
-    url(r'^password_reset/done/$', auth_views.password_reset_done, name='password_reset_done'),
+    url(r'^password_reset/done/$', auth_views.password_reset_done,{'template_name':'profiles/password_reset_done.html'}, name='password_reset_done'),
     url(r'^password_reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)$', auth_views.password_reset_confirm, name='password_reset_confirm'),
     url(r'^password_reset/complete/$', auth_views.password_reset_complete, name='password_reset_complete'),
 
