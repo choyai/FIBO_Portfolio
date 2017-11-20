@@ -23,4 +23,4 @@ class LoginForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['firstName', 'avatar', 'bio']
+        fields = ['avatar', 'bio']

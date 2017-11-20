@@ -6,16 +6,17 @@ from django.dispatch import receiver
 
 class Profile(models.Model):
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
-    firstName = models.CharField(max_length = 255)
     avatar = models.FileField(verbose_name = ("Profile Picture"), upload_to ="profiles", max_length = 255)
-    bio = models.TextField(max_length = 500)
+    bio = models.TextField(max_length = 500, blank=True)
     birthDate = models.DateField(null=True, blank=True)
-    location = models.CharField(max_length=255)
-    phone = models.CharField(max_length=50)
+    location = models.CharField(max_length=255, blank=True)
+    phone = models.CharField(max_length=50, blank=True)
     emergencyPhone = models.CharField(max_length=50, default = "-")
-    congenitalDisease = models.CharField(max_length = 50, default="none")
+    congenitalDisease = models.CharField(max_length = 50, default="None")
     emailConfirmed = models.BooleanField(default=False)
     position = models.CharField(max_length = 100)
+    admission = models.CharField(max_length = 100)
+    scholarship = models.CharField(max_length = 100, default = "None")
 
     def get_absolute_url(self):
         return reverse('activities:detail', kwargs={'pk': self.pk})
