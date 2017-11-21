@@ -1,5 +1,5 @@
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.core.urlresolvers import reverse_lazy
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import View
@@ -38,12 +38,13 @@ class UserFormView(View):
                     return redirect('profiles:home')
         return render(request, self.template_name, {'form': form})
 
+class PrivacyEditView(FormView):
+    form_class = PrivacyForm
+    template_name = 'profiles/privacy.html'
+    success_url = reverse_lazy('profiles:home')
 
 def home(request):
     return render(request, 'profiles/home.html')
-
-#def password_reset(request):
-#    return render(request, 'profiles/password_reset.html')
 
 def changepassword(request, user_id):
     return render(request, 'profiles/changepassword.html')
@@ -98,9 +99,6 @@ class StudentView(generic.DetailView):
     template_name = 'profiles/#'
     def get(self, request):
         return render(request, self.template_name)
-
-def privacy(request, user_id):
-    return render(request, 'profiles/privacy.html')
 
 def organization(request):
     return render(request, 'profiles/organization.html')
