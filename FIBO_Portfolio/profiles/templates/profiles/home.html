@@ -18,7 +18,7 @@
         <br><br>
 <!space of Carousel>
         <div class="row">
-            <div class="col-7">
+            <div class="col-sm-7">
                 <br>
                 <h2><b>New Activity</b></h2>
                 <hr>
@@ -42,7 +42,7 @@
                   </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-sm-4">
                 <br>
                 <div class="containerboxsearch"><br>
                     <div class="boxsearch">Search<br>
@@ -176,7 +176,18 @@ header.masthead {
       font-weight: 700;
       line-height: 75px;
       margin-bottom: 50px;
-      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; } }
+      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; } 
+    
+    }
+    @media (max-width: 1000px) {
+    .containerboxsearch_home{
+      width: 100%; 
+    }
+    
+    .boxsearch {
+      margin-right: 0px;
+
+    }}
 
 </style>
 {% endblock %}
