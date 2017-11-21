@@ -18,6 +18,13 @@ class Profile(models.Model):
     position = models.CharField(max_length = 100)
     admission = models.CharField(max_length = 100)
     scholarship = models.CharField(max_length = 100, default = "None")
+    friendViewPersonalInfo = models.BooleanField(default = False)
+    publicViewPersonalInfo = models.BooleanField(default = False)
+    friendViewAcademicInfo = models.BooleanField(default = False)
+    publicViewAcademicInfo = models.BooleanField(default = False)
+    friendViewExpInfo = models.BooleanField(default = False)
+    publicViewExpInfo = models.BooleanField(default = False)
+
 
     def get_absolute_url(self):
         return reverse('profiles:profile', kwargs={'pk': self.pk})
