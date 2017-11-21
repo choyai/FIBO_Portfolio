@@ -9,6 +9,7 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'password']
 
+
 class LoginForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input'}))
 
@@ -19,8 +20,27 @@ class LoginForm(forms.ModelForm):
             'username': forms.TextInput(attrs={'class':'input'})
         }
 
-
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['firstName', 'avatar', 'bio']
+
+class ForgotPWForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['email']
+
+class createActivityForm(forms.ModelForm):
+    class Meta:
+        model = Activity
+        fields = ['name', 'category','description','location','supervisors','participants','startDate', 'endDate']
+        widget={
+            'name': forms.TextInput(attrs={'class':'input'}),
+            'category': forms.TextInput(attrs={'class':'input'}),
+            'description': forms.TextInput(attrs={'class':'input'}),
+            'location': forms.TextInput(attrs={'class':'input'}),
+            'supervisors': forms.TextInput(attrs={'class':'input'}),
+            'participants': forms.TextInput(attrs={'class':'input'}),
+
+        }
+

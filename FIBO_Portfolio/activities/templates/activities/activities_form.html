@@ -7,19 +7,22 @@
 {% block body %}
   <br><br>
   <div class="container">
-    <h1>Create Activity</h1>
+    <h2>Create Activity</h2>
     <br>
     <!-- form -->
-    <form class = "form-horizontal" action = "" method = "post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {% include 'profiles/form-template.html' %}
-      <div class="row">
-        <div class="col-sm-8"></div>
-        <div class="col-sm-4">
-          <button type="submit" class="orangebutton">Submit</button>
-          <button type="reset" class="graybutton">Cancel</button>
+    
+    <div class="login-block">
+      <div class="centerblock">
+        <br>
+        {% csrf_token %}
+        {% include 'profiles/form-template.html' %}
+          <div class="buttonblock">
+              <button type="submit" class="orangebutton">Submit</button>
+              <button type="reset" class="graybutton">Cancel</button>
+          </div>
         </div>
       </div>
+    </div>
     </form>
   </div>
 {% endblock %}
@@ -27,6 +30,16 @@
 {% block another2 %}
   {% load staticfiles %}
   <style>
+  body{
+    background: lightgray;
+  }
+  .buttonblock{
+  text-align: right;
+  }
+    .centerblock {
+      margin-left: 150px;
+      }
+
     .orangebutton {
       background-color: #F36E21;
       border: none;
@@ -36,6 +49,10 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
+      cursor: pointer;
+    }
+    .orangebutton:hover{
+      background-color: gray;
     }
     .graybutton {
       background-color: gray;
@@ -46,7 +63,42 @@
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
+      cursor: pointer;
     }
+    .graybutton:hover{
+      background-color: #F36E21;
+    }
+    .login-block {
+    width: 80%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #3B3D4C;
+    margin: 0 auto;}
+
+    .login-block input {
+    width: 80%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #3B3D4C;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+    outline: none;}
+
+    .login-block input:active, .login-block input:focus {
+    border: 1px solid #3B3D4C;}
+
+    @media (max-width: 1000px) {
+    .centerblock {
+        margin-left: 0px;
+    }
+    .login-block input {
+      width: 100%;
+    }
+}
+
 
   </style>
 {% endblock %}

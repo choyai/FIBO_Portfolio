@@ -4,6 +4,7 @@ from django.core.urlresolvers import reverse
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
     firstName = models.CharField(max_length = 255)
