@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from . import views
 from django.contrib.auth import views as auth_views
-
+from django.core.urlresolvers import reverse_lazy
 app_name = 'profiles'
 
 urlpatterns = [
@@ -13,12 +13,12 @@ urlpatterns = [
 
     url(r'^password_reset/$', auth_views.password_reset,{'template_name':'profiles/reset_password.html',
                                                     'post_reset_redirect':'profiles:password_reset_done',
-                                                    'from_email':'fibo.portfolio@gmail.com'
+                                                    'from_email':'fibo.portfolio@gmail.com','email_template_name':'profiles/password_reset_email.html'
                                                     },
                                                     name='password_reset'),
     url(r'^password_reset/done/$', auth_views.password_reset_done,{'template_name':'profiles/password_reset_done.html'}, name='password_reset_done'),
-    url(r'^password_reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)$', auth_views.password_reset_confirm, name='password_reset_confirm'),
-    url(r'^password_reset/complete/$', auth_views.password_reset_complete, name='password_reset_complete'),
+    url(r'^password_reset/confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)$', auth_views.PasswordResetConfirmView.as_view(template_name='profiles/password_reset_confirm.html', success_url = reverse_lazy('profiles:password_reset_complete')), name='password_reset_confirm'),
+    url(r'^password_reset/complete/$', auth_views.PasswordResetCompleteView.as_view(template_name='profiles/password_reset_complete.html'), name='password_reset_complete'),
 
 
 
