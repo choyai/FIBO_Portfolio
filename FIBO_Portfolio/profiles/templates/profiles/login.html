@@ -8,16 +8,15 @@
     <h1>Login</h1>
     {% csrf_token %}
     {% include 'profiles/form-template.html' %}
-    <button>Submit</button>
+    <button type="submit">Login</button>
+
     <div class="forgotblock">
       <a href="{% url 'profiles:password_reset' %}">Forgot Password</a>
+
     </div>
 </div>
 
 {% endblock %}
-
-
-
 
 
 
@@ -104,3 +103,4 @@ h1{
 
 </style>
 {% endblock %}
+
