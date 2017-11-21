@@ -36,15 +36,15 @@
                 </li>
                 <li>
                   <a href="{% url 'profiles:academic' profile.pk%}">
-                  <i class="glyphicon glyphicon-user"></i> Academic </a>
+                  <i class="glyphicon glyphicon-academic"></i> Academic </a>
                 </li>
                 <li>
                   <a href="{% url 'profiles:work' profile.pk %}">
-                  <i class="glyphicon glyphicon-ok"></i> Work and Experience </a>
+                  <i class="glyphicon glyphicon-work"></i> Work and Experience </a>
                 </li>
                 <li>
                   <a href="{% url 'profiles:award' profile.pk %}">
-                  <i class="glyphicon glyphicon-flag"></i> Award </a>
+                  <i class="glyphicon glyphicon-award"></i> Award </a>
                 </li>
               </ul>
             </div>
@@ -167,8 +167,10 @@ body{
   color:#F36E21;
 }
 
+
 .profile-usermenu ul li {
-  border-bottom: 1px solid #f0f4f7;
+  width: 200px;
+  height: 20px;
 }
 
 .profile-usermenu ul li:last-child {
@@ -177,7 +179,7 @@ body{
 
 .profile-usermenu ul li a {
   color: gray;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
 }
 
