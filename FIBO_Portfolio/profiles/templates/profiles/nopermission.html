@@ -1,0 +1,11 @@
+{% extends base.html %}
+{% block title %} Error {% endblock %}
+{% block body %}
+<div class="col-8">
+  You do not have permission for this action
+  <hr>
+  <a href="{% url 'profiles:home' %}">
+  <i class="glyphicon glyphicon-flag"></i> Back to home </a>
+</hr>
+</div>
+{% endblock %}
