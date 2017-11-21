@@ -20,7 +20,7 @@ class Profile(models.Model):
     scholarship = models.CharField(max_length = 100, default = "None")
 
     def get_absolute_url(self):
-        return reverse('activities:detail', kwargs={'pk': self.pk})
+        return reverse('profiles:profile', kwargs={'pk': self.pk})
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
