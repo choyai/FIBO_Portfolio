@@ -11,9 +11,10 @@
     <br>
     <!-- form -->
     
-    <div class="login-block">
-      <h2>Create Activity</h2>
+    <div class="input-block">
       <br>
+      <h2 style="margin-left: 10px;">Create Activity</h2>
+      <hr>
       <div class="centerblock">
         <br>
         {% csrf_token %}
@@ -33,7 +34,7 @@
   {% load staticfiles %}
   <style>
   body{
-    background: lightgray;
+    background-color: #B4B4B4;
   }
   .buttonblock{
   text-align: right;
@@ -70,7 +71,7 @@
     .graybutton:hover{
       background-color: #F36E21;
     }
-    .login-block {
+    .input-block {
     width: 80%;
     padding: 20px;
     background: #fff;
@@ -78,7 +79,7 @@
     border-top: 5px solid #3B3D4C;
     margin: 0 auto;}
 
-    .login-block input {
+    .input-block input {
     width: 80%;
     height: 42px;
     box-sizing: border-box;
@@ -89,14 +90,15 @@
     padding: 0 20px 0 10px;
     outline: none;}
 
-    .login-block input:active, .login-block input:focus {
+    .input-block input:active, 
+    .input-block input:focus {
     border: 1px solid #3B3D4C;}
 
     @media (max-width: 1000px) {
     .centerblock {
         margin-left: 0px;
     }
-    .login-block input {
+    .input-block input {
       width: 100%;
     }
 }
