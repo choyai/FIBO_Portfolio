@@ -10,7 +10,6 @@
     {% csrf_token %}
     {% include 'profiles/form-template.html' %}
     <button type="submit">Login</button>
-
     <div class="forgotblock">
       <a href="{% url 'profiles:password_reset' %}">Forgot Password</a>
 
