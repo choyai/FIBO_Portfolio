@@ -3,6 +3,7 @@ from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.views.generic import View
+from django.views.generic.edit import CreateView
 from .forms import *
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
@@ -68,6 +69,15 @@ class ProfileUpdate(UpdateView):
     model = Profile
     template_name = 'profiles/profiles_form.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
+
+class AcademicCreate(CreateView):
+    model = Grade
+    template_name = 'profiles/academicedit.html'
+    fields = ['semester', 'creditTotal', 'GPA']
+
+class WorkUpdate(UpdateView):
+    model = Profile
+    template_name = 'profiles/worknexperienceedit.html'
 
 class ExecutiveTeamView(View):
     template_name = 'profiles/executive_team.html'

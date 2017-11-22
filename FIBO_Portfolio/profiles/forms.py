@@ -41,6 +41,4 @@ class createActivityForm(forms.ModelForm):
             'location': forms.TextInput(attrs={'class':'input'}),
             'supervisors': forms.TextInput(attrs={'class':'input'}),
             'participants': forms.TextInput(attrs={'class':'input'}),
-
         }
-

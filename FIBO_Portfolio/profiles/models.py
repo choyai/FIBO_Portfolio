@@ -20,7 +20,7 @@ class Profile(models.Model):
     scholarship = models.CharField(max_length = 100, default = "None")
 
     def get_absolute_url(self):
-        return reverse('profiles:profile', kwargs={'pk': self.pk})
+            return reverse('profiles:profile', kwargs={'pk': self.pk})
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -40,6 +40,8 @@ class Grade(models.Model):
     semester = models.CharField(max_length = 10)
     creditTotal = models.DecimalField(max_digits=3, decimal_places=1)
     GPA = models.DecimalField(max_digits=3, decimal_places=2)
+    def get_absolute_url(self):
+            return reverse('profiles:academic', kwargs={'pk': self.pk})
 
 class EducationBackground(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
