@@ -7,10 +7,11 @@ from django.views.generic.edit import CreateView
 from .forms import *
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
-from io import  BytesIO
+from io import BytesIO
 from django.template import loader
 from django.contrib.auth import authenticate, login
 from .models import *
+
 
 
 class UserFormView(View):
@@ -53,6 +54,18 @@ class ProfileView(generic.DetailView):
     model = Profile
     template_name = 'profiles/profilepage.html'
 
+class AcademicFormView(View):
+    form_class = AcademicForm
+    template_name = 'profiles/academicedit.html'
+
+    def get(self, request, pk):
+        form = self.form_class(None)
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request, pk):
+        form = self.form_class(request.POST)
+        return render(request, self.template_name, {'form': form})
+
 class AcademicView(generic.DetailView):
     model = Profile
     template_name = 'profiles/academic.html'
@@ -61,23 +74,30 @@ class AwardView(generic.DetailView):
     model = Profile
     template_name = 'profiles/award.html'
 
+class AwardFormView(View):
+    form_class = createActivityForm
+    template_name = 'profiles/awardedit.html'
+    def get(self, request, pk):
+        return render(request, self.template_name)
+
 class WorkView(generic.DetailView):
     model = Profile
     template_name = 'profiles/work.html'
+
+class WorkFormView(View):
+    form_class = createActivityForm
+    template_name = 'profiles/worknexperienceedit.html'
+    def get(self, request,pk):
+        return render(request, self.template_name)
 
 class ProfileUpdate(UpdateView):
     model = Profile
     template_name = 'profiles/profiles_form.html'
     fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
-class AcademicCreate(CreateView):
-    model = Grade
-    template_name = 'profiles/academicedit.html'
-    fields = ['semester', 'creditTotal', 'GPA']
-
-class WorkUpdate(UpdateView):
+class AwardEdit(generic.DetailView):
     model = Profile
-    template_name = 'profiles/worknexperienceedit.html'
+    template_name = 'profiles/awardedit.html'
 
 class ExecutiveTeamView(View):
     template_name = 'profiles/executive_team.html'
