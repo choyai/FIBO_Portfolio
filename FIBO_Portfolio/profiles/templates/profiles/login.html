@@ -6,6 +6,7 @@
 <div class="logo"></div>
 <div class="login-block">
     <h1>Login</h1>
+    <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
     {% csrf_token %}
     {% include 'profiles/form-template.html' %}
     <button type="submit">Login</button>
@@ -23,7 +24,7 @@
 {% block another2 %}
 <style>
 body {
-    background: url('https://image.dek-d.com/25/1089566/110642064') no-repeat fixed center center;
+    background: url('https://i.pinimg.com/736x/85/8f/83/858f835dbae4355d855fc716d3db583f--short-poems-city-wallpaper.jpg') no-repeat fixed center center;
     background-size: cover;
 }
 a{

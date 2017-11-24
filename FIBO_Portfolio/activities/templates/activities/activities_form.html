@@ -7,13 +7,20 @@
 {% block body %}
   <br><br>
   <div class="container">
-    <h2>Create Activity</h2>
+    
     <br>
     <!-- form -->
-    
+
     <div class="login-block">
+      <div class="container">
+        <br>
+      <h2>Create Activity</h2>
+    <hr>
+      </div>
+      
       <div class="centerblock">
         <br>
+        <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
         {% csrf_token %}
         {% include 'profiles/form-template.html' %}
           <div class="buttonblock">
