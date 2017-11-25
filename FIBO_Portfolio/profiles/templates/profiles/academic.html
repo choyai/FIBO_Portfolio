@@ -35,7 +35,7 @@
                   <i class="glyphicon glyphicon-home"></i> Personal Profile </a>
                 </li>
                 <li class="active">
-                  <a href="{% url 'profiles:academic' profile.pk%}">
+                  <a href="{% url 'profiles:academic' profile.pk %}">
                   <i class="glyphicon glyphicon-user"></i> Academic </a>
                 </li>
                 <li>
@@ -48,12 +48,12 @@
                 </li>
               </ul>
             </div>
-          </div>  
+          </div>
           <div class="col-8">
 
             <br>
             <div class="edit-link">
-              <a href="#">edit</a>
+              <a href="{% url 'profiles:academicEdit' profile.pk %}">edit</a>
             </div>
             <b>Grade</b>
             <hr></hr>
@@ -113,7 +113,7 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 .buttoningraybar:hover{
   background-color: #fff;
@@ -126,10 +126,10 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 .graybar{
-  background-color:#EBEBEB; 
+  background-color:#EBEBEB;
   height: 70px;
   width: 1110px;
 }
