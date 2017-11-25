@@ -31,24 +31,24 @@
             <div class="profile-usermenu">
               <ul class="nav">
                 <li>
-                  <a href="{% url 'profiles:profile' profile.pk %}">
+                  <a href="{% url 'profiles:profile' user.pk %}">
                   <i class="glyphicon glyphicon-home"></i> Personal Profile </a>
                 </li>
                 <li class="active">
-                  <a href="{% url 'profiles:academic' profile.pk%}">
+                  <a href="{% url 'profiles:academic' user.pk%}">
                   <i class="glyphicon glyphicon-user"></i> Academic </a>
                 </li>
                 <li>
-                  <a href="{% url 'profiles:work' profile.pk %}">
+                  <a href="{% url 'profiles:work' user.pk %}">
                   <i class="glyphicon glyphicon-ok"></i> Work and Experience </a>
                 </li>
                 <li>
-                  <a href="{% url 'profiles:award' profile.pk %}">
+                  <a href="{% url 'profiles:award' user.pk %}">
                   <i class="glyphicon glyphicon-flag"></i> Award </a>
                 </li>
               </ul>
             </div>
-          </div>  
+          </div>
           <div class="col-8">
 
             <br>
@@ -135,7 +135,7 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 .buttoningraybar:hover{
   background-color: #fff;
@@ -148,10 +148,10 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 .graybar{
-  background-color:#EBEBEB; 
+  background-color:#EBEBEB;
   height: 70px;
   width: 1110px;
 }
@@ -206,4 +206,3 @@ body{
 
 </style>
 {% endblock %}
-

@@ -28,10 +28,11 @@ urlpatterns = [
 
 
     url(r'^profile/(?P<pk>[0-9]+)/academic$', views.AcademicView.as_view(), name='academic'),
-    url(r'^profile/(?P<pk>[0-9]+)/academicCreate$', views.AcademicCreate.as_view(), name='academicCreate'),
-    url(r'^profile/(?P<pk>[0-9]+)/award$', views.AwardView.as_view(), name='award'),
+    url(r'^profile/(?P<pk>[0-9]+)/academicEdit$', views.AcademicFormView.as_view(), name='academicEdit'),
     url(r'^profile/(?P<pk>[0-9]+)/work$', views.WorkView.as_view(), name='work'),
-    url(r'^profile/(?P<pk>[0-9]+)/workedit', views.WorkUpdate.as_view(), name='workEdit'),
+    url(r'^profile/(?P<pk>[0-9]+)/workedit', views.WorkFormView.as_view(), name='workEdit'),
+    url(r'^profile/(?P<pk>[0-9]+)/award$', views.AwardView.as_view(), name='award'),
+    url(r'^profile/(?P<pk>[0-9]+)/awardedit$', views.AwardFormView.as_view(), name='awardEdit'),
 
     url(r'^organization', views.organization, name='organization'),
     url(r'^organization/executive_team$', views.ExecutiveTeamView.as_view(), name='executive_team'),
