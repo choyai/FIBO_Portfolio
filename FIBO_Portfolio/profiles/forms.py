@@ -9,6 +9,15 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'password']
 
+class AcademicForm(forms.ModelForm):
+    class Meta:
+        model = Grade
+        fields = ['semester', 'creditTotal', 'GPA']
+        widget = {
+            'semester': forms.NumberInput(attrs={'class':'input'}),
+            'creditTotal': forms.NumberInput(attrs={'class':'input'}),
+            'GPA': forms.NumberInput(attrs={'class':'input'})
+        }
 
 class LoginForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'input'}))
@@ -52,13 +61,17 @@ class PrivacyForm(forms.ModelForm):
 class createActivityForm(forms.ModelForm):
     class Meta:
         model = Activity
-        fields = ['name', 'category','description','location','supervisors','participants','startDate', 'endDate']
-        widget={
+        fields = ['name', 'category', 'description', 'location', 'supervisors', 'participants', 'startDate', 'endDate']
+        widget = {
             'name': forms.TextInput(attrs={'class':'input'}),
             'category': forms.TextInput(attrs={'class':'input'}),
             'description': forms.TextInput(attrs={'class':'input'}),
             'location': forms.TextInput(attrs={'class':'input'}),
             'supervisors': forms.TextInput(attrs={'class':'input'}),
             'participants': forms.TextInput(attrs={'class':'input'}),
+<<<<<<< HEAD
 
         }
+=======
+        }
+>>>>>>> master
