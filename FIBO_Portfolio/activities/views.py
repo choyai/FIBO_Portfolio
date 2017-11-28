@@ -49,6 +49,12 @@ class ActivitiesDelete(DeleteView):
     template_name = 'activities/delete.html'
     success_url = reverse_lazy('activities:home')
 
+class VerifyView(View):
+    template_name = 'activities/verify.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
 def profile(request, user_id):
     return render(request, 'activity/myactivity.html')
 
