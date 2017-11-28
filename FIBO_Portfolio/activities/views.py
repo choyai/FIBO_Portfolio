@@ -60,3 +60,6 @@ def home(request):
 
 def myactivities(request, user_id):
     return render(request, 'activities/myactivity.html')
+
+def verify(request):
+    return render(request, 'activity/verify.html')

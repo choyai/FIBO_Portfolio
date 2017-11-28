@@ -134,7 +134,7 @@ font-size:2em;
             <li class="nav-item">
 
               <a class="nav-link" href="{% url 'profiles:profile' user.pk %}">Profile</a></a>
-            </li>   
+            </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="{% url 'activities:home' %}" id="navbardrop" data-toggle="dropdown">Activities</a>
               <div class="dropdown-menu">
@@ -174,12 +174,11 @@ font-size:2em;
                   <img src="https://www.uppic.org/image-E51D_59F1B7A7.jpg" class="img-fluid" alt="header image">
                   <button type="button" class="headerbutton" style="right: 10px;">Get Link</button>
                   <button type="button" class="headerbutton" style="right: 130px;">Resume</button>
-                  <button type="button" class="headerbutton" style="right: 250px;">CV</button>
                 </div>
               </div>
               <nav class="navbar navbar2-default">
                 <div class="navbar-header">
-                  <a class="navbar-brands" href="#"><img class="img-responsive" src="http://rolyart.ro/wp-content/uploads/2016/07/roland-maruntelu-freelancer-romania.jpg"></a>
+                  <a class="navbar-brands" href="#"><img class="img-responsive" src="{{profile.avatar.url}}"></a>
                   <span class="site-name">{{profile.username}}</span>
                   <form action="{% url 'profiles:privacy' user.id %}">
                   <button type="submit" class="buttoningraybar" style="right: 10px;">Edit Privacy</button>
