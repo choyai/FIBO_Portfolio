@@ -55,6 +55,7 @@
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
+            {% if request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
             <b>Contact information</b>
             <hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{profile.user.email}}
 
@@ -77,8 +78,7 @@
             <br><br><br>
             <b>Ability</b>
             <hr></hr><center><img src="#" hspace="20"></center>
-
-
+            {% endif %}
             <br><br><br>
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>

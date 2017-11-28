@@ -171,6 +171,7 @@ font-size:2em;
             <header id="header">
               <div class="headerpic">
                 <div class="imagewrap">
+                  {%  %}
                   <img src="https://www.uppic.org/image-E51D_59F1B7A7.jpg" class="img-fluid" alt="header image">
                   <button type="button" class="headerbutton" style="right: 10px;">Get Link</button>
                   <button type="button" class="headerbutton" style="right: 130px;">Resume</button>
@@ -178,7 +179,11 @@ font-size:2em;
               </div>
               <nav class="navbar navbar2-default">
                 <div class="navbar-header">
+                  {% if profile.avatar %}
                   <a class="navbar-brands" href="#"><img class="img-responsive" src="{{profile.avatar.url}}"></a>
+                  {% else %}
+                  <a class="navbar-brands" href="#"><img class="img-responsive" src="{% static 'profiles/images/default_avatar.jpg' %}"></a>
+                  {% endif %}
                   <span class="site-name">{{profile.username}}</span>
                   <form action="{% url 'profiles:privacy' user.id %}">
                   <button type="submit" class="buttoningraybar" style="right: 10px;">Edit Privacy</button>
