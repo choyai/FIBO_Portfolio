@@ -6,6 +6,9 @@
 <div class="logo"></div>
 <div class="login-block">
     <h1>Login</h1>
+{% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
     <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
     {% csrf_token %}
     {% include 'profiles/form-template.html' %}
@@ -106,4 +109,3 @@ h1{
 
 </style>
 {% endblock %}
-
