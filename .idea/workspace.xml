@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633a92dc-4f13-4e44-8068-a3f54c8d7a6f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/myactivity.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/myactivity.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,16 +24,53 @@
         <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
-              <caret line="57" column="11" lean-forward="false" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="11" />
+              <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="11" />
               <folding>
                 <element signature="e#0#82#0" expanded="true" />
-                <marker date="1511892783862" expanded="true" signature="0:72" ph="import ..." />
+                <marker date="1511943771046" expanded="true" signature="0:72" ph="import ..." />
+                <marker date="1511943771046" expanded="true" signature="525:1351" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="629:733" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="763:1351" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="837:1284" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1155:1284" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1190:1284" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1385:1506" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1526:1575" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1614:1673" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1713:1781" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1812:2174" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2062:2174" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2215:2280" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2318:2380" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2408:2573" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2522:2573" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2610:2671" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2698:2872" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2821:2872" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2906:3088" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3126:3192" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3224:3354" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3303:3354" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3394:3531" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3480:3531" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3568:3700" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3649:3700" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3728:3852" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3801:3852" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3878:4001" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3950:4001" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4041:4153" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4102:4153" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4181:4238" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4261:4313" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4337:4703" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4723:4760" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="academic.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="academic.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
@@ -42,24 +80,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profilepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="53" column="221" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="221" />
+            <state relative-caret-position="273">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base2.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="profilepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="126" column="14" lean-forward="false" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="14" />
+            <state relative-caret-position="468">
+              <caret line="175" column="116" lean-forward="false" selection-start-line="175" selection-start-column="116" selection-end-line="175" selection-end-column="116" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <marker date="1511944012044" expanded="false" signature="6573:6585" ph="..." />
+                <marker date="1511944012044" expanded="false" signature="6704:6717" ph="..." />
               </folding>
             </state>
           </provider>
@@ -92,6 +142,22 @@
               <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+                <marker date="1511943771038" expanded="true" signature="332:2212" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="1772:1808" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="1841:1912" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2017:2089" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2183:2212" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2242:2355" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2383:2735" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2663:2735" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2777:2987" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3020:3135" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3166:3976" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3859:3927" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3951:3976" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="4013:4207" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="4251:4308" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="4344:4474" ph="..." />
               </folding>
             </state>
           </provider>
@@ -163,12 +229,12 @@
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/forms.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" />
       </list>
     </option>
   </component>
@@ -550,14 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -585,10 +643,47 @@
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
-          <caret line="57" column="11" lean-forward="false" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="11" />
+          <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="11" />
           <folding>
             <element signature="e#0#82#0" expanded="true" />
-            <marker date="1511892783862" expanded="true" signature="0:72" ph="import ..." />
+            <marker date="1511943771046" expanded="true" signature="0:72" ph="import ..." />
+            <marker date="1511943771046" expanded="true" signature="525:1351" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="629:733" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="763:1351" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="837:1284" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1155:1284" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1190:1284" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1385:1506" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1526:1575" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1614:1673" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1713:1781" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1812:2174" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2062:2174" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2215:2280" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2318:2380" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2408:2573" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2522:2573" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2610:2671" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2698:2872" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2821:2872" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2906:3088" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3126:3192" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3224:3354" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3303:3354" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3394:3531" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3480:3531" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3568:3700" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3649:3700" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3728:3852" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3801:3852" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3878:4001" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3950:4001" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4041:4153" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4102:4153" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4181:4238" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4261:4313" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4337:4703" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4723:4760" ph="..." />
           </folding>
         </state>
       </provider>
@@ -599,17 +694,6 @@
           <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="126" column="14" lean-forward="false" selection-start-line="126" selection-start-column="12" selection-end-line="126" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,15 +720,23 @@
           <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+            <marker date="1511943771038" expanded="true" signature="332:2212" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="1772:1808" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="1841:1912" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2017:2089" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2183:2212" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2242:2355" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2383:2735" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2663:2735" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2777:2987" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3020:3135" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3166:3976" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3859:3927" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3951:3976" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="4013:4207" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="4251:4308" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="4344:4474" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="53" column="221" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="221" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,6 +745,35 @@
         <state relative-caret-position="525">
           <caret line="60" column="23" lean-forward="true" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="175" column="116" lean-forward="false" selection-start-line="175" selection-start-column="116" selection-end-line="175" selection-end-column="116" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <marker date="1511944012044" expanded="false" signature="6573:6585" ph="..." />
+            <marker date="1511944012044" expanded="false" signature="6704:6717" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

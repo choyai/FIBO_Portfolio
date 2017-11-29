@@ -14,7 +14,7 @@ class Profile(models.Model):
     ACCOUNT_TYPES = ((student, 'Student'), (lecturer, 'Lecturer'), (staff, 'Staff'))
 
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
-    avatar = models.ImageField(verbose_name = ("Profile Picture"), upload_to =user_dir_path, default='profile-icon.jpg')
+    avatar = models.ImageField(verbose_name = ("Profile Picture"), upload_to =user_dir_path)
     bio = models.TextField(max_length = 500, blank=True)
     birthDate = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=255, blank=True)
