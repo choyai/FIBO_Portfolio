@@ -31,13 +31,15 @@
       margin-top: 30px;
       margin-bottom: 100px;
     }
-    .headerpic {
+.headerpic {
   text-align: center;
   position: center;
-  width: auto;
-  height: auto;
+  object-fit: cover;
 }
-
+.headerpic img{
+  width:1110px;
+  height: 300px;
+}
 
 .navbar2-default .navbar-right  > li > a{
   color: #fff;
@@ -67,6 +69,8 @@ font-size:2em;
     transition: all 0.3s ease-in-out ;
 
   }
+
+.centered-and-cropped { object-fit: cover }
 
 .site-name{
   color:#fff;
@@ -139,6 +143,7 @@ font-size:2em;
               <a class="nav-link dropdown-toggle" href="{% url 'activities:home' %}" id="navbardrop" data-toggle="dropdown">Activities</a>
               <div class="dropdown-menu">
                 {% if request.user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'activities:home' %}">ACTIVITIES'S HOME</a>
                 <a class="dropdown-item" href="{% url 'activities:myactivities' user.pk %}">MY ACTIVITIES</a>
                 <a class="dropdown-item" href="{% url 'activities:create' %}">CREATE ACTIVITY</a>
                 {% endif %}
@@ -173,7 +178,9 @@ font-size:2em;
             <header id="header">
               <div class="headerpic">
                 <div class="imagewrap">
-                  <img src="{% static 'profiles/images/default_banner.jpg' %}" class="img-fluid" alt="header image">
+                  <div class="centered-and-cropped">
+                    <img src="{% static 'profiles/images/default_banner.jpg' %}" class="centered-and-cropped">
+                  </div>
                   <button type="button" class="headerbutton" style="right: 10px;">Get Link</button>
                   <button type="button" class="headerbutton" style="right: 130px;">Resume</button>
                 </div>
@@ -183,7 +190,7 @@ font-size:2em;
                   {% if profile.avatar %}
                   <a class="navbar-brands" href="#"><img class="img-responsive" src="{{profile.avatar.url}}"></a>
                   {% else %}
-                  <a class="navbar-brands" href="#"><img class="img-responsive" src="{% static 'profiles/images/default_avatar.jpg' %}"></a>
+                  <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168"src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
                   {% endif %}
                   <span class="site-name">{{profile.username}}</span>
                   <form action="{% url 'profiles:privacy' user.id %}">
