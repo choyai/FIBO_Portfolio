@@ -28,8 +28,9 @@
 
 {% block another2 %}
 <style>
+{% load staticfiles %}
 body {
-    background: url('https://image.dek-d.com/25/1089566/110642064') no-repeat fixed center center;
+    background: url("{% static 'profiles/images/default_background.jpg' %}") no-repeat fixed center center;
     background-size: cover;
 }
 a{
