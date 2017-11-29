@@ -23,7 +23,7 @@ urlpatterns = [
 
 
     url(r'^profile/(?P<pk>[0-9]+)$', views.ProfileView.as_view(), name='profile'),
-    url(r'^profile/(?P<user_id>[0-9]+)/privacy$', views.privacy, name='privacy'),
+    url(r'^profile/(?P<pk>[0-9]+)/privacy$', views.PrivacyEditView.as_view(), name='privacy'),
     url(r'^profile/(?P<pk>[0-9]+)/edit$', views.ProfileUpdate.as_view(), name='personaledit'),
 
 

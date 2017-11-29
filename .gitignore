@@ -12,3 +12,5 @@
 .idea/workspace.xml
 /FIBO_Portfolio/venv-1
 /FIBO_Portfolio/profiles/migrations
+FIBO_Portfolio/profiles/migrations/0001_initial.py
+FIBO_Portfolio/media/profiles/Cells_test.bmp
