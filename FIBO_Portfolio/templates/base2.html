@@ -191,13 +191,14 @@ font-size:2em;
                   <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{{profile.avatar.url}}"></a>
                   {% else %}
                   <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
-
                   {% endif %}
                   <span class="site-name">{{profile.username}}</span>
                   <form action="{% url 'profiles:privacy' user.id %}">
                   <button type="submit" class="buttoningraybar" style="right: 10px;">Edit Privacy</button>
                 </form>
-                  <button type="button" class="buttoningraybar" style="right: 130px;">Change Password</button>
+                  <form action="{% url 'profiles:password_change' %}">
+                  <button type="submit" class="buttoningraybar" style="right: 130px;">Change Password</button>
+                </form>
                 </div>
               </nav>
           </header>
