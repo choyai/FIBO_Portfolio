@@ -7,21 +7,41 @@
 {% block body %}
 <div class="container">
     <br><br><br>
-    <h1 class="intro-heading">Activities</h1>
+    <div class="row">
+      <div class="col-8">
+        <h1 class="intro-heading">Activities</h1>
+      </div>
+      <div class="col-4" style="text-align: right;">
+        <form action="{% url 'activities:create' %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <button type="Submit" class="orangebutton">Create Activity</button>
+      </form>
+      </div>
+    </div>
     <br>
     <div class="row">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title"">
-                    <a href="#" style="color:black;">Project One</a>
-                  </h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-                </div>
-          </div>
-        </div>
-        
+      {%for activity in object_list %}
+            <div class="col-lg-4 col-sm-6 portfolio-item">
+              <div class="card h-100">
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="..." ></a> <!add pic of activity here #>
+                    <div class="card-body">
+                        <h4 class="card-title""><a href="{% url 'activities:detail' activity.pk %}" style="color:black;">{{ activity.name }}</a>
+                        </h4>
+                        <p class="card-text">{{activity.description}}</p>
+                    </div>
+
+                  <form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline; text-align: right;">
+                    {% csrf_token %}
+                    <input type="hidden" name="activity_id" value="={{ activity.id }}"/>
+                    <button type="Submit" class="graybutton">Delete</button>
+                  </form>
+
+              </div>
+            </div>
+            
+      {% endfor %}
+    
       </div>
       <!-- /.row -->
 
@@ -63,6 +83,35 @@
 {% endblock %}
 {% block another2 %}
     <style>
+        .orangebutton {
+      background-color: #F36E21;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .orangebutton:hover{
+      background-color: gray;
+    }
+     .graybutton {
+      background-color: gray;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .graybutton:hover{
+      background-color: #F36E21;
+    }
+
     .paginationdes>ul>li>a{
         color: black;
     }
@@ -75,5 +124,6 @@
     .activityCard>h4>a:hover{
         color: #F36E21;
     }
+
     </style>
 {% endblock %}
