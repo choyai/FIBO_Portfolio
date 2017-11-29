@@ -68,10 +68,16 @@ class ActivitiesDelete(DeleteView):
     success_url = reverse_lazy('activities:home')
 
 class VerifyView(View):
-    template_name = 'activities/verify.html'
 
-    def get(self, request):
-        return render(request, self.template_name)
+    def get(self, request, pk):
+        template_name = 'activities/verify.html'
+        profile = Profile.objects.get(id = request.user.pk)
+        queryset = profile.activity_set.all()
+        context = {"verified_list": None, "unverified_list": None,}
+        context["verified_list"] = queryset.filter(isVerified=True)
+        context["unverified_list"] = queryset.filter(isVerified=False)
+
+        return render(request, template_name, context)
 
 def profile(request, user_id):
     return render(request, 'activity/myactivity.html')
@@ -81,6 +87,3 @@ def activity(request, activity_id):
 
 def home(request):
     return render(request, 'activities/ActivitiesPage.html')
-
-def verify(request):
-    return render(request, 'activity/verify.html')

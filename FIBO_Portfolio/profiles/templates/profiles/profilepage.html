@@ -51,15 +51,18 @@
           </div>
           <div class="col-8">
 
-            {% if request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% if request.user.profile.account_type == 'Lecturer' or request.user.profile.account_type == 'Staff' or request.user.profile.account_type == 'Student' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
             <br>
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
             {% endif %}
-            {% if request.user.pk == profile.pk or request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% if profile.get_account_type_display == 'Lecturer' %}
+            Account Type: {{ profile.get_account_type_display }} <br>
+            {% endif %}
+            {% if request.user.pk == profile.pk or request.user.profile.get_account_type_display == 'Lecturer' or request.user.profile.get_account_type_display == 'Staff' or request.user.profile.get_account_type_display == 'Student' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
             <br>
-            <b>Contact information</b>
+            <hr></hr><b>Contact information</b>
             <hr></hr>Phone Number : {{profile.phone}}
             <br> Email : {{profile.user.email}}
 

@@ -37,6 +37,9 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.first_name
 
+    def is_staff(self):
+        return self.account_type in (self.staff, self.lecturer)
+
     def get_absolute_url(self):
             return reverse('profiles:profile', kwargs={'pk': self.pk})
 

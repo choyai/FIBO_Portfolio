@@ -146,6 +146,9 @@ font-size:2em;
                 <a class="dropdown-item" href="{% url 'activities:home' %}">ACTIVITIES'S HOME</a>
                 <a class="dropdown-item" href="{% url 'activities:myactivities' user.pk %}">MY ACTIVITIES</a>
                 <a class="dropdown-item" href="{% url 'activities:create' %}">CREATE ACTIVITY</a>
+                <a class="dropdown-item" href="{% url 'activities:verify' user.pk %}"> VERIFY ACTIVITIES</a>
+                {% endif %}
+                {% if user.profile.get_account_type_display == 'Lecturer' %}
                 {% endif %}
               </div>
             </li>
