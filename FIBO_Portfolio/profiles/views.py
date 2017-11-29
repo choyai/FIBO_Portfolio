@@ -47,8 +47,8 @@ class PrivacyEditView(FormView):
 def home(request):
     return render(request, 'profiles/home.html')
 
-def changepassword(request, user_id):
-    return render(request, 'profiles/changepassword.html')
+# def changepassword(request, user_id):
+#    return render(request, 'profiles/changepassword.html')
 
 class ProfileView(generic.DetailView):
     model = Profile
