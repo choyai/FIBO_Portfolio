@@ -58,7 +58,7 @@
             </div>
             {% endif %}
             {% if request.user.pk == profile.pk or request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
-
+            <br>
             <b>Contact information</b>
             <hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{profile.user.email}}
 
