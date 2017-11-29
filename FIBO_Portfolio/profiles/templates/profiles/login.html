@@ -6,6 +6,9 @@
 <div class="logo"></div>
 <div class="login-block">
     <h1>Login</h1>
+{% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
     <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
     {% csrf_token %}
     {% include 'profiles/form-template.html' %}
@@ -25,8 +28,9 @@
 
 {% block another2 %}
 <style>
+{% load staticfiles %}
 body {
-    background: url('https://image.dek-d.com/25/1089566/110642064') no-repeat fixed center center;
+    background: url("{% static 'profiles/images/default_background.jpg' %}") no-repeat fixed center center;
     background-size: cover;
 }
 a{
@@ -106,4 +110,3 @@ h1{
 
 </style>
 {% endblock %}
-

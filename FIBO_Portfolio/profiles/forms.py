@@ -39,6 +39,25 @@ class ForgotPWForm(forms.ModelForm):
         model = User
         fields = ['email']
 
+class PrivacyForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['friendViewPersonalInfo',
+        'publicViewPersonalInfo',
+        'friendViewAcademicInfo',
+        'publicViewAcademicInfo',
+        'friendViewExpInfo',
+        'publicViewExpInfo'
+        ]
+        widget ={
+            'friendViewPersonalInfo': forms.CheckboxInput(),
+            'publicViewPersonalInfo': forms.CheckboxInput(),
+            'friendViewAcademicInfo': forms.CheckboxInput(),
+            'publicViewAcademicInfo': forms.CheckboxInput(),
+            'friendViewExpInfo': forms.CheckboxInput(),
+            'publicViewExpInfo': forms.CheckboxInput(),
+        }
+
 class createActivityForm(forms.ModelForm):
     class Meta:
         model = Activity
@@ -50,4 +69,5 @@ class createActivityForm(forms.ModelForm):
             'location': forms.TextInput(attrs={'class':'input'}),
             'supervisors': forms.TextInput(attrs={'class':'input'}),
             'participants': forms.TextInput(attrs={'class':'input'}),
+
         }

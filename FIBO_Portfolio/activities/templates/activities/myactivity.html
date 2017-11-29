@@ -28,10 +28,10 @@
         <div class="row justify-content-md-center">
           <div class="col-10" >
             <br>
-            <h5><b>Current Activities</b></h5>
+            <h5>Verified Activities</h5>
             <hr></hr>
 
-      
+            {% for activity in profile.activity_set.all %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail">
@@ -39,41 +39,22 @@
                     <div class="center">
                       <div class="caption">
                         <br>
-                        <h4>Activity's Titile</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="cardbutton">Go</a> </p>
+                        <h4>{{activity.name}}</h4>
+                        <p>{{activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' activity.pk %}" class="cardbutton">Go</a> </p>
                       </div>
                   </div>
                 </div>
               </div>
             </div>
-      
-
-            <br><br><br>
-            <h5><b>Completed Activities</b></h5>
-            <hr></hr>
-
-            <div class="row">
-              <div class="col-xs-18 col-sm-6 col-md-4">
-                <div class="thumbnail">
-                  <img src="http://placehold.it/500x300" alt="">
-                    <div class="center">
-                      <div class="caption">
-                        <br>
-                        <h4>Activity's Titile</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="cardbutton">Go</a> </p>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
 
 
             <br><br><br>
-            <h5><b>Unverified Activity</b></h5>
+            <h5>Unverified Activities</h5>
             <hr></hr>
 
+        <!--    {% for activity in profile.activity_set.get %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail">
@@ -81,15 +62,16 @@
                     <div class="center">
                       <div class="caption">
                         <br>
-                        <h4>Activity's Titile</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, soluta, eligendi doloribus sunt minus amet sit debitis repellat. Consectetur, culpa itaque odio similique suscipit</p>
-                        <p><a href="#" class="cardbutton">Go</a> </p>
+                        <h4>{{activity.name}}</h4>
+                        <p>{{activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' activity.pk %}" class="cardbutton">Go</a> </p>
                       </div>
                   </div>
                 </div>
               </div>
             </div>
- 
+            {% endfor %} -->
+
 
             <br><br><br>
         	</div>
@@ -151,11 +133,11 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 
 .graybar{
-  background-color:#EBEBEB; 
+  background-color:#EBEBEB;
   height: 70px;
   width: 1110px;
 }
@@ -184,5 +166,3 @@ body{
 
 </style>
 {% endblock %}
-
-

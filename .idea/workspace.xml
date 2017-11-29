@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="633a92dc-4f13-4e44-8068-a3f54c8d7a6f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/createActivity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/activities_form.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/activities_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/award.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/award.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/login.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/password_reset_complete.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/password_reset_complete.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/password_reset_confirm.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/password_reset_confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/password_reset_email.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/password_reset_email.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/myactivity.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/myactivity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profiles_form.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profiles_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/work.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/work.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py" afterPath="$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" afterPath="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,59 +19,117 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py">
+    <leaf>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="49" />
+            <state relative-caret-position="260">
+              <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="11" />
               <folding>
-                <marker date="1511336511388" expanded="true" signature="1621:3104" ph="..." />
+                <element signature="e#0#82#0" expanded="true" />
+                <marker date="1511943771046" expanded="true" signature="0:72" ph="import ..." />
+                <marker date="1511943771046" expanded="true" signature="525:1351" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="629:733" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="763:1351" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="837:1284" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1155:1284" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1190:1284" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1385:1506" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1526:1575" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1614:1673" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1713:1781" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="1812:2174" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2062:2174" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2215:2280" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2318:2380" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2408:2573" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2522:2573" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2610:2671" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2698:2872" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2821:2872" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="2906:3088" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3126:3192" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3224:3354" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3303:3354" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3394:3531" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3480:3531" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3568:3700" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3649:3700" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3728:3852" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3801:3852" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3878:4001" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="3950:4001" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4041:4153" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4102:4153" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4181:4238" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4261:4313" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4337:4703" ph="..." />
+                <marker date="1511943771046" expanded="true" signature="4723:4760" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="academic.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="academic.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="117" column="1" lean-forward="false" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+            <state relative-caret-position="525">
+              <caret line="60" column="23" lean-forward="true" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1827">
-              <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+            <state relative-caret-position="273">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profilepage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base2.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="175" column="116" lean-forward="false" selection-start-line="175" selection-start-column="116" selection-end-line="175" selection-end-column="116" />
               <folding>
-                <element signature="e#0#72#0" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <marker date="1511944012044" expanded="false" signature="6573:6585" ph="..." />
+                <marker date="1511944012044" expanded="false" signature="6704:6717" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="academicedit.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academicedit.html">
+      <file leaf-file-name="work.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/work.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-651">
-              <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="43" />
+            <state relative-caret-position="239">
+              <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="305">
+              <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -85,10 +138,38 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="10" />
+            <state relative-caret-position="1681">
+              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+                <marker date="1511943771038" expanded="true" signature="332:2212" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="1772:1808" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="1841:1912" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2017:2089" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2183:2212" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2242:2355" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2383:2735" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2663:2735" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="2777:2987" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3020:3135" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3166:3976" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3859:3927" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="3951:3976" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="4013:4207" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="4251:4308" ph="..." />
+                <marker date="1511943771038" expanded="true" signature="4344:4474" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1533">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,12 +188,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>edit pr</find>
-      <find>profile</find>
       <find>edit privacy</find>
       <find>privacy</find>
       <find>personal</find>
       <find>acada</find>
-      <find>acade</find>
       <find>awa</find>
       <find>award</find>
       <find>pri</find>
@@ -121,6 +200,13 @@
       <find>aca</find>
       <find>edit</find>
       <find>profiles</find>
+      <find>organization</find>
+      <find>act</find>
+      <find>activi</find>
+      <find>acade</find>
+      <find>profile</find>
+      <find>pa</find>
+      <find>image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,31 +216,31 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/admin.py" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/index.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/award.html" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/FIBO_Portfolio/views.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/index.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/FIBO_Portfolio/template/FIBO_Portfolio/index.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/FIBO_Portfolio/urls.py" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/forms.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/FIBO_Portfolio/settings.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/work.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academicedit.html" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py" />
-        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/forms.py" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/views.py" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base.html" />
         <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html" />
+        <option value="$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1056" />
-    <option name="y" value="-23" />
+    <option name="x" value="745" />
+    <option name="y" value="-9" />
     <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
@@ -173,7 +259,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -239,6 +324,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -282,7 +368,7 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23093449" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20998926" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -301,26 +387,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22610097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -334,14 +400,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/ActivitiesPage.html" />
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/createActivity.html" />
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profile.html" />
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py">
@@ -435,13 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -487,27 +538,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1464">
-          <caret line="70" column="89" lean-forward="false" selection-start-line="70" selection-start-column="89" selection-end-line="70" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="8" lean-forward="false" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/organization.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -515,25 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="54" column="28" lean-forward="false" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -541,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -549,6 +563,145 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/FIBO_Portfolio/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/activities_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1932">
+          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academicedit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#28#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="55" column="42" lean-forward="true" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/ActivityPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="35" lean-forward="false" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/myactivity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="45" column="24" lean-forward="true" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#82#0" expanded="true" />
+            <marker date="1511943771046" expanded="true" signature="0:72" ph="import ..." />
+            <marker date="1511943771046" expanded="true" signature="525:1351" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="629:733" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="763:1351" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="837:1284" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1155:1284" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1190:1284" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1385:1506" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1526:1575" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1614:1673" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1713:1781" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="1812:2174" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2062:2174" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2215:2280" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2318:2380" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2408:2573" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2522:2573" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2610:2671" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2698:2872" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2821:2872" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="2906:3088" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3126:3192" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3224:3354" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3303:3354" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3394:3531" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3480:3531" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3568:3700" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3649:3700" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3728:3852" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3801:3852" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3878:4001" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="3950:4001" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4041:4153" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4102:4153" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4181:4238" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4261:4313" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4337:4703" ph="..." />
+            <marker date="1511943771046" expanded="true" signature="4723:4760" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1533">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -561,93 +714,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/FIBO_Portfolio/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="47" column="10" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="10" />
+        <state relative-caret-position="1681">
+          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/templates/activities/activities_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1932">
-          <caret line="92" column="25" lean-forward="false" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="30" column="49" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="49" />
-          <folding>
-            <marker date="1511336511388" expanded="true" signature="1621:3104" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="117" column="1" lean-forward="false" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" column="49" lean-forward="true" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academicedit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-651">
-          <caret line="45" column="43" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="87" column="44" lean-forward="false" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
+            <marker date="1511943771038" expanded="true" signature="332:2212" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="1772:1808" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="1841:1912" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2017:2089" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2183:2212" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2242:2355" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2383:2735" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2663:2735" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="2777:2987" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3020:3135" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3166:3976" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3859:3927" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="3951:3976" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="4013:4207" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="4251:4308" ph="..." />
+            <marker date="1511943771038" expanded="true" signature="4344:4474" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/academic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="525">
+          <caret line="60" column="23" lean-forward="true" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/activities/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/profiles/templates/profiles/profilepage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="69" column="36" lean-forward="true" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FIBO_Portfolio/templates/base2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="175" column="116" lean-forward="false" selection-start-line="175" selection-start-column="116" selection-end-line="175" selection-end-column="116" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#header#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <marker date="1511944012044" expanded="false" signature="6573:6585" ph="..." />
+            <marker date="1511944012044" expanded="false" signature="6704:6717" ph="..." />
           </folding>
         </state>
       </provider>
