@@ -1,4 +1,4 @@
-{% extends 'base2.html' %}
+{% extends 'base.html' %}
 {% block title %}My Activities{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
@@ -28,10 +28,10 @@
         <div class="row justify-content-md-center">
           <div class="col-10" >
             <br>
-            <h5><b>Verified Activities</b></h5>
+            <h5>Verified Activities</h5>
             <hr></hr>
 
-            {% for activity in profile.activity_set.all %}
+            {% for participation in verified_list %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail">
@@ -39,9 +39,9 @@
                     <div class="center">
                       <div class="caption">
                         <br>
-                        <h4>{{activity.name}}</h4>
-                        <p>{{activity.description|truncatechars:140}}</p>
-                        <p><a href="{% url 'activities:detail' activity.pk %}" class="cardbutton">Go</a> </p>
+                        <h4>{{participation.activity.name}}</h4>
+                        <p>{{participation.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' participation.activity.pk %}" class="cardbutton">Go</a> </p>
                       </div>
                   </div>
                 </div>
@@ -51,10 +51,10 @@
 
 
             <br><br><br>
-            <h5><b>Unverified Activities</b></h5>
+            <h5>Unverified Activities</h5>
             <hr></hr>
 
-        <!--    {% for activity in profile.activity_set.get %}
+           {% for participation in unverified_list %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail">
@@ -62,15 +62,15 @@
                     <div class="center">
                       <div class="caption">
                         <br>
-                        <h4>{{activity.name}}</h4>
-                        <p>{{activity.description|truncatechars:140}}</p>
-                        <p><a href="{% url 'activities:detail' activity.pk %}" class="cardbutton">Go</a> </p>
+                        <h4>{{participation.activity.name}}</h4>
+                        <p>{{participation.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' participation.activity.pk %}" class="cardbutton">Go</a> </p>
                       </div>
                   </div>
                 </div>
               </div>
             </div>
-            {% endfor %} -->
+            {% endfor %}
 
 
             <br><br><br>

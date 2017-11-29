@@ -35,16 +35,16 @@
                   <i class="glyphicon glyphicon-home"></i> Personal Profile </a>
                 </li>
                 <li class="active">
-                  <a href="{% url 'profiles:academic' profile.pk %}">
-                  <i class="glyphicon glyphicon-user"></i> Academic </a>
+                  <a href="{% url 'profiles:academic' profile.pk%}">
+                  <i class="glyphicon glyphicon-academic"></i> Academic </a>
                 </li>
                 <li>
                   <a href="{% url 'profiles:work' profile.pk %}">
-                  <i class="glyphicon glyphicon-ok"></i> Work and Experience </a>
+                  <i class="glyphicon glyphicon-work"></i> Work and Experience </a>
                 </li>
                 <li>
                   <a href="{% url 'profiles:award' profile.pk %}">
-                  <i class="glyphicon glyphicon-flag"></i> Award </a>
+                  <i class="glyphicon glyphicon-award"></i> Award </a>
                 </li>
               </ul>
             </div>
@@ -150,22 +150,26 @@ body{
 }
 
 .profile-usermenu ul li {
-  border-bottom: 1px solid #f0f4f7;
+  width: 200px;
+  height: 30px;
 }
 
 .profile-usermenu ul li:last-child {
   border-bottom: none;
+
 }
 
 .profile-usermenu ul li a {
   color: gray;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
+
 }
 
 .profile-usermenu ul li a i {
+
   margin-right: 8px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .profile-usermenu ul li a:hover {
@@ -183,6 +187,24 @@ body{
   border-left: 2px solid #3B3D4C;
   margin-left: -2px;
 }
-
+.list {
+    color: #fff;
+    list-style: none;
+    padding-left: 0px;
+}
+.list::first-line {
+    color: rgba(255, 255, 255, 0.5);
+}
+.list> li, h5 {
+    padding: 5px 0px 5px 20px;
+}
+.list>li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid white;
+    color: white;
+}
+.list>li>a{
+  color: #fff;
+}
 </style>
 {% endblock %}

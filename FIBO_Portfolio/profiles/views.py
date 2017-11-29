@@ -47,8 +47,8 @@ class PrivacyEditView(FormView):
 def home(request):
     return render(request, 'profiles/home.html')
 
-def changepassword(request, user_id):
-    return render(request, 'profiles/changepassword.html')
+# def changepassword(request, user_id):
+#    return render(request, 'profiles/changepassword.html')
 
 class ProfileView(generic.DetailView):
     model = Profile
@@ -143,8 +143,21 @@ def pdf_view(request):
 
     p = canvas.Canvas(response)
 
-    p.drawString(100, 100, "My PDF")
+    p.setFont("Helvetica", 20)
+    p.drawString(330,740,"Name : ")
+    p.setFont("Helvetica", 14)
+    p.drawString(350,700,"age : ")
+    p.drawString(350,680,"email : ")
+    p.drawString(350,660,"phone : ")
+    p.drawString(350,640,"address : ")
 
+    p.setFont("Helvetica", 18)
+    p.drawString(80,540,"Academic")
+    p.line(80,530,250,530)
+    p.drawString(80,390,"Work and experience")
+    p.line(80,380,250,380)
+    p.drawString(80,240,"Award")
+    p.line(80,230,250,230)
     p.showPage()
     p.save()
 
