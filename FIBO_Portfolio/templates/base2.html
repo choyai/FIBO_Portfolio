@@ -188,9 +188,9 @@ font-size:2em;
               <nav class="navbar navbar2-default">
                 <div class="navbar-header">
                   {% if profile.avatar %}
-                  <a class="navbar-brands" href="#"><img class="img-responsive" src="{{profile.avatar.url}}"></a>
+                  <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{{profile.avatar.url}}"></a>
                   {% else %}
-                  <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168"src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
+                  <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
                   {% endif %}
                   <span class="site-name">{{profile.username}}</span>
                   <form action="{% url 'profiles:privacy' user.id %}">
