@@ -1,167 +1,108 @@
 {% extends 'base.html' %}
-{% block title %}Privacy{% endblock %}
-{% block another %}
-    {% load staticfiles %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <script src="{% static 'profiles/css/style.css' %}"></script>
+{% block title %}Edit Permissions{% endblock %}
+{% block another1 %}
+  {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
 {% endblock %}
 {% block body %}
-  <font>
-    <div class="headerimage" style="position: absolute;z-index: -1;">
-        <img src="#" style="width:1400px"></div>
-        <div class="row">
-          <div class="contianer-head-image">
-            <img src="#" style="width:231px;height:231px;margin-top: 90px;margin-left: 200px;margin-right: 30px;"></div>
-            <div class="contianer-head-title" style="margin-top: 230px;color: white;">
-              <div align="center"><h1>Mr.Nutped</h1></div>
-            </div>
-          <div class="contianer-head-button" style="margin-top: 230px;margin-left: 330px;">
-            <div class="form-head-button">
-              <button type="submit" style="background-color: #3B3D4C;border: none;color: white;padding: 10px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;font-family: "Roboto", Arial, serif"><b>CV</b></button>
-              <button type="submit" style="background-color: #3B3D4C;border: none;color: white;padding: 10px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;font-family: "Roboto", Arial, serif"><b>Resume</b></button>
-              <button type="submit" style="background-color: #3B3D4C;border: none;color: white;padding: 10px 30px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;font-family: "Roboto", Arial, serif"><b>Get Link</b></button>
-            </div>
+  <br><br>
+  <div class="container">
 
+    <br>
+    <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
+
+    <div class="input-block">
+      <br>
+      <h2 style="margin-left: 10px;">Edit Privacy</h2>
+      <hr>
+      <div class="centerblock">
+        <br>
+        {% csrf_token %}
+        {% include 'profiles/form-template.html' %}
+          <div class="buttonblock">
+              <button type="submit" class="orangebutton">Save</button>
+              <button type="reset" class="graybutton">Cancel</button>
           </div>
         </div>
-    <div class="container">
-      <br>
-
-      <div class="row">
-        <div class="col-12" style= "background-color:LightGray; hight:60px;"><h2><img src="https://static.wixstatic.com/media/a3ae4a24d9a28f8fa25f49fe47bdbd3c.png/v1/fill/w_44,h_37,al_c,usm_0.66_1.00_0.01/a3ae4a24d9a28f8fa25f49fe47bdbd3c.png" style="width:40px;height:40px;      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);"><span style="color:#2F2E2E;"><b>Privacy</b></span></h2></div>
-        <div class="col-12"><br></br></div>
-        <div class="col"><table style="width:100%"><form action="/action_page.php" method="get">
-            <tr>
-              <th>Personal profile</th>
-              <th>Friend</th>
-              <th>Public</th>
-            </tr>
-            <tr>
-              <td><br>Contact information</td>
-              <td><br><input type="checkbox" name="privacy" value="friend"></td>
-              <td><br><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Congenital diseaseEve</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Emergency contact</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Birthday</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Life Goals</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Ability</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-              </tr>
-            </form>
-            </table>
-            <br><hr><table style="width:100%"><form action="/action_page.php" method="get">
-                <tr>
-                  <th>Award</th>
-                  <th>Friend</th>
-                  <th>Public</th>
-                </tr>
-                <tr>
-                  <td><br>Received awards</td>
-                  <td><br><input type="checkbox" name="privacy" value="friend"></td>
-                  <td><br><input type="checkbox" name="privacy" value="public"></td>
-                </tr>
-                </table>
-        </div>
-        <div class="col"><table style="width:100%"><form action="/action_page.php" method="get">
-            <tr>
-              <th>Academic</th>
-              <th>Friend</th>
-              <th>Public</th>
-            </tr>
-            <tr>
-              <td><br>Grade</td>
-              <td><br><input type="checkbox" name="privacy" value="friend"></td>
-              <td><br><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Admission Type</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Scholarship</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            </table>
-        </div>
-        <div class="col"><table style="width:100%"><form action="/action_page.php" method="get">
-            <tr>
-              <th>Work and Experience</th>
-              <th>Friend</th>
-              <th>Public</th>
-            </tr>
-            <tr>
-              <td><br>Class project</td>
-              <td><br><input type="checkbox" name="privacy" value="friend"></td>
-              <td><br><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Lab</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>TA</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Activities</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Competition</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Internship</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Part-time</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            <tr>
-              <td>Research</td>
-              <td><input type="checkbox" name="privacy" value="friend"></td>
-              <td><input type="checkbox" name="privacy" value="public"></td>
-            </tr>
-            </form>
-            </table>
-        </div>
+      </div>
     </div>
+    </form>
+  </div>
+{% endblock %}
 
-    <div class="container">
-        <p align="right"><button type="submit" >SAVE</button><br><br><br></p>
+{% block another2 %}
+  {% load staticfiles %}
+  <style>
+  body{
+    background-color: #B4B4B4;
+  }
+  .buttonblock{
+  text-align: right;
+  }
+    .centerblock {
+      margin-left: 150px;
+      }
 
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-  </font>
+    .orangebutton {
+      background-color: #F36E21;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .orangebutton:hover{
+      background-color: gray;
+    }
+    .graybutton {
+      background-color: gray;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .graybutton:hover{
+      background-color: #F36E21;
+    }
+    .input-block {
+    width: 80%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #3B3D4C;
+    margin: 0 auto;}
+
+    .input-block input {
+    width: 80%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #3B3D4C;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+    outline: none;}
+
+    .input-block input:active,
+    .input-block input:focus {
+    border: 1px solid #3B3D4C;}
+
+    @media (max-width: 1000px) {
+    .centerblock {
+        margin-left: 0px;
+    }
+    .input-block input {
+      width: 100%;
+    }
+}
+
+
+  </style>
 {% endblock %}
