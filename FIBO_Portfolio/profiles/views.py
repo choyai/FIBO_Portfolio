@@ -2,8 +2,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormVi
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.views.generic import View
-from django.views.generic.edit import CreateView
+from django.views.generic import View, DetailView
 from .forms import *
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
