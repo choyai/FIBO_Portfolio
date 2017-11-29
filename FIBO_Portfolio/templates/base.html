@@ -57,13 +57,14 @@
               <a class="nav-link dropdown-toggle" href="{% url 'activities:home' %}" id="navbardrop" data-toggle="dropdown">Activities</a>
               <div class="dropdown-menu">
                 {% if request.user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'activities:home' %}">ACTIVITIES'S HOME</a>
                 <a class="dropdown-item" href="{% url 'activities:myactivities' user.pk %}">MY ACTIVITIES</a>
                 <a class="dropdown-item" href="{% url 'activities:create' %}">CREATE ACTIVITY</a>
                 {% endif %}
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'profiles:organization' %}" id="navbardrop" data-toggle="dropdown">Organization</a>
+              <a class="nav-link dropdown-toggle" href="{% url 'profiles:executive_team' %}" id="navbardrop" data-toggle="dropdown">Organization</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="{% url 'profiles:executive_team' %}">EXECUTIVE TEAM</a>
                 <a class="dropdown-item" href="{% url 'profiles:lecturers_and_researchers' %}">Lecturer/Researcher</a>

@@ -1,138 +1,160 @@
 {% extends 'base.html' %}
 {% block title %}{{activity.name}} | Activity Page {% endblock %}
 {% block another1 %}
-	{% load staticfiles %}
-		<link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
-
+  {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
 {% endblock %}
-
-
 {% block body %}
-<!—Title of activity section —>
-		<br><br>
-		<div class="container">
-			<div class="row">
-			  <div class="col-8">
-			  	<h1 class="intro-heading">{{activity.name}}</h1>
-			  </div>
-			  <div class="col-4">
-			  	<div class="containerbottonSubmit">
-			  		<button type="button" class="orangebutton">Submit to verify</button>
-			  	</div>
+  <br><br>
+  <div class="container">
+    <div class="input-block">
+      <br>
+      <div class="row">
+		<div class="col-6">
+      		<h2 style="margin-left: 10px;">{{activity.name}}</h2>
+      	</div>
+      	<div class="col-6">
+      		<div class="containerbottonSubmit">
+			 	<button type="button" class="orangebutton">Submit to verify</button>
+			 	<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
+					{% csrf_token %}
+					<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
+					<button type="Submit" class="graybutton">Delete</button>
+				</form>
 			</div>
 		</div>
-
-	<!—end Title of activity section —>
-
-
-	<!—activity banner section —>
-		<br><br>
-		<div class="container">
+	 </div>
+      <hr>
+      <div class="centerblock">
+      	<div class="centered-and-cropped">
 			<div class="bannerpic">
-				<img src="..." class="img-fluid" alt="Activity's image"> <!add pic of activity in #>
+				<img src="..." class="img-fluid" alt="Activity's image"> <!add pic of activity here #>
 			</div>
 		</div>
-	<!—end activity banner section —>
-
-	<!—activity info section —>
+      </div>
+      <!—activity info section —>
 		<br>
-		<div class="container">
-			<div class="row">
-				<h2 class="topicinfo"><br>Description</h>
-			</div>
-		</div>
+		<h4>Description</h4>
 		<div class="containerdes">
-			<h2 class="infodes">{{activity.description}}</h>
+			<h5>{{activity.description}}</h>
 		</div>
-		<div class="container">
-			<div class="row">
-				<h2 class="topicinfo">Duration</h>
-			</div>
-		</div>
+		<br>
+		<h4>Duration</h4>
 		<div class="containerdes">
-			<h2 class="infodes">{{activity.startDate}} - {{activity.endDate}}</h>
+			<h5>{{activity.startDate}} - {{activity.endDate}}</h>
 		</div>
-		<div class="container">
-			<div class="row">
-				<h2 class="topicinfo">Location</h>
-			</div>
-		</div>
+		<br>
+		<h4>Location</h4>
 		<div class="containerdes">
-			<h2 class="infodes">{{activity.location}}</h>
+			<h5>{{activity.location}}</h>
 		</div>
-		<div class="container">
-			<div class="row">
-				<h2 class="topicinfo">Supervisors</h>
-			</div>
-		</div>
+		<br>
+		<h4>Supervisors</h4>
 		<div class="containerdes">
-			<h2 class="infodes">{{activity.supervisors.name}}</h>
+			<h5>{{activity.supervisors.name}}</h>
 		</div>
-		<div class="container">
-			<div class="row">
-				<h2 class="topicinfo">Members</h>
-			</div>
-		</div>
+		<br>
+		<h4>Members</h4>
 		<div class="containerdes">
-			<h2 class="infodes">{{activity.participants.name}}</h>
+			<h5>{{activity.participants.name}}</h>
 		</div>
-		<div class="container">
-			<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
-				{% csrf_token %}
-				<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
-				<button type="submit" class="btn btn-default btn-sm">Delete</button>
-			</form>
-		</div>
+		<br><br>
+
 	<!—end activity info section —>
-
-	<!—Space for Corousel section —>
-
-	<!—end Space for Corousel section —>
-
+	</div>
+</div>	
 	
+    </div>
 
+  </div>
 {% endblock %}
+
 {% block another2 %}
-<style>
+  {% load staticfiles %}
+  <style>
+  body{
+    background-color: #B4B4B4;
+  }
+  .containerdes{
+  	margin-left: 50px;
+  }
+  .buttonblock{
+  text-align: right;
+  }
+  .centered-and-cropped { object-fit: cover }
+  .bannerpic img{
+  width:1110px;
+  height: 300px;
+}
+  .centerblock {
+	text-align: center;
+      }
 
-.bannerpic {
-  margin-top: 20px;
-  text-align: center;
-}
-.topicinfo {
-  margin-bottom: 20px;
-  font-size: 35px;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-.infodes {
-  margin-bottom: 50px;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.5;
-}
-.containerdes {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 25px;
-  padding-right: 300px;
-}
+    .orangebutton {
+      background-color: #F36E21;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .orangebutton:hover{
+      background-color: gray;
+    }
+    .graybutton {
+      background-color: gray;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .graybutton:hover{
+      background-color: #F36E21;
+    }
+    .input-block {
+    width: 80%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #3B3D4C;
+    margin: 0 auto;}
 
-.containerbottonSubmit {
+    .input-block input {
+    width: 80%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #3B3D4C;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+    outline: none;}
+
+    .input-block input:active,
+    .input-block input:focus {
+    border: 1px solid #3B3D4C;}
+
+    @media (max-width: 1000px) {
+    .centerblock {
+        margin-left: 0px;
+    }
+    .input-block input {
+      width: 100%;
+    }
+}
+	.containerbottonSubmit {
 	margin-right: auto;
   	margin-left: auto;
-  	padding-left: 30px;
+  	padding-left: 120px;
 }
-.orangebutton {
-    background-color: #F36E21;
-    border: none;
-    color: white;
-    padding: 15px 28px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-}
-</style>
+
+
+  </style>
 {% endblock %}
