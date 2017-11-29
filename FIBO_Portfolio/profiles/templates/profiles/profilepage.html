@@ -51,7 +51,7 @@
           </div>
           <div class="col-8">
 
-            {% if request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% if request.user.pk == profile.pk %}
             <br>
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
@@ -74,19 +74,24 @@
             <b>Birthdate</b>
             <hr></hr>{{profile.birthDate}}
 
-            <br><br><br>
+            <!--<br><br><br>
             <b>Life Goals</b>
-            <hr></hr>
+            <hr></hr>{{profile.lifeGoals}}
 
             <br><br><br>
             <b>Ability</b>
-            <hr></hr><center><img src="#" hspace="20"></center>
+            <hr></hr>-->
             {% endif %}
+
+            {% if request.user.pk == profile.pk %}
             <br><br><br>
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
+            {% endif %}
+            {% if request.user.pk == profile.pk or request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
             <b>Image(Informal)</b>
+            {% endif %}
             <hr></hr>
 
 
