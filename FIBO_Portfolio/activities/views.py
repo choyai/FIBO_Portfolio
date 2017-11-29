@@ -1,6 +1,6 @@
 from django.views import generic
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, ModelFormMixin
-from django.views.generic import View, DetailView
+from django.views.generic import View, DetailView, ListView
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
@@ -28,9 +28,10 @@ class ActivitiesCreate(CreateView):
         self.object = form.save(commit=False)
     #    for person in form.cleaned_data['supervisors']:
     #        supervision = Supervision(activity=self.object, supervisor = person)
+        self.object.save()
         for person in form.cleaned_data['participants']:
             participation = Participation(activity=self.object, participant=person)
-        self.object.save()
+            participation.save()
         return super(ModelFormMixin, self).form_valid(form)
 
 class ActivitiesUpdate(UpdateView):
@@ -48,9 +49,18 @@ class ActivitiesUpdate(UpdateView):
         return super(ModelFormMixin, self).form_valid(form)
 
 
-class MyActivitiesView(DetailView):
-    model = Profile
-    template_name = 'activities/myactivity.html'
+class MyActivitiesView(View):
+
+    def get(self, request, pk):
+        template_name = 'activities/myactivity.html'
+        profile = Profile.objects.get(id = request.user.pk)
+        queryset = profile.participation_set.all()
+        context = {"verified_list": None, "unverified_list": None,}
+        context["verified_list"] = queryset.filter(isVerified=True)
+        context["unverified_list"] = queryset.filter(isVerified=False)
+
+        return render(request, template_name, context)
+
 
 class ActivitiesDelete(DeleteView):
     model = Activity
