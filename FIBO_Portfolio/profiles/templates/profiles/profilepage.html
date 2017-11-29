@@ -57,8 +57,9 @@
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
             {% endif %}
-            {% if request.user.pk == profile.pk or request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
 
+
+            {% if request.user.pk == profile.pk or profile.publicViewPersonal or Inforequest.user.profile.account_type == 'SF' or request.user.profile.account_type == 'LE' or profile.friendViewPersonalInfo %}
             <b>Contact information</b>
             <hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{profile.user.email}}
 
@@ -81,6 +82,9 @@
             <br><br><br>
             <b>Ability</b>
             <hr></hr>-->
+
+            {% else %}
+            <b><br>This Profile is Private</b>
             {% endif %}
 
             {% if request.user.pk == profile.pk %}
@@ -89,7 +93,7 @@
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
             {% endif %}
-            {% if request.user.pk == profile.pk or request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% if request.user.pk == profile.pk or profile.get_account_type_display == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
             <b>Image(Informal)</b>
             {% endif %}
             <hr></hr>
