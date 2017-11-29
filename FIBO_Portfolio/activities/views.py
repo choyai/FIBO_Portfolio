@@ -4,7 +4,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import *
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
+from django.views.generic import View
+from django.shortcuts import render, redirect
 
 class ActivitiesIndex(generic.ListView):
     template_name = 'activities/index.html'
@@ -49,7 +51,7 @@ class ActivitiesDelete(DeleteView):
     template_name = 'activities/delete.html'
     success_url = reverse_lazy('activities:home')
 
-def profile(request, user_id):
+def profile(request,activity_id ):
     return render(request, 'activity/myactivity.html')
 
 def activity(request, activity_id):
