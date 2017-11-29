@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block title %}Verify{% endblock %}
+{% block another1 %}
+  {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
+{% endblock %}
+{% block body %}
+  <br><br>
+  <div class="container">
+
+    <br>
+      <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
+
+    <div class="input-block">
+      <br>
+      <h2 style="margin-left: 10px;">Verifiy</h2>
+      <hr>
+      <div class="row">
+        <div class="col-4">
+        </div>
+        <div class="col-5">
+          <br><br><br><br><br><br>
+          <b>ID :</b>  <!--add student id here-->
+          <br>
+          <b>Student Name :{{profile.user.first_name}} {{profile.user.last_name}}</b>
+        </div>
+        <div class="col-3">
+          <img src="{% static 'profiles/images/default_avatar.jpg' %}" style=" width: 186px; height: 189px;">
+        </div>
+      </div>
+      <br>
+
+
+
+<div class="contianer-verify">
+  <center>
+    <table style="border-collapse: collapse;border: 3px solid grey;width:845px;">
+    
+    <tr>
+    <td style="width:300px;height:350px;"><img src="#" style="width:332px;height:229px;margin-left: 40px;"></td>
+    <td style="width:300px;">
+    <div class="text-left">
+      <b>NAME</b><br>xxxx<br><br>
+      <b>Category</b><br>xxxx<br><br>
+      <b>Description</b><br>xxxx<br><br>
+      <b>Date</b><br>xx/xx/xx
+    </div>
+    </td>
+
+    <td style="width:100px;"><div class="checkbox"><label><input type="checkbox" style="zoom:2"></label></div></td>
+    </tr>
+
+    </table>
+  </center>
+</div>
+<br>
+  <div class="buttonblock">
+    <button type="submit" class="orangebutton">Verified</button>
+    <button type="submit" class="graybutton">Back</button>
+  </div>
+</div>
+
+  </div>
+{% endblock %}
+
+{% block another2 %}
+  {% load staticfiles %}
+  <style>
+  body{
+    background-color: #B4B4B4;
+  }
+  .buttonblock{
+  text-align: right;
+  }
+    .centerblock {
+      margin-left: 150px;
+      }
+
+    .orangebutton {
+      background-color: #F36E21;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .orangebutton:hover{
+      background-color: gray;
+    }
+    .graybutton {
+      background-color: gray;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .graybutton:hover{
+      background-color: #F36E21;
+    }
+    .input-block {
+    width: 80%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #3B3D4C;
+    margin: 0 auto;}
+
+    .input-block input {
+    width: 80%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #3B3D4C;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+    outline: none;}
+
+    .input-block input:active,
+    .input-block input:focus {
+    border: 1px solid #3B3D4C;}
+
+    @media (max-width: 1000px) {
+    .centerblock {
+        margin-left: 0px;
+    }
+    .input-block input {
+      width: 100%;
+    }
+    .contianer-verify{
+    margin-top: 15px;
+}
+
+
+.container-text-top{
+  margin-left: 700px;
+  margin-top: 320px;
+  font-family: "Roboto", Arial, serif;
+  position:absolute;
+  top:-10px;
+    left:10px;
+}
+
+.container-top{
+  margin-top: 30px;
+}
+.container-text-info{
+  margin-left: 800px;
+  margin-top: 320px;
+  font-family: "Roboto", Arial, serif;
+  position:absolute;
+  top:-10px;
+    left:10px;
+}
+.buttonverify{
+    margin-left: 950px;
+}
+
+.title-verify{
+  margin-left: 220px;margin-top: 17px;
+  font-family: "Roboto", Arial, serif;
+}
+.text-left{
+    text-align: left;
+    font-family: "Roboto", Arial, serif;
+}
+
+
+  </style>
+{% endblock %}
