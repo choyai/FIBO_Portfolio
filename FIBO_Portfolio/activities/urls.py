@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^create', views.ActivitiesCreate.as_view(), name='create'),
     url(r'^(?P<pk>[0-9]+)/edit/$', views.ActivitiesUpdate.as_view(), name='update'),
     url(r'^(?P<pk>[0-9]+)/delete/$', views.ActivitiesDelete.as_view(), name='delete'),
-    url(r'^(?P<pk>[0-9]+)/myactivity$', views.MyActivitiesView.as_view(), name='myactivities'),
-    url(r'^verify', views.verify, name='verify'),
+    url(r'^activity/(?P<activity_id>[0-9]+)$', views.activity, name='activity'),
+    url(r'^(?P<user_id>[0-9]+)/activities', views.MyActivitiesView.as_view, name='myactivities'),
+    url(r'^verify', views.VerifyView.as_view(), name = 'verify')
 ]
