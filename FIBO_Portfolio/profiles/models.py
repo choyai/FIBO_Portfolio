@@ -101,7 +101,7 @@ class Activity(models.Model):
 class Participation(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     participant = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    ifVerified = models.BooleanField(default = False)
+    isVerified = models.BooleanField(default = False)
 
 def activity_dir_path(instance, filename):
     return 'activity_{0}/{1}'.format(instance, filename)
