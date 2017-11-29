@@ -76,17 +76,20 @@
             <b>Birthdate</b>
             <hr></hr>{{profile.birthDate}}
 
-            <!--<br><br><br>
-            <b>Life Goals</b>
-            <hr></hr>{{profile.lifeGoals}}
+            <br><br><br>
+            <b>Biography</b>
+            <hr></hr>{{profile.bio}}
+
 
             <br><br><br>
-            <b>Ability</b>
-            <hr></hr>-->
-
-            {% else %}
-            <b><br>This Profile is Private</b>
+            {% if request.user.pk == profile.pk %}
+            <br><br><br>
+            <div class="edit-link">
+              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+            </div>
             {% endif %}
+            <b>Abilities</b>
+            <hr></hr>
 
             {% if request.user.pk == profile.pk %}
             <br><br><br>
@@ -94,18 +97,24 @@
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
             {% endif %}
-            {% if request.user.pk == profile.pk or profile.get_account_type_display == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+
             <b>Image(Informal)</b>
-            {% endif %}
             <hr></hr><center><img src="#" hspace="20"></center>
             <div class="gallery_product">
-                <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+              <img src="http://fakeimg.pl/365x365/" class="img-responsive">
             </div>
             <hr></hr>
             <div class="wwrapper">
               <img class="centered-and-cropped" width="200" height="200" src="..." > <!-add Informal Image here>
 
             </div>
+
+            {% else %}
+            <b><br>This Profile is Private</b>
+            {% endif %}
+
+            {% if request.user.pk == profile.pk or profile.get_account_type_display == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% endif %}
 
 
             <br><br><br>
