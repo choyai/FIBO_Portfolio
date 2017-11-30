@@ -48,40 +48,110 @@
                 </li>
               </ul>
             </div>
-          </div>  
+          </div>
 
           <div class="col-8">
 
             <br>
-            <div class="edit-link">
-              <a href="{% url 'profiles:workEdit' profile.pk %}">edit</a>
+            {% if request.user.pk == profile.pk or profile.publicViewExpInfo or request.user.user.get_account_type_display == 'Staff' or request.user.user.get_account_type_display == 'Lecturer' or profile.friendViewExpInfo and request.user.is_authenticated or profile.get_account_type_display == 'Lecturer' and request.user.is_authenticated %}
+            <b>Class Projects</b>
+            {% for project in class_pj_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{project.activity.name}}</h4>
+                        <p>{{project.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' project.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <b>Class Project</b>
-            <hr></hr>
+            {% endfor %}
 
             <br><br><br>
-            <b>Lab</b>
-            <hr></hr>
 
+            <b>Labs</b>
+            {% for lab in lab_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{lab.activity.name}}</h4>
+                        <p>{{lab.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' lab.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
             <br><br><br>
-            <b>TA</b>
-            <hr></hr>
 
+            <b>Teacher's Assistant</b>
+            {% for ta in ta_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{ta.activity.name}}</h4>
+                        <p>{{ta.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' ta.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
             <br><br><br>
-            <b>Activity</b>
-            <hr></hr>
-
+            <b>Competitions</b>
+            {% for comp in competition_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{comp.activity.name}}</h4>
+                        <p>{{comp.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' comp.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
             <br><br><br>
-            <b>Competition</b>
-            <hr></hr>
-
-            <br><br><br>
-            <b>Internship</b>
-            <hr></hr>
-
-            <br><br><br>
-            <b>Research</b>
-            <hr></hr>
+            <b>Internships</b>
+            {% for intern in internship_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{intern.activity.name}}</h4>
+                        <p>{{intern.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' intern.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
 
 
             <br><br><br>
@@ -131,7 +201,7 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 .buttoningraybar:hover{
   background-color: #fff;
@@ -144,10 +214,10 @@ body{
   display: inline-block;
   font-size: 15px;
   position:absolute;
-  bottom:30px;  
+  bottom:30px;
 }
 .graybar{
-  background-color:#EBEBEB; 
+  background-color:#EBEBEB;
   height: 70px;
   width: 1110px;
 }

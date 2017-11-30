@@ -53,15 +53,26 @@
           <div class="col-8">
 
             <br>
-            <div class="edit-link">
-              <a href="{% url 'profiles:awardEdit' profile.pk %}">edit</a>
-            </div>
+            {% if request.user.pk == profile.pk or profile.publicViewPersonal or request.user.user.get_account_type_display == 'Staff' or request.user.user.get_account_type_display == 'Lecturer' or profile.friendViewPersonalInfo and request.user.is_authenticated or profile.get_account_type_display == 'Lecturer' and request.user.is_authenticated %}
             <b>Awards</b>
-            <hr></hr>
-
-
-            <br><br><br>
-
+            {% for award in award_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{award.activity.name}}</h4>
+                        <p>{{award.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' award.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>

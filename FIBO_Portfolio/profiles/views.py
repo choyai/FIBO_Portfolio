@@ -77,6 +77,10 @@ class AcademicView(generic.DetailView):
 class AwardView(generic.DetailView):
     model = Profile
     template_name = 'profiles/award.html'
+    def get_context_data(self, **kwargs):
+        context = super(AwardView, self).get_context_data(**kwargs)
+        context['award_set'] = self.get_object().participation_set.filter(activity__category__contains='award', isVerified=True)
+        return context
 
 class AwardFormView(View):
     form_class = createActivityForm
@@ -87,6 +91,15 @@ class AwardFormView(View):
 class WorkView(generic.DetailView):
     model = Profile
     template_name = 'profiles/work.html'
+    def get_context_data(self, **kwargs):
+        context = super(WorkView, self).get_context_data(**kwargs)
+        context['class_pj_set'] = self.get_object().participation_set.filter(activity__category__contains='project', isVerified=True)
+        context['lab_set'] = self.get_object().participation_set.filter(activity__category__contains="lab", isVerified=True)
+        context['ta_set'] = self.get_object().participation_set.filter(activity__category__contains="teach", isVerified=True)
+        context['competition_set'] = self.get_object().participation_set.filter(activity__category__contains="competition", isVerified=True)
+        context['internship_set'] = self.get_object().participation_set.filter(activity__category__contains="internship", isVerified=True)
+        return context
+
 
 class WorkFormView(View):
     form_class = createActivityForm
