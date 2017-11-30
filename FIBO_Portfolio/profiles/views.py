@@ -148,26 +148,96 @@ def pdf_view(request):
     profile = request.user.user
     response = HttpResponse(content_type='profiles/application/pdf')
     response['Content-Disposition'] = 'attachment; filename ="resume.pdf"'
-
+    participationlist = profile.participation_set.filter(isVerified=True)
+    awardlist = participationlist.filter(activity__category__contains='award')
+    worklist = participationlist.filter(activity__category__contains='work')
+    abilist = profile.ability_set.all()
+    gradelist = profile.grade_set.all()
     #buffer = BytesIO
 
     p = canvas.Canvas(response)
 
-    p.setFont("Helvetica", 20)
-    p.drawString(330,740, "Name : " + request.user.first_name + " " + request.user.last_name)
+    p.setFont("Helvetica-Bold", 20)
+    #p.drawString(20,760, "Resume" )
+    p.drawString(25,790,  request.user.first_name + " " + request.user.last_name)
     p.setFont("Helvetica", 14)
-    p.drawString(350,700,"age : " + str(calculate_age(profile.birthDate)))
-    p.drawString(350,680,"email : " + request.user.email)
-    p.drawString(350,660,"phone : " + profile.phone )
-    p.drawString(350,640,"address : " + profile.location)
+    p.drawString(27,770,  "Institute of Field Robotics (FIBO)")
+    p.line(25,763,750,761)
+
+    p.setFont("Helvetica", 11)
+    p.drawString(330,800,"EMAIL    " + request.user.email)
+    p.drawString(330,785,"PHONE  " + profile.phone )
+    p.setFont("Helvetica", 9)
+    p.drawString(330,772,"Location     " + profile.location)
 
     p.setFont("Helvetica", 18)
-    p.drawString(80,540,"Academic")
-    p.line(80,530,250,530)
-    p.drawString(80,390,"Work and experience")
-    p.line(80,380,250,380)
-    p.drawString(80,240,"Award")
-    p.line(80,230,250,230)
+    gpax = 0
+    totalgrade = 0
+    totalCredit = 0
+    semes = 0
+    for grade in gradelist:
+        totalgrade += grade.GPA * grade.creditTotal
+        totalCredit += grade.creditTotal
+        semes += 1
+    gpax = (totalgrade/totalCredit)
+    format(gpax, '.2f')
+
+
+    p.drawString(27,740,"Academic")
+    p.line(27,738,110,738)
+    p.setFont("Helvetica", 12)
+    p.drawString(30,725, "GPAX of "+ str(semes) + " semester "+str(gpax))
+    semes = 1
+    yposleft = 712;
+    for grade in gradelist:
+        p.drawString(30,yposleft, "GPA of semester "+ str(semes)+ " : " +str(format(grade.GPA, '.2f')) + "  Credit : " + str(grade.creditTotal) )
+        semes += 1
+        yposleft -= 14;
+
+
+    p.setFont("Helvetica", 18)
+    yposleft -= 10;
+    p.drawString(27,yposleft,"Work and Experience")
+    yposleft -= 2;
+    p.line(27,yposleft,200,yposleft)
+    p.setFont("Helvetica", 12)
+    yposleft -= 15;
+    i = 1
+    for work in worklist:
+        p.drawString(30,yposleft, str(i)+ ". " + work.activity.name + "   Start : " +  str(work.activity.startDate) +  "  End: " + str(work.activity.endDate))
+        yposleft -= 14;
+        i +=1
+
+
+
+    p.setFont("Helvetica", 18)
+    yposleft -= 10;
+    p.drawString(27,yposleft,"Awards")
+    yposleft -= 2;
+    p.line(27,yposleft,80,yposleft)
+    p.setFont("Helvetica", 12)
+    yposleft -= 15;
+    for award in awardlist:
+        p.drawString(30,yposleft,  " - " + award.activity.name + "   Date : " +  str(award.activity.startDate) )
+        yposleft -= 14;
+
+
+
+    p.setFont("Helvetica", 18)
+    yposleft -= 10;
+    p.drawString(27,yposleft,"Ablities")
+    yposleft -= 2;
+    p.line(27,yposleft,80,yposleft)
+    p.setFont("Helvetica", 12)
+    yposleft -= 15;
+    for abi in abilist:
+        p.drawString(30,yposleft,  " - " + abi.name )
+        yposleft -= 14;
+
+
+    p.line(0,50,1000,50)
+    p.drawString(10,20,"FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio ")
+
     p.showPage()
     p.save()
 
