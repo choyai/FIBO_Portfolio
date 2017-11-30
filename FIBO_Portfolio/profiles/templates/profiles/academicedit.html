@@ -50,47 +50,28 @@
             </div>
           </div>
           <div class="col-8">
+       <br>
+        <div class="container">
 
-            <br>
-            <b>Grade</b>
-            <hr></hr>
-            <div class="form-group row">
-              <label for="1st-year" class="col-2 col-form-label">1st year</label>
-              <div class="col-10"><input class="form-control" type="number" value="4.00" id="1st-year">
-              </div></div>
-            <div class="form-group row">
-              <label for="2nd-year" class="col-2 col-form-label">2nd year</label>
-              <div class="col-10"><input class="form-control" type="number" value="4.00" id="2nd-year">
+            <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
+
+          <div class="input-block">
+            <h2 style="margin-left: 10px;">Edit Academic</h2>
+            <hr>
+            <div class="centerblock">
+
+              {% csrf_token %}
+              {% include 'profiles/form-template.html' %}
+                <div class="buttonblock">
+                    <button type="submit" class="orangebutton">Submit</button>
+                    <button type="cancle" class="graybutton">Cancel</button>
+                </div>
+              <br>
               </div>
             </div>
-
-            <br><br><br>
-            <b>Admission Type</b>
-            <hr></hr>
-            <select class="form-control form-control-sm">
-              <option>select</option>
-              <option>select-1</option>
-              <option>select-2</option>
-              <option>select-3</option>
-            </select>
-
-            <br><br><br>
-            <b>Scolarship</b>
-            <hr></hr>
-            <select class="form-control form-control-sm">
-              <option>select</option>
-              <option>select-1</option>
-              <option>select-2</option>
-              <option>select-3</option>
-            </select>
-
-
-      <br>
-      <p align="right">
-        <button type="submit" class="orangebutton">Submit</button>
-        <button type="reset" class="graybutton">Cancel</button>
-      </p>
-      <br><br>
+          </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

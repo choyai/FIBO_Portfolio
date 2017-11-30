@@ -52,12 +52,28 @@
           <div class="col-8">
 
             <br>
+            <br>
             <div class="edit-link">
-
-              <a href="{% url 'profiles:gradeCreate' %}">Add Grade</a>
+              <a href="{% url 'profiles:educationalBackground' %}">Add School</a>
             </div>
 
-            {% if request.user.user.account_type == 'LE' or request.user.user.account_type == 'SF' or request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
+            {% for educationalBackground in edu_set %}
+            <b>Degree & Major</b>
+
+            <hr></hr>{{educationalBackground.degree}}{{educationalBackground.major}}
+
+            <br><br><br>
+            <b>School</b>{{educationalBackground.school}}
+            <hr></hr>
+            {% endfor %}
+
+            <div class="edit-link">
+            {% if request.user.user.account_type == 'LE' %}
+              <a href="{% url 'profiles:gradeCreate' %}">Add Grade</a>
+            </div>
+            {% endif %}
+
+            {% if request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
             <b>Grade</b>
             {% for grade in grade_set %}
             <hr></hr>Semester: {{grade.semester}}<br>
@@ -65,7 +81,6 @@
             GPA = {{grade.GPA}}<br>
             {% endfor %}
 
-    
             <br><br><br>
             <div class="edit-link">
               <a href="{% url 'profiles:academicEdit' profile.pk %}">Edit</a>

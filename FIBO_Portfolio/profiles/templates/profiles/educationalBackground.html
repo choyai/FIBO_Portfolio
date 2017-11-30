@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block title %}Edit Profile{% endblock %}
+{% block another1 %}
+  {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
+{% endblock %}
+{% block body %}
+  <br><br>
+  <div class="container">
+
+    <br>
+    <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
+
+    <div class="input-block">
+      <br>
+      <h2 style="margin-left: 10px;">Edit Educational Background</h2>
+      <hr>
+      <div class="centerblock">
+        <br>
+        {% csrf_token %}
+        {% include 'profiles/form-template.html' %}
+          <div class="buttonblock">
+              <button type="submit" class="orangebutton">Save</button>
+              <button type="cancel" class="graybutton">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+{% endblock %}
+
+{% block another2 %}
+  {% load staticfiles %}
+  <style>
+  body{
+    background-color: #B4B4B4;
+  }
+  .buttonblock{
+  text-align: right;
+  }
+    .centerblock {
+      margin-left: 150px;
+      }
+
+    .orangebutton {
+      background-color: #F36E21;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .orangebutton:hover{
+      background-color: gray;
+    }
+    .graybutton {
+      background-color: gray;
+      border: none;
+      color: white;
+      padding: 10px 28px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .graybutton:hover{
+      background-color: #F36E21;
+    }
+    .input-block {
+    width: 80%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    border-top: 5px solid #3B3D4C;
+    margin: 0 auto;}
+
+    .input-block input {
+    width: 80%;
+    height: 42px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #3B3D4C;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+    outline: none;}
+
+    .input-block input:active,
+    .input-block input:focus {
+    border: 1px solid #3B3D4C;}
+
+    @media (max-width: 1000px) {
+    .centerblock {
+        margin-left: 0px;
+    }
+    .input-block input {
+      width: 100%;
+    }
+}
+
+
+  </style>
+{% endblock %}
