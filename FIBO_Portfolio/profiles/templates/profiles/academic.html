@@ -74,7 +74,7 @@
             {% endif %}
 
             {% if request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
-            <b>Grade</b>
+            <b>Grades</b>
             {% for grade in grade_set %}
             <hr></hr>Semester: {{grade.semester}}<br>
             Credits = {{grade.creditTotal}}<br>

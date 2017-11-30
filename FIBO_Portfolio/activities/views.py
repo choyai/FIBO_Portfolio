@@ -26,9 +26,9 @@ class ActivitiesCreate(CreateView):
               'startDate', 'endDate']
     def form_valid(self, form):
         self.object = form.save(commit=False)
-    #    for person in form.cleaned_data['supervisors']:
-    #        supervision = Supervision(activity=self.object, supervisor = person)
         self.object.save()
+        for person in form.cleaned_data['supervisors']:
+            supervision = Supervision(activity=self.object, supervisor = person)
         for person in form.cleaned_data['participants']:
             participation = Participation(activity=self.object, participant=person)
             participation.save()
@@ -41,8 +41,8 @@ class ActivitiesUpdate(UpdateView):
               'startDate', 'endDate']
     def form_valid(self, form):
         self.object = form.save(commit=False)
-    #    for person in form.cleaned_data['supervisors']:
-    #        supervision = Supervision(activity=self.object, supervisor = person)
+        for person in form.cleaned_data['supervisors']:
+            supervision = Supervision(activity=self.object, supervisor = person)
         for person in form.cleaned_data['participants']:
             participation = Participation(activity=self.object, participant=person)
         self.object.save()
@@ -72,7 +72,12 @@ class VerifyView(View):
     def get(self, request, pk):
         template_name = 'activities/verify.html'
         profile = Profile.objects.get(id = request.user.pk)
-        queryset = profile.supervisor.all()
+        queryset_i = profile.supervision_set.all()
+        queryset = Participation.objects.none()
+        for supervision in queryset_i:
+            abi = supervision.activity
+            queryset = union(queryset, abi.participation_set.all())
+
         context = {"verified_list": None, "unverified_list": None,}
         context["verified_list"] = queryset.filter(isVerified=True)
         context["unverified_list"] = queryset.filter(isVerified=False)
