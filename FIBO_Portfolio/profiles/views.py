@@ -12,7 +12,10 @@ from django.template import loader
 from django.contrib.auth import authenticate, login
 from .models import *
 
-
+class GPAUpdateView(UpdateView):
+    model = Grade
+    template_name = 'profiles/academicedit.html'
+    fields = 'GPA'
 
 class UserFormView(View):
     form_class = UserForm
@@ -58,21 +61,39 @@ class ProfileView(generic.DetailView):
         return context
 
 
-class AcademicFormView(View):
-    form_class = AcademicForm
+class AcademicFormView(UpdateView):
+    model = Profile
     template_name = 'profiles/academicedit.html'
+    fields = ['admission', 'scholarship']
 
-    def get(self, request, pk):
-        form = self.form_class(None)
-        return render(request, self.template_name, {'form': form})
+class GradeCreateView(CreateView):
+    model = Grade
+    template_name = 'profiles/gradeEdit.html'
+    fields = ['profile', 'semester', 'creditTotal', 'GPA']
 
-    def post(self, request, pk):
-        form = self.form_class(request.POST)
-        return render(request, self.template_name, {'form': form})
+
+class GradeUpdateView(UpdateView):
+    model = Grade
+    template_name = 'profiles/gradeEdit.html'
+    fields = ['GPA']
 
 class AcademicView(generic.DetailView):
     model = Profile
     template_name = 'profiles/academic.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(AcademicView, self).get_context_data(**kwargs)
+        context['grade_set'] = self.get_object().grade_set.all()
+        context['edu_set'] = self.get_object().educationbackground_set.all()
+        return context
+
+
+
+class EducationalBackground(CreateView):
+    model = EducationBackground
+    template_name = 'profiles/educationalBackground.html'
+    fields = ['profile', 'degree', 'major', 'school']
+
 
 class AwardView(generic.DetailView):
     model = Profile

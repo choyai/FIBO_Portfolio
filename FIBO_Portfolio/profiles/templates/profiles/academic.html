@@ -52,21 +52,49 @@
           <div class="col-8">
 
             <br>
+            <br>
             <div class="edit-link">
-              <a href="{% url 'profiles:academicEdit' profile.pk %}">edit</a>
+              <a href="{% url 'profiles:educationalBackground' %}">Add School</a>
             </div>
-            {% if request.user.user.account_type == 'LE' or request.user.user.account_type == 'SF' or request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
-            <b>Grade</b>
+
+            {% for educationalBackground in edu_set %}
+            <b>Degree & Major</b>
+
+            <hr></hr>{{educationalBackground.degree}}{{educationalBackground.major}}
+
+            <br><br><br>
+            <b>School</b>{{educationalBackground.school}}
             <hr></hr>
+            {% endfor %}
+
+            <div class="edit-link">
+            {% if request.user.user.account_type == 'LE' %}
+              <a href="{% url 'profiles:gradeCreate' %}">Add Grade</a>
+            </div>
             {% endif %}
 
-            <br><br><br>
-            <b>Admisstion Type</b>
-            <hr></hr>
+            {% if request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
+            <b>Grade</b>
+            {% for grade in grade_set %}
+            <hr></hr>Semester: {{grade.semester}}<br>
+            Credits = {{grade.creditTotal}}<br>
+            GPA = {{grade.GPA}}<br>
+            {% endfor %}
 
             <br><br><br>
-            <b>Scolarship</b>
-            <hr></hr>
+            <div class="edit-link">
+              <a href="{% url 'profiles:academicEdit' profile.pk %}">Edit</a>
+            </div>
+            <b>Admission Type</b>
+            <hr></hr>{{profile.admission}}
+
+            <br><br><br>
+            <b>Scholarship</b>
+            <hr></hr>{{profile.scholarship}}
+            {% else %}
+            <b>Private Academic Profile</b>
+            {% endif %}
+
 
 
             <br><br><br>
