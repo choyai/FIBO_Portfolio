@@ -187,7 +187,8 @@ def pdf_view(request):
     worklist = participationlist.filter(activity__category__contains='work')
     abilist = profile.ability_set.all()
     gradelist = profile.grade_set.all()
-    #buffer = BytesIO
+    backlist = profile.educationbackground_set.all()
+
 
     p = canvas.Canvas(response)
 
@@ -214,46 +215,51 @@ def pdf_view(request):
         totalCredit += grade.creditTotal
         semes += 1
     gpax = (totalgrade/totalCredit)
-    format(gpax, '.2f')
+
 
 
     p.drawString(27,740,"Academic")
     p.line(27,738,110,738)
     p.setFont("Helvetica", 12)
-    p.drawString(30,725, "GPAX of "+ str(semes) + " semester "+str(gpax))
+    p.drawString(30,725, "GPAX of "+ str(semes) + " semester "+str(format(gpax, '.2f')))
     semes = 1
     yposleft = 712;
     for grade in gradelist:
         p.drawString(30,yposleft, "GPA of semester "+ str(semes)+ " : " +str(format(grade.GPA, '.2f')) + "  Credit : " + str(grade.creditTotal) )
         semes += 1
         yposleft -= 14;
-
+    for back in backlist:
+        if back.school != None :
+            p.drawString(30,yposleft, "Graduated from "+ back.school + " with a " + back.degree + ", majoring in "+ back.major )
+            yposleft -= 14;
 
     p.setFont("Helvetica", 18)
     yposleft -= 10;
-    p.drawString(27,yposleft,"Work and Experience")
+    p.drawString(27,yposleft,"Work and Experiences")
     yposleft -= 2;
     p.line(27,yposleft,200,yposleft)
     p.setFont("Helvetica", 12)
     yposleft -= 15;
-    i = 1
+
     for work in worklist:
-        p.drawString(30,yposleft, str(i)+ ". " + work.activity.name + "   Start : " +  str(work.activity.startDate) +  "  End: " + str(work.activity.endDate))
+        p.drawString(30,yposleft, "- " + work.activity.name + "   Start : " +  str(work.activity.startDate) +  "  End: " + str(work.activity.endDate))
         yposleft -= 14;
-        i +=1
 
 
-
-    p.setFont("Helvetica", 18)
-    yposleft -= 10;
-    p.drawString(27,yposleft,"Awards")
-    yposleft -= 2;
-    p.line(27,yposleft,80,yposleft)
-    p.setFont("Helvetica", 12)
-    yposleft -= 15;
+    i = 1
     for award in awardlist:
-        p.drawString(30,yposleft,  " - " + award.activity.name + "   Date : " +  str(award.activity.startDate) )
-        yposleft -= 14;
+        if award.activity.name != None:
+            if i == 1 :
+                    p.setFont("Helvetica", 18)
+                    yposleft -= 10;
+                    p.drawString(27,yposleft,"Awards")
+                    yposleft -= 2;
+                    p.line(27,yposleft,80,yposleft)
+                    p.setFont("Helvetica", 12)
+                    yposleft -= 15;
+                    i = 2
+            p.drawString(30,yposleft,  " - " + award.activity.name + "   Date : " +  str(award.activity.startDate) )
+            yposleft -= 14;
 
 
 
@@ -270,7 +276,7 @@ def pdf_view(request):
 
 
     p.line(0,50,1000,50)
-    p.drawString(10,20,"FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio FIBO Portfoilio ")
+    p.drawString(10,20,"FIBO Portfoilio URL : www.fiboportfolilo.com/profile/" + str(profile.pk) )
 
     p.showPage()
     p.save()
@@ -279,6 +285,3 @@ def pdf_view(request):
     #buffer.close()
     response.write(p)
     return response
-
-def edit(request):
-    return HttpResponse('Edit page')
