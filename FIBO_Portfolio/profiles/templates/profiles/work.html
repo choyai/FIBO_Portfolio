@@ -55,6 +55,7 @@
             <br>
             {% if request.user.pk == profile.pk or profile.publicViewExpInfo or request.user.user.get_account_type_display == 'Staff' or request.user.user.get_account_type_display == 'Lecturer' or profile.friendViewExpInfo and request.user.is_authenticated or profile.get_account_type_display == 'Lecturer' and request.user.is_authenticated %}
             <b>Class Projects</b>
+            <hr>
             {% for project in class_pj_set %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
@@ -76,6 +77,7 @@
             <br><br><br>
 
             <b>Labs</b>
+            <hr>
             {% for lab in lab_set %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
@@ -96,6 +98,7 @@
             <br><br><br>
 
             <b>Teacher's Assistant</b>
+            <hr>
             {% for ta in ta_set %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
@@ -115,6 +118,7 @@
             {% endfor %}
             <br><br><br>
             <b>Competitions</b>
+            <hr>
             {% for comp in competition_set %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
@@ -134,6 +138,7 @@
             {% endfor %}
             <br><br><br>
             <b>Internships</b>
+            <hr>
             {% for intern in internship_set %}
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
@@ -274,6 +279,38 @@ body{
   border-left: 2px solid #3B3D4C;
   margin-left: -2px;
 }
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.center{
+  text-align: center;
+}
+
+.fixbuttonincard{
+  margin-bottom: 10px;
+}
+.cardbutton{
+  background-color: #3B3E4C;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+.cardbutton:hover{
+  background-color: #F36E21;
+  color: white;
+}
+
 
 </style>
 {% endblock %}
