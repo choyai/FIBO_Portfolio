@@ -58,12 +58,12 @@
             <hr>
             {% for award in award_set %}
             <div class="row">
-              <div class="col-xs-18 col-sm-6 col-md-4">
+              <div class="col-xs-18 col-sm-6 portfolio-item">
                 <div class="thumbnail">
                   {% if activity.image %}
-                  <a href="#"><img class="centered-and-cropped" width="500" height="300" src="{{activity.image.url}}" ></a>
+                  <a href="{{activity.image.url}}"><img class="centered-and-cropped" width="500" height="300" src="{{activity.image.url}}" ></a>
                   {% else %}
-                  <a href="#"><img class="centered-and-cropped" width="500" height="300" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  <a href="#"><img class="centered-and-cropped" width="500" height="300" src="{% static 'activities/images/default_activity.jpg' %}" ></a>
                   {% endif %}
                     <div class="center">
                       <div class="caption">

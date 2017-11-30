@@ -67,6 +67,15 @@ class AcademicFormView(UpdateView):
     template_name = 'profiles/academicedit.html'
     fields = ['admission', 'scholarship']
 
+class AbilityCreateView(CreateView):
+    model = Ability
+    template_name = 'profiles/ability_form.html'
+    fields = ['profile', 'name']
+class AbilityEditView(UpdateView):
+    model = Ability
+    template_name = 'profiles/ability_form.html'
+    fields = ['name']
+
 class GradeCreateView(CreateView):
     model = Grade
     template_name = 'profiles/gradeEdit.html'
@@ -154,7 +163,7 @@ class StudentView(ListView):
     template_name = 'profiles/students.html'
     def get_context_data(self, **kwargs):
         context = super(StudentView, self).get_context_data(**kwargs)
-        context['students_set'] = self.get_queryset().filter(account_type='Student')
+        context['students_set'] = self.get_queryset().all() #.filter(account_type='Student')
         return context
 
 class LecturerView(ListView):
@@ -162,7 +171,7 @@ class LecturerView(ListView):
     template_name = 'profiles/lecturerandresearcher.html'
     def get_context_data(self, **kwargs):
         context = super(LecturerView, self).get_context_data(**kwargs)
-        context['lecturer_set'] = self.get_queryset().filter(account_type='Lecturer')
+        context['lecturer_set'] = self.get_queryset().all() #filter(account_type='Lecturer')
         return context
 
 class OfficerView(ListView):
@@ -170,7 +179,7 @@ class OfficerView(ListView):
     template_name = 'profiles/officer.html'
     def get_context_data(self, **kwargs):
         context = super(OfficerView, self).get_context_data(**kwargs)
-        context['staff_set'] = self.get_queryset().filter(account_type='Staff')
+        context['staff_set'] = self.get_queryset().all() #filter(account_type='Staff')
         return context
 
 def organization(request):

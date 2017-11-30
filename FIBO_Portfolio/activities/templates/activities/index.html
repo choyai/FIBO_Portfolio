@@ -28,7 +28,7 @@
                   {% if activity.image %}
                   <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{{activity.image.url}}" ></a>
                   {% else %}
-                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activities/images/default_activity.jpg' %}" ></a>
                   {% endif %}
                     <div class="card-body">
                         <h4 class="card-title"><a href="{% url 'activities:detail' activity.pk %}" style="color:black;">{{ activity.name }}</a>
@@ -44,7 +44,7 @@
      </div>
       <!-- /.row -->
 
-      <!-- Pagination -->
+      <!-- Pagination
       <br>
       <div class="paginationdes">
           <ul class="pagination justify-content-center">
@@ -72,7 +72,7 @@
           </ul>
         </div>
 
-    </div>
+    </div>-->
 </div>
     <!-- /.container -->
 

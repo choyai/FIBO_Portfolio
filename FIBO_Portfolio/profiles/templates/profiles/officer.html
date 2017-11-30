@@ -1,14 +1,19 @@
 {% extends 'base3.html' %}
+{% block another1 %}
+
+{% endblock %}
 {% block main-content %}
-{% for staff in staff_set%}
-{{staff.stID}} <br>
-{{staff.user.first_name}} {{staff.user.last_name}}<br>
-{% if staff.avatar %}
-<a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{{staff.avatar.url}}"></a>
-{% elif staff.stID %}
+{% for student in staff_set %}
+<div class="col-xs-18 col-sm-6 portfolio-item">
+{{student.stID}} <br>
+{{student.user.first_name}} {{student.user.last_name}}<br>
+{% if student.avatar %}
+<a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{{student.avatar.url}}"></a>
+{% else %}
 {% load staticfiles %}
 <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
 {% endif %}
 
 {% endfor %}
+</div>
 {% endblock %}

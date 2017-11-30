@@ -60,6 +60,8 @@ class Ability(models.Model):
 
     def __str__(self):
         return self.profile.user.first_name + self.name
+    def get_absolute_url(self):
+            return reverse('profiles:profile', kwargs={'pk': self.profile.pk})
 
 class Grade(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
@@ -101,7 +103,7 @@ class Activity(models.Model):
         )
 
     name = models.CharField(max_length=250)
-    image = models.ImageField(verbose_name="Activity Picture", upload_to=activity_dir_path)
+    image = models.ImageField(verbose_name="Activity Picture", upload_to=activity_dir_path, blank=True)
     category = models.CharField(max_length=250, blank=True, null=True)
     description = models.CharField(max_length=5000, blank=True, null=True)
     location = models.CharField(max_length=250, blank=True, null=True)

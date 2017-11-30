@@ -153,7 +153,7 @@ font-size:2em;
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{% url 'profiles:organization' %}" id="navbardrop" data-toggle="dropdown">Organization</a>
+              <a class="nav-link dropdown-toggle" href="{% url 'profiles:executive_team' %}" id="navbardrop" data-toggle="dropdown">Organization</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="{% url 'profiles:executive_team' %}">EXECUTIVE TEAM</a>
                 <a class="dropdown-item" href="{% url 'profiles:lecturers_and_researchers' %}">Lecturer/Researcher</a>
@@ -183,14 +183,14 @@ font-size:2em;
                     <img src="{% static 'profiles/images/default_banner.jpg' %}" >
                   </div>
                   <form action="{% url 'profiles:pdfgen' %}">
-                  <button type="submit" class="headerbutton" style="right: 130px;">Resume</button>
+                  <button type="submit" class="headerbutton" style="right: 10px;">Resume</button>
                 </form>
                 </div>
               </div>
               <nav class="navbar navbar2-default">
                 <div class="navbar-header">
                   {% if profile.avatar %}
-                  <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{{profile.avatar.url}}"></a>
+                  <a class="navbar-brands" href="{{profile.avatar.url}}"><img class="centered-and-cropped" width="160" height="168" src="{{profile.avatar.url}}"></a>
                   {% else %}
                   <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
                   {% endif %}

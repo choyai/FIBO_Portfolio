@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Edit Permissions{% endblock %}
+{% block title %}Edit Profile{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
@@ -13,12 +13,10 @@
 
     <div class="input-block">
       <br>
-      <h2 style="margin-left: 10px;">Edit Privacy</h2>
+      <h2 style="margin-left: 10px;">Add/Edit Ability</h2>
       <hr>
       <div class="centerblock">
         <br>
-      <h3>  Check = can view </h3>
-      <br><br><br>
         {% csrf_token %}
         {% include 'profiles/form-template.html' %}
           <div class="buttonblock">

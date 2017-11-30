@@ -1,14 +1,16 @@
 {% extends 'base3.html' %}
 {% block main-content %}
-{% for student in students_set%}
+{% for student in students_set %}
+<div class="col-xs-18 col-sm-6 portfolio-item">
 {{student.stID}} <br>
 {{student.user.first_name}} {{student.user.last_name}}<br>
 {% if student.avatar %}
 <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{{student.avatar.url}}"></a>
-{% elif student.stID %}
+{% else %}
 {% load staticfiles %}
 <a class="navbar-brands" href="#"><img class="centered-and-cropped" width="160" height="168" src="{% static 'profiles/images/default_avatar.jpg' %}" ></a>
 {% endif %}
 
 {% endfor %}
+</div>
 {% endblock %}

@@ -53,6 +53,8 @@ urlpatterns = [
     url(r'^organization/officers$', views.OfficerView.as_view(), name='officers'),
     url(r'^organization/students$', views.StudentView.as_view(), name='students'),
 
+    url(r'^newabi$', views.AbilityCreateView.as_view(), name='newAbi'),
+    url(r'^ability/(?P<pk>[0-9]+)/edit/$', views.AbilityEditView.as_view(), name='editAbi'),
 
     url(r'^aboutus', views.aboutus, name='aboutus'),
 

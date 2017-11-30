@@ -86,19 +86,22 @@
             {% if request.user.pk == profile.pk %}
             <br><br><br>
             <div class="edit-link">
-              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+              <a href="{% url 'profiles:newAbi' %}">add</a>
             </div>
             {% endif %}
             <b>Abilities</b>
             <hr>
             {% for ability in ability_set %}
             {{ability.name}}
+            <div class="edit-link">
+              <a href="{% url 'profiles:editAbi' ability.pk %}">edit</a>
+            </div>
             {% endfor %}
 
             {% if request.user.pk == profile.pk %}
             <br><br><br>
             <div class="edit-link">
-              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+              <a href="{% url 'profiles:newAbi' %}">add</a>
             </div>
             {% endif %}
 

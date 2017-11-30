@@ -31,14 +31,14 @@
             <h5>Verified Activities</h5>
             <hr></hr>
 
-            {% for participation in verified_list %}
-            <div class="row">
-              <div class="col-xs-18 col-sm-6 col-md-4">
+
+              {% for participation in verified_list %}
+              <div class="col-xs-18 col-sm-6 portfolio-item">
                 <div class="thumbnail">
-                  {% if activity.image %}
-                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{{activity.image.url}}" ></a>
+                  {% if participation.activity.image %}
+                  <a href="{{participation.activity.url}}"><img class="centered-and-cropped" width="350" height="300" src="{{participation.activity.image.url}}" ></a>
                   {% else %}
-                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  <a href="#"><img class="centered-and-cropped" width="350" height="300" src="{% static 'activities/images/default_activity.jpg' %}" ></a>
                   {% endif %}
                     <div class="center">
                       <div class="caption">
@@ -50,22 +50,22 @@
                   </div>
                 </div>
               </div>
-            </div>
-            {% endfor %}
+              {% endfor %}
+
 
 
             <br><br><br>
             <h5>Unverified Activities</h5>
             <hr></hr>
 
-           {% for participation in unverified_list %}
             <div class="row">
-              <div class="col-xs-18 col-sm-6 col-md-4">
+              {% for participation in unverified_list %}
+              <div class="col-xs-18 col-sm-6 portfolio-item">
                 <div class="thumbnail">
-                  {% if activity.image %}
-                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{{activity.image.url}}" ></a>
+                  {% if participation.activity.image %}
+                  <a href="{{participation.activity.image.url}}"><img class="centered-and-cropped" width="350" height="300" src="{{participation.activity.image.url}}" ></a>
                   {% else %}
-                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  <a href="#"><img class="centered-and-cropped" width="350" height="300" src="{% static 'activities/images/default_activity.jpg' %}" ></a>
                   {% endif %}
                     <div class="center">
                       <div class="caption">
@@ -77,8 +77,8 @@
                   </div>
                 </div>
               </div>
+              {% endfor %}
             </div>
-            {% endfor %}
 
 
             <br><br><br>

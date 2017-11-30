@@ -60,11 +60,12 @@
             {% for educationalBackground in edu_set %}
             <b>Degree & Major</b>
 
-            <hr></hr>{{educationalBackground.degree}}{{educationalBackground.major}}
+            <hr></hr>{{educationalBackground.degree}} degree, {{educationalBackground.major}} major.
 
             <br><br><br>
-            <b>School</b>{{educationalBackground.school}}
+            <b>School</b>
             <hr></hr>
+            {{educationalBackground.school}}<br>
             {% endfor %}
 
             <div class="edit-link">
