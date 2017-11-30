@@ -38,6 +38,9 @@ urlpatterns = [
 
     url(r'^profile/(?P<pk>[0-9]+)/academic$', views.AcademicView.as_view(), name='academic'),
     url(r'^profile/(?P<pk>[0-9]+)/academicEdit$', views.AcademicFormView.as_view(), name='academicEdit'),
+    url(r'^profile/addbackground/$', views.EducationalBackground.as_view(), name='educationalBackground'),
+    url(r'^profile/addgrade/$', views.GradeCreateView.as_view(), name='gradeCreate'),
+    url(r'^profile/(?P<pk>[0-9]+)/gradeEdit$', views.GradeUpdateView.as_view(), name='gradeEdit'),
     url(r'^profile/(?P<pk>[0-9]+)/work$', views.WorkView.as_view(), name='work'),
     url(r'^profile/(?P<pk>[0-9]+)/workedit', views.WorkFormView.as_view(), name='workEdit'),
     url(r'^profile/(?P<pk>[0-9]+)/award$', views.AwardView.as_view(), name='award'),
