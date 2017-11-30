@@ -3,7 +3,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormVi
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.views.generic import View, DetailView
+from django.views.generic import View, DetailView, ListView
 from .forms import *
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
@@ -11,6 +11,8 @@ from io import BytesIO
 from django.template import loader
 from django.contrib.auth import authenticate, login
 from .models import *
+
+
 
 class GPAUpdateView(UpdateView):
     model = Grade
@@ -60,7 +62,6 @@ class ProfileView(generic.DetailView):
         context['image_set'] = self.get_object().user.userimage_set.all()
         return context
 
-
 class AcademicFormView(UpdateView):
     model = Profile
     template_name = 'profiles/academicedit.html'
@@ -70,7 +71,6 @@ class GradeCreateView(CreateView):
     model = Grade
     template_name = 'profiles/gradeEdit.html'
     fields = ['profile', 'semester', 'creditTotal', 'GPA']
-
 
 class GradeUpdateView(UpdateView):
     model = Grade
@@ -86,8 +86,6 @@ class AcademicView(generic.DetailView):
         context['grade_set'] = self.get_object().grade_set.all()
         context['edu_set'] = self.get_object().educationbackground_set.all()
         return context
-
-
 
 class EducationalBackground(CreateView):
     model = EducationBackground
@@ -121,7 +119,6 @@ class WorkView(generic.DetailView):
         context['internship_set'] = self.get_object().participation_set.filter(activity__category__contains="internship", isVerified=True)
         return context
 
-
 class WorkFormView(View):
     form_class = createActivityForm
     template_name = 'profiles/worknexperienceedit.html'
@@ -147,25 +144,34 @@ class LecturerAndResearcherView(View):
     def get(self, request):
         return render(request, self.template_name)
 
-class AdjunctionLecturerView(View):
-    template_name = 'profiles/adjunct_lecturer.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
-class EngineersView(View):
-    template_name = 'profiles/engineer.html'
-    def get(self, request):
-        return render(request, self.template_name)
-
 class OfficerView(View):
     template_name = 'profiles/officer.html'
     def get(self, request):
         return render(request, self.template_name)
 
-class StudentView(generic.DetailView):
-    template_name = 'profiles/#'
-    def get(self, request):
-        return render(request, self.template_name)
+class StudentView(ListView):
+    model = Profile
+    template_name = 'profiles/students.html'
+    def get_context_data(self, **kwargs):
+        context = super(StudentView, self).get_context_data(**kwargs)
+        context['students_set'] = self.get_queryset().filter(account_type='Student')
+        return context
+
+class LecturerView(ListView):
+    model = Profile
+    template_name = 'profiles/lecturerandresearcher.html'
+    def get_context_data(self, **kwargs):
+        context = super(LecturerView, self).get_context_data(**kwargs)
+        context['lecturer_set'] = self.get_queryset().filter(account_type='Lecturer')
+        return context
+
+class OfficerView(ListView):
+    model = Profile
+    template_name = 'profiles/officer.html'
+    def get_context_data(self, **kwargs):
+        context = super(OfficerView, self).get_context_data(**kwargs)
+        context['staff_set'] = self.get_queryset().filter(account_type='Staff')
+        return context
 
 def organization(request):
     return render(request, 'profiles/organization.html')

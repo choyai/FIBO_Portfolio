@@ -11,7 +11,7 @@ class Profile(models.Model):
     student = 'ST'
     lecturer = 'LE'
     staff = 'SF'
-    ACCOUNT_TYPES = ((student, 'Student'), (lecturer, 'Lecturer'), (staff, 'Staff'))
+    ACCOUNT_TYPES = (('ST', 'Student'), ('LE', 'Lecturer'), ('SF', 'Staff'))
 
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
     stID = models.CharField(max_length = 20, blank=True)
