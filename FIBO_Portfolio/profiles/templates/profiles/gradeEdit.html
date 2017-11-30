@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}{{activity.name}} | Activity Page {% endblock %}
+{% block title %}Edit Profile{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
@@ -7,65 +7,26 @@
 {% block body %}
   <br><br>
   <div class="container">
+
+    <br>
+    <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
+
     <div class="input-block">
       <br>
-      <div class="row">
-		<div class="col-6">
-      		<h2 style="margin-left: 10px;">{{activity.name}}</h2>
-      	</div>
-      	<div class="col-6">
-      		<div class="containerbottonSubmit">
-			 	<button type="button" class="orangebutton">Submit to verify</button>
-			 	<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
-					{% csrf_token %}
-					<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
-					<button type="Submit" class="graybutton">Delete</button>
-				</form>
-			</div>
-		</div>
-	 </div>
+      <h2 style="margin-left: 10px;">Edit Grade</h2>
       <hr>
       <div class="centerblock">
-      	<div class="centered-and-cropped">
-			<div class="bannerpic">
-				<img src="..." class="img-fluid" alt="Activity's image"> <!add pic of activity here #>
-			</div>
-		</div>
+        <br>
+        {% csrf_token %}
+        {% include 'profiles/form-template.html' %}
+          <div class="buttonblock">
+              <button type="submit" class="orangebutton">Save</button>
+              <button type="cancel" class="graybutton">Cancel</button>
+          </div>
+        </div>
       </div>
-      <!—activity info section —>
-		<br>
-		<h4>Description</h4>
-		<div class="containerdes">
-			<h5>{{activity.description}}</h>
-		</div>
-		<br>
-		<h4>Duration</h4>
-		<div class="containerdes">
-			<h5>{{activity.startDate}} - {{activity.endDate}}</h>
-		</div>
-		<br>
-		<h4>Location</h4>
-		<div class="containerdes">
-			<h5>{{activity.location}}</h>
-		</div>
-		<br>
-		<h4>Supervisors</h4>
-		<div class="containerdes">
-			<h5>{{activity.supervisors.name}}</h>
-		</div>
-		<br>
-		<h4>Members</h4>
-		<div class="containerdes">
-			<h5>{{activity.participants.name}}</h>
-		</div>
-		<br><br>
-
-	<!—end activity info section —>
-	</div>
-</div>	
-	
     </div>
-
+    </form>
   </div>
 {% endblock %}
 
@@ -75,19 +36,11 @@
   body{
     background-color: #B4B4B4;
   }
-  .containerdes{
-  	margin-left: 50px;
-  }
   .buttonblock{
   text-align: right;
   }
-  .centered-and-cropped { object-fit: cover }
-  .bannerpic img{
-  width:1110px;
-  height: 300px;
-}
-  .centerblock {
-	text-align: center;
+    .centerblock {
+      margin-left: 150px;
       }
 
     .orangebutton {
@@ -148,11 +101,6 @@
     .input-block input {
       width: 100%;
     }
-}
-	.containerbottonSubmit {
-	margin-right: auto;
-  	margin-left: auto;
-  	padding-left: 120px;
 }
 
 

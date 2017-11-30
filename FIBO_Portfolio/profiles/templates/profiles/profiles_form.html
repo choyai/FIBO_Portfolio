@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Create Activity{% endblock %}
+{% block title %}Edit Profile{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
@@ -7,10 +7,10 @@
 {% block body %}
   <br><br>
   <div class="container">
-    
+
     <br>
-    <!-- form -->
-    
+    <form class="form-horizontal" action = "" method= "post" enctype="multipart/form-data">
+
     <div class="input-block">
       <br>
       <h2 style="margin-left: 10px;">Edit Profile</h2>
@@ -20,7 +20,7 @@
         {% csrf_token %}
         {% include 'profiles/form-template.html' %}
           <div class="buttonblock">
-              <button type="submit" class="orangebutton">Submit</button>
+              <button type="submit" class="orangebutton">Save</button>
               <button type="reset" class="graybutton">Cancel</button>
           </div>
         </div>
@@ -90,7 +90,7 @@
     padding: 0 20px 0 10px;
     outline: none;}
 
-    .input-block input:active, 
+    .input-block input:active,
     .input-block input:focus {
     border: 1px solid #3B3D4C;}
 

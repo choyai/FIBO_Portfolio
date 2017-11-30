@@ -9,7 +9,16 @@ urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name':'profiles/login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^register$', views.UserFormView.as_view(), name='register'),
-    url(r'^changepassword/(?P<pk>[0-9]+)$', views.changepassword, name='changepassword'),
+
+    url(r'^pdfgen/$', views.pdf_view, name='pdfgen'),
+
+
+
+    url(r'^change_password/$', auth_views.PasswordChangeView.as_view(template_name='profiles/passwordchange.html', success_url = reverse_lazy('profiles:password_change_done')) , name='password_change'),
+    url(r'^change_password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='profiles/passwordchangedone.html'), name='password_change_done'),
+
+
+
 
     url(r'^password_reset/$', auth_views.password_reset,{'template_name':'profiles/reset_password.html',
                                                     'post_reset_redirect':'profiles:password_reset_done',
@@ -23,12 +32,15 @@ urlpatterns = [
 
 
     url(r'^profile/(?P<pk>[0-9]+)$', views.ProfileView.as_view(), name='profile'),
-    url(r'^profile/(?P<user_id>[0-9]+)/privacy$', views.privacy, name='privacy'),
+    url(r'^profile/(?P<pk>[0-9]+)/privacy$', views.PrivacyEditView.as_view(), name='privacy'),
     url(r'^profile/(?P<pk>[0-9]+)/edit$', views.ProfileUpdate.as_view(), name='personaledit'),
 
 
     url(r'^profile/(?P<pk>[0-9]+)/academic$', views.AcademicView.as_view(), name='academic'),
     url(r'^profile/(?P<pk>[0-9]+)/academicEdit$', views.AcademicFormView.as_view(), name='academicEdit'),
+    url(r'^profile/addbackground/$', views.EducationalBackground.as_view(), name='educationalBackground'),
+    url(r'^profile/addgrade/$', views.GradeCreateView.as_view(), name='gradeCreate'),
+    url(r'^profile/(?P<pk>[0-9]+)/gradeEdit$', views.GradeUpdateView.as_view(), name='gradeEdit'),
     url(r'^profile/(?P<pk>[0-9]+)/work$', views.WorkView.as_view(), name='work'),
     url(r'^profile/(?P<pk>[0-9]+)/workedit', views.WorkFormView.as_view(), name='workEdit'),
     url(r'^profile/(?P<pk>[0-9]+)/award$', views.AwardView.as_view(), name='award'),
