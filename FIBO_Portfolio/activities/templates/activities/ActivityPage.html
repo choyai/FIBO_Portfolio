@@ -10,17 +10,16 @@
     <div class="input-block">
       <br>
       <div class="row">
-		<div class="col-6">
+		<div class="col-8">
       		<h2 style="margin-left: 10px;">{{activity.name}}</h2>
-      	</div>
-      	<div class="col-6">
-      		<div class="containerbottonSubmit">
-			 	<button type="button" class="orangebutton">Submit to verify</button>
-			 	<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
-					{% csrf_token %}
-					<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
-					<button type="Submit" class="graybutton">Delete</button>
-				</form>
+    </div>
+    <div class="col-4">
+      <div class="containerbottonSubmit">
+    			 	<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
+    					{% csrf_token %}
+    					<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
+    					<button type="Submit" class="graybutton">Delete</button>
+    				</form>
 			</div>
 		</div>
 	 </div>
@@ -152,7 +151,7 @@
 	.containerbottonSubmit {
 	margin-right: auto;
   	margin-left: auto;
-  	padding-left: 120px;
+  	padding-left: 150px;
 }
 
 
