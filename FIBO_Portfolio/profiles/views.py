@@ -131,7 +131,7 @@ class WorkFormView(View):
 class ProfileUpdate(UpdateView):
     model = Profile
     template_name = 'profiles/profiles_form.html'
-    fields = ['user', 'avatar', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
+    fields = ['user', 'avatar','banner', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
 class AwardEdit(generic.DetailView):
     model = Profile

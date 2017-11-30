@@ -35,7 +35,11 @@
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail">
-                  <img src="http://placehold.it/500x300" alt="">
+                  {% if activity.image %}
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{{activity.image.url}}" ></a>
+                  {% else %}
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  {% endif %}
                     <div class="center">
                       <div class="caption">
                         <br>
@@ -58,7 +62,11 @@
             <div class="row">
               <div class="col-xs-18 col-sm-6 col-md-4">
                 <div class="thumbnail">
-                  <img src="http://placehold.it/500x300" alt="">
+                  {% if activity.image %}
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{{activity.image.url}}" ></a>
+                  {% else %}
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  {% endif %}
                     <div class="center">
                       <div class="caption">
                         <br>
@@ -163,6 +171,6 @@ body{
 .fixbuttonincard{
   margin-bottom: 10px;
 }
-
+.centered-and-cropped { object-fit: cover }
 </style>
 {% endblock %}

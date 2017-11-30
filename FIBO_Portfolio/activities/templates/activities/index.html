@@ -24,9 +24,14 @@
       {%for activity in object_list %}
             <div class="col-lg-4 col-sm-6 portfolio-item">
               <div class="card h-100">
-                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="..." ></a> <!add pic of activity here #>
+
+                  {% if activity.image %}
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{{activity.image.url}}" ></a>
+                  {% else %}
+                  <a href="#"><img class="centered-and-cropped" width="350" height="200" src="{% static 'activity/images/banneractivity.jpg' %}" ></a>
+                  {% endif %}
                     <div class="card-body">
-                        <h4 class="card-title""><a href="{% url 'activities:detail' activity.pk %}" style="color:black;">{{ activity.name }}</a>
+                        <h4 class="card-title"><a href="{% url 'activities:detail' activity.pk %}" style="color:black;">{{ activity.name }}</a>
                         </h4>
                         <p class="card-text">{{activity.description}}</p>
                         <p><a href="{% url 'activities:detail' activity.pk %}" class="cardbutton">Go</a> </p>
@@ -34,7 +39,7 @@
 
               </div>
             </div>
-            
+
       {% endfor %}
      </div>
       <!-- /.row -->
@@ -107,6 +112,7 @@
     .card-body{
       text-align: center;
     }
+      .centered-and-cropped { object-fit: cover }
         .cardbutton{
   background-color: #3B3E4C;
   border: none;
