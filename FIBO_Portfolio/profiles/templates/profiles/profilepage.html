@@ -59,9 +59,10 @@
             </div>
             {% endif %}
 
-            {% if request.user.pk == profile.pk or profile.publicViewPersonal or Inforequest.user.profile.account_type == 'SF' or request.user.profile.account_type == 'LE' or profile.friendViewPersonalInfo %}
+            {% if request.user.pk == profile.pk or profile.publicViewPersonal or request.user.user.get_account_type_display == 'Staff' or request.user.user.get_account_type_display == 'Lecturer' or profile.friendViewPersonalInfo and request.user.is_authenticated or profile.get_account_type_display == 'Lecturer' and request.user.is_authenticated %}
             <b>Contact information</b>
-            <hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{profile.user.email}}
+            <hr></hr>Phone Number : {{profile.phone}}
+            <br>Email : {{profile.user.email}}
 
 
             <br><br><br>
@@ -89,7 +90,10 @@
             </div>
             {% endif %}
             <b>Abilities</b>
+            {% for ability in ability_set %}
             <hr></hr>
+            {{ability.name}}
+            {% endfor %}
 
             {% if request.user.pk == profile.pk %}
             <br><br><br>
@@ -99,21 +103,23 @@
             {% endif %}
 
             <b>Image(Informal)</b>
-            <hr></hr><center><img src="#" hspace="20"></center>
+            {% for image in userimage_set %}
+            <!-- <hr></hr><center><img src="#" hspace="20"></center>
             <div class="gallery_product">
               <img src="http://fakeimg.pl/365x365/" class="img-responsive">
-            </div>
+            </div> -->
+
             <hr></hr>
             <div class="wwrapper">
-              <img class="centered-and-cropped" width="200" height="200" src="..." > <!-add Informal Image here>
+              <img class="centered-and-cropped" width="200" height="200" src="{{image.url}}" > <!-add Informal Image here>
 
             </div>
-
+            {% endfor %}
             {% else %}
             <b><br>This Profile is Private</b>
             {% endif %}
 
-            {% if request.user.pk == profile.pk or profile.get_account_type_display == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% if request.user.pk == profile.pk or profile.get_account_type_display == 'LE' or request.user.user.account_type == 'SF' or request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
             {% endif %}
 
 

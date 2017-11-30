@@ -10,9 +10,11 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, {'next_page': '/'}, name='logout'),
     url(r'^register$', views.UserFormView.as_view(), name='register'),
 
+    url(r'^pdfgen/$', views.pdf_view, name='pdfgen'),
 
 
-    url(r'^change_password/$', auth_views.PasswordChangeView.as_view(template_name='profiles/passwordchange.html', success_url = reverse_lazy('profiles:password_change_done')) , name='password_change') ,
+
+    url(r'^change_password/$', auth_views.PasswordChangeView.as_view(template_name='profiles/passwordchange.html', success_url = reverse_lazy('profiles:password_change_done')) , name='password_change'),
     url(r'^change_password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='profiles/passwordchangedone.html'), name='password_change_done'),
 
 

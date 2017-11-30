@@ -56,6 +56,9 @@ class Ability(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     name = models.CharField(max_length = 100)
 
+    def __str__(self):
+        return self.profile.user.first_name + self.name
+
 class Grade(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     semester = models.CharField(max_length = 10)
@@ -75,6 +78,9 @@ class UserImage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.FileField(upload_to=user_dir_path)
 
+    def __str__(self):
+        return self.image.url
+
 class Activity(models.Model):
     participants = models.ManyToManyField(
         Profile,
@@ -85,7 +91,7 @@ class Activity(models.Model):
         Profile,
         related_name='supervisor',
         limit_choices_to={'account_type': 'LE'},
-    )
+        )
 
     name = models.CharField(max_length=250)
     category = models.CharField(max_length=250, blank=True, null=True)
@@ -104,6 +110,7 @@ class Activity(models.Model):
 class Participation(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     participant = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    #supervisor = models.ForeignKey
     isVerified = models.BooleanField(default = False)
 
 def activity_dir_path(instance, filename):
@@ -112,3 +119,6 @@ def activity_dir_path(instance, filename):
 class ActivityImage(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = activity_dir_path)
+
+    def __str__(self):
+        return self.image.upload_to

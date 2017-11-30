@@ -72,7 +72,7 @@ class VerifyView(View):
     def get(self, request, pk):
         template_name = 'activities/verify.html'
         profile = Profile.objects.get(id = request.user.pk)
-        queryset = profile.activity_set.all()
+        queryset = profile.participation_set.all()
         context = {"verified_list": None, "unverified_list": None,}
         context["verified_list"] = queryset.filter(isVerified=True)
         context["unverified_list"] = queryset.filter(isVerified=False)

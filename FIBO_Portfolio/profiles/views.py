@@ -1,3 +1,4 @@
+from datetime import date
 from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.shortcuts import render, redirect
@@ -47,12 +48,15 @@ class PrivacyEditView(FormView):
 def home(request):
     return render(request, 'profiles/home.html')
 
-# def changepassword(request, user_id):
-#    return render(request, 'profiles/changepassword.html')
-
 class ProfileView(generic.DetailView):
     model = Profile
     template_name = 'profiles/profilepage.html'
+    def get_context_data(self, **kwargs):
+        context = super(ProfileView, self).get_context_data(**kwargs)
+        context['ability_set'] = self.get_object().ability_set.all()
+        context['image_set'] = self.get_object().user.userimage_set.all()
+        return context
+
 
 class AcademicFormView(View):
     form_class = AcademicForm
@@ -135,21 +139,27 @@ def organization(request):
 def aboutus(request):
     return render(request, 'profiles/aboutus.html')
 
-def pdf_view(request):
-    response = HttpResponse(content_type='profiles/application/pdf')
-    response['Content-Disposition'] = 'attachment; filename ="somefilename.pdf"'
 
-    buffer = BytesIO
+def calculate_age(born):
+    today = date.today()
+    return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+
+def pdf_view(request):
+    profile = request.user.user
+    response = HttpResponse(content_type='profiles/application/pdf')
+    response['Content-Disposition'] = 'attachment; filename ="resume.pdf"'
+
+    #buffer = BytesIO
 
     p = canvas.Canvas(response)
 
     p.setFont("Helvetica", 20)
-    p.drawString(330,740,"Name : ")
+    p.drawString(330,740, "Name : " + request.user.first_name + " " + request.user.last_name)
     p.setFont("Helvetica", 14)
-    p.drawString(350,700,"age : ")
-    p.drawString(350,680,"email : ")
-    p.drawString(350,660,"phone : ")
-    p.drawString(350,640,"address : ")
+    p.drawString(350,700,"age : " + str(calculate_age(profile.birthDate)))
+    p.drawString(350,680,"email : " + request.user.email)
+    p.drawString(350,660,"phone : " + profile.phone )
+    p.drawString(350,640,"address : " + profile.location)
 
     p.setFont("Helvetica", 18)
     p.drawString(80,540,"Academic")
@@ -161,9 +171,9 @@ def pdf_view(request):
     p.showPage()
     p.save()
 
-    pdf = buffer.getvalue()
-    buffer.close()
-    response.write(pdf)
+    #pdf = buffer.getvalue()
+    #buffer.close()
+    response.write(p)
     return response
 
 def edit(request):

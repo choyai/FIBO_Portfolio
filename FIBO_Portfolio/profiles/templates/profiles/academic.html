@@ -55,7 +55,7 @@
             <div class="edit-link">
               <a href="{% url 'profiles:academicEdit' profile.pk %}">edit</a>
             </div>
-            {% if request.user.profile.account_type == 'LE' or request.user.profile.account_type == 'SF' or request.user.profile.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
+            {% if request.user.user.account_type == 'LE' or request.user.user.account_type == 'SF' or request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
             <b>Grade</b>
             <hr></hr>
             {% endif %}
