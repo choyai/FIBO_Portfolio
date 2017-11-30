@@ -15,11 +15,19 @@
     </div>
     <div class="col-4">
       <div class="containerbottonSubmit">
+        <form action="{% url 'activities:update' activity.pk %}" method="post" style="display: inline;">
+          {% csrf_token %}
+          <!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
+
+          <button type="Submit" class="graybutton">Edit</button>
+        </form>
     			 	<form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline;">
     					{% csrf_token %}
     					<!--<input type="hidden" name="activity.pk" value="{{activity.pk}}"/>-->
+
     					<button type="Submit" class="graybutton">Delete</button>
     				</form>
+
 			</div>
 		</div>
 	 </div>
@@ -27,7 +35,14 @@
       <div class="centerblock">
       	<div class="centered-and-cropped">
 			<div class="bannerpic">
-				<img src="..." class="img-fluid" alt="Activity's image"> <!add pic of activity here #>
+        {% if activity.image %}
+        <img src={{activity.image.url}} class="img-fluid" alt="Activity's image">
+        {% else %}
+        <div class="centered-and-cropped">
+          <img src="{% static 'activity/images/banneractivity.jpg' %}" >
+        </div>
+        {% endif %}
+
 			</div>
 		</div>
       </div>
@@ -61,8 +76,8 @@
 
 	<!—end activity info section —>
 	</div>
-</div>	
-	
+</div>
+
     </div>
 
   </div>
@@ -74,6 +89,7 @@
   body{
     background-color: #B4B4B4;
   }
+  .centered-and-cropped { object-fit: cover }
   .containerdes{
   	margin-left: 50px;
   }
@@ -82,8 +98,8 @@
   }
   .centered-and-cropped { object-fit: cover }
   .bannerpic img{
-  width:1110px;
-  height: 300px;
+  width:800px;
+  height: 300px;}
 }
   .centerblock {
 	text-align: center;

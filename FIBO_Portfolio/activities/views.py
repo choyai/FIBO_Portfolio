@@ -22,7 +22,7 @@ class ActivitiesDetail(generic.DetailView):
 class ActivitiesCreate(CreateView):
     model = Activity
     template_name = 'activities/activities_form.html'
-    fields = ['name', 'category', 'description', 'location', 'location', 'supervisors', 'participants',
+    fields = ['name','image', 'category', 'description', 'location', 'location', 'supervisors', 'participants',
               'startDate', 'endDate']
     def form_valid(self, form):
         self.object = form.save(commit=False)
@@ -37,7 +37,7 @@ class ActivitiesCreate(CreateView):
 class ActivitiesUpdate(UpdateView):
     model = Activity
     template_name = 'activities/activities_form.html'
-    fields = ['name', 'category', 'description', 'location', 'location', 'supervisors', 'participants',
+    fields = ['name','image', 'category', 'description', 'location', 'location', 'supervisors', 'participants',
               'startDate', 'endDate']
     def form_valid(self, form):
         self.object = form.save(commit=False)
