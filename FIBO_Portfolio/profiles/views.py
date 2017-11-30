@@ -1,9 +1,9 @@
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.core.urlresolvers import reverse_lazy
+from datetime import date
+from django.views.generic.edit import CreateView, UpdateView, DeleteView, FormView
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.views.generic import View
-from django.views.generic.edit import CreateView
+from django.views.generic import View, DetailView
 from .forms import *
 from django.http import HttpResponse
 from reportlab.pdfgen import canvas
@@ -40,19 +40,23 @@ class UserFormView(View):
                     return redirect('profiles:home')
         return render(request, self.template_name, {'form': form})
 
+class PrivacyEditView(FormView):
+    form_class = PrivacyForm
+    template_name = 'profiles/privacy.html'
+    success_url = reverse_lazy('profiles:home')
 
 def home(request):
     return render(request, 'profiles/home.html')
 
-#def password_reset(request):
-#    return render(request, 'profiles/password_reset.html')
-
-def changepassword(request, user_id):
-    return render(request, 'profiles/changepassword.html')
-
 class ProfileView(generic.DetailView):
     model = Profile
     template_name = 'profiles/profilepage.html'
+    def get_context_data(self, **kwargs):
+        context = super(ProfileView, self).get_context_data(**kwargs)
+        context['ability_set'] = self.get_object().ability_set.all()
+        context['image_set'] = self.get_object().user.userimage_set.all()
+        return context
+
 
 class AcademicFormView(View):
     form_class = AcademicForm
@@ -73,6 +77,10 @@ class AcademicView(generic.DetailView):
 class AwardView(generic.DetailView):
     model = Profile
     template_name = 'profiles/award.html'
+    def get_context_data(self, **kwargs):
+        context = super(AwardView, self).get_context_data(**kwargs)
+        context['award_set'] = self.get_object().participation_set.filter(activity__category__contains='award', isVerified=True)
+        return context
 
 class AwardFormView(View):
     form_class = createActivityForm
@@ -83,6 +91,15 @@ class AwardFormView(View):
 class WorkView(generic.DetailView):
     model = Profile
     template_name = 'profiles/work.html'
+    def get_context_data(self, **kwargs):
+        context = super(WorkView, self).get_context_data(**kwargs)
+        context['class_pj_set'] = self.get_object().participation_set.filter(activity__category__contains='project', isVerified=True)
+        context['lab_set'] = self.get_object().participation_set.filter(activity__category__contains="lab", isVerified=True)
+        context['ta_set'] = self.get_object().participation_set.filter(activity__category__contains="teach", isVerified=True)
+        context['competition_set'] = self.get_object().participation_set.filter(activity__category__contains="competition", isVerified=True)
+        context['internship_set'] = self.get_object().participation_set.filter(activity__category__contains="internship", isVerified=True)
+        return context
+
 
 class WorkFormView(View):
     form_class = createActivityForm
@@ -93,7 +110,7 @@ class WorkFormView(View):
 class ProfileUpdate(UpdateView):
     model = Profile
     template_name = 'profiles/profiles_form.html'
-    fields = ['user', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
+    fields = ['user', 'avatar', 'bio', 'birthDate', 'location', 'phone', 'emergencyPhone', 'congenitalDisease']
 
 class AwardEdit(generic.DetailView):
     model = Profile
@@ -129,31 +146,47 @@ class StudentView(generic.DetailView):
     def get(self, request):
         return render(request, self.template_name)
 
-def privacy(request, user_id):
-    return render(request, 'profiles/privacy.html')
-
 def organization(request):
     return render(request, 'profiles/organization.html')
 
 def aboutus(request):
     return render(request, 'profiles/aboutus.html')
 
-def pdf_view(request):
-    response = HttpResponse(content_type='profiles/application/pdf')
-    response['Content-Disposition'] = 'attachment; filename ="somefilename.pdf"'
 
-    buffer = BytesIO
+def calculate_age(born):
+    today = date.today()
+    return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+
+def pdf_view(request):
+    profile = request.user.user
+    response = HttpResponse(content_type='profiles/application/pdf')
+    response['Content-Disposition'] = 'attachment; filename ="resume.pdf"'
+
+    #buffer = BytesIO
 
     p = canvas.Canvas(response)
 
-    p.drawString(100, 100, "My PDF")
+    p.setFont("Helvetica", 20)
+    p.drawString(330,740, "Name : " + request.user.first_name + " " + request.user.last_name)
+    p.setFont("Helvetica", 14)
+    p.drawString(350,700,"age : " + str(calculate_age(profile.birthDate)))
+    p.drawString(350,680,"email : " + request.user.email)
+    p.drawString(350,660,"phone : " + profile.phone )
+    p.drawString(350,640,"address : " + profile.location)
 
+    p.setFont("Helvetica", 18)
+    p.drawString(80,540,"Academic")
+    p.line(80,530,250,530)
+    p.drawString(80,390,"Work and experience")
+    p.line(80,380,250,380)
+    p.drawString(80,240,"Award")
+    p.line(80,230,250,230)
     p.showPage()
     p.save()
 
-    pdf = buffer.getvalue()
-    buffer.close()
-    response.write(pdf)
+    #pdf = buffer.getvalue()
+    #buffer.close()
+    response.write(p)
     return response
 
 def edit(request):

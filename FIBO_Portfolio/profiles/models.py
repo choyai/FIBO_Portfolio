@@ -4,6 +4,8 @@ from django.core.urlresolvers import reverse
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+def user_dir_path(instance, filename):
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
 
 class Profile(models.Model):
     student = 'ST'
@@ -12,7 +14,7 @@ class Profile(models.Model):
     ACCOUNT_TYPES = ((student, 'Student'), (lecturer, 'Lecturer'), (staff, 'Staff'))
 
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
-    avatar = models.FileField(verbose_name = ("Profile Picture"), upload_to ="profiles", max_length = 255, blank=True)
+    avatar = models.ImageField(verbose_name = ("Profile Picture"), upload_to =user_dir_path)
     bio = models.TextField(max_length = 500, blank=True)
     birthDate = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=255, blank=True)
@@ -24,9 +26,19 @@ class Profile(models.Model):
     position = models.CharField(max_length = 100)
     admission = models.CharField(max_length = 100, blank=True)
     scholarship = models.CharField(max_length = 100, default = "None")
+    friendViewPersonalInfo = models.BooleanField(default = False)
+    publicViewPersonalInfo = models.BooleanField(default = False)
+    friendViewAcademicInfo = models.BooleanField(default = False)
+    publicViewAcademicInfo = models.BooleanField(default = False)
+    friendViewExpInfo = models.BooleanField(default = False)
+    publicViewExpInfo = models.BooleanField(default = False)
+
 
     def __str__(self):
         return self.user.first_name
+
+    def is_staff(self):
+        return self.account_type in (self.staff, self.lecturer)
 
     def get_absolute_url(self):
             return reverse('profiles:profile', kwargs={'pk': self.pk})
@@ -44,6 +56,9 @@ class Ability(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     name = models.CharField(max_length = 100)
 
+    def __str__(self):
+        return self.profile.user.first_name + self.name
+
 class Grade(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     semester = models.CharField(max_length = 10)
@@ -58,24 +73,25 @@ class EducationBackground(models.Model):
     major = models.CharField(max_length = 100)
     school = models.CharField(max_length = 100)
 
-def user_dir_path(instance, filename):
-    return 'user_{0}/{1}'.format(instance.user.id, filename)
 
 class UserImage(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.FileField(upload_to=user_dir_path)
 
+    def __str__(self):
+        return self.image.url
+
 class Activity(models.Model):
     participants = models.ManyToManyField(
-        User,
+        Profile,
         through='Participation',
         related_name='participant',
         )
     supervisors = models.ManyToManyField(
-        User,
-        through='Supervision',
+        Profile,
         related_name='supervisor',
-    )
+        limit_choices_to={'account_type': 'LE'},
+        )
 
     name = models.CharField(max_length=250)
     category = models.CharField(max_length=250, blank=True, null=True)
@@ -90,14 +106,12 @@ class Activity(models.Model):
     def __str__(self):
         return self.name
 
-class Supervision(models.Model):
-    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-    supervisor = models.ForeignKey(User, on_delete=models.CASCADE)
 
 class Participation(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
-    participant = models.ForeignKey(User, on_delete=models.CASCADE)
-    ifVerified = models.BooleanField(default = False)
+    participant = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    #supervisor = models.ForeignKey
+    isVerified = models.BooleanField(default = False)
 
 def activity_dir_path(instance, filename):
     return 'activity_{0}/{1}'.format(instance, filename)
@@ -105,3 +119,6 @@ def activity_dir_path(instance, filename):
 class ActivityImage(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     image = models.ImageField(upload_to = activity_dir_path)
+
+    def __str__(self):
+        return self.image.upload_to

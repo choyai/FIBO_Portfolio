@@ -51,12 +51,19 @@
           </div>
           <div class="col-8">
 
+            {% if request.user.pk == profile.pk %}
+
             <br>
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
+            {% endif %}
+
+            {% if request.user.pk == profile.pk or profile.publicViewPersonal or request.user.user.get_account_type_display == 'Staff' or request.user.user.get_account_type_display == 'Lecturer' or profile.friendViewPersonalInfo and request.user.is_authenticated or profile.get_account_type_display == 'Lecturer' and request.user.is_authenticated %}
             <b>Contact information</b>
-            <hr></hr>Phone Number : {{Profile.phone}}<br>Email : {{profile.user.email}}
+            <hr></hr>Phone Number : {{profile.phone}}
+            <br>Email : {{profile.user.email}}
+
 
             <br><br><br>
             <b>Congenital disease</b>
@@ -71,20 +78,49 @@
             <hr></hr>{{profile.birthDate}}
 
             <br><br><br>
-            <b>Life Goals</b>
-            <hr></hr>
+            <b>Biography</b>
+            <hr></hr>{{profile.bio}}
+
 
             <br><br><br>
-            <b>Ability</b>
-            <hr></hr><center><img src="#" hspace="20"></center>
-
-
+            {% if request.user.pk == profile.pk %}
             <br><br><br>
             <div class="edit-link">
               <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
             </div>
-            <b>Image(Informal)</b>
+            {% endif %}
+            <b>Abilities</b>
+            {% for ability in ability_set %}
             <hr></hr>
+            {{ability.name}}
+            {% endfor %}
+
+            {% if request.user.pk == profile.pk %}
+            <br><br><br>
+            <div class="edit-link">
+              <a href="{% url 'profiles:personaledit' profile.pk %}">edit</a>
+            </div>
+            {% endif %}
+
+            <b>Image(Informal)</b>
+            {% for image in userimage_set %}
+            <!-- <hr></hr><center><img src="#" hspace="20"></center>
+            <div class="gallery_product">
+              <img src="http://fakeimg.pl/365x365/" class="img-responsive">
+            </div> -->
+
+            <hr></hr>
+            <div class="wwrapper">
+              <img class="centered-and-cropped" width="200" height="200" src="{{image.url}}" > <!-add Informal Image here>
+
+            </div>
+            {% endfor %}
+            {% else %}
+            <b><br>This Profile is Private</b>
+            {% endif %}
+
+            {% if request.user.pk == profile.pk or profile.get_account_type_display == 'LE' or request.user.user.account_type == 'SF' or request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo %}
+            {% endif %}
 
 
             <br><br><br>
@@ -101,6 +137,15 @@
 body{
   background-color: #B4B4B4;
 }
+
+.wwrapper {
+  display: grid;
+  grid-template-columns: 200px 200px 200px ;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
 .imagewrap {display:inline-block;position:relative;}
 
 

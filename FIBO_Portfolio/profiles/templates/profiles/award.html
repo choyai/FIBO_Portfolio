@@ -1,5 +1,5 @@
 {% extends 'base2.html' %}
-{% block title %}Personal Profile | Profile{% endblock %}
+{% block title %}Award| Profile{% endblock %}
 {% block another1 %}
   {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'activity page/css/style.css' %}">
@@ -14,7 +14,7 @@
             <img src="https://static.wixstatic.com/media/f43cb85404b54190be558c08e1d47300.png" style="width:70px;height:70px;filter: grayscale(100%);margin-left: 30px">
           </div>
           <div class="col-8">
-            <h2 style="margin-left: 15px;margin-top: 17px">Personal Profile</h2>
+            <h2 style="margin-left: 15px;margin-top: 17px">Award</h2>
           </div>
         </div>
       </div>
@@ -53,15 +53,27 @@
           <div class="col-8">
 
             <br>
-            <div class="edit-link">
-              <a href="{% url 'profiles:awardEdit' profile.pk %}">edit</a>
-            </div>
+            {% if request.user.pk == profile.pk or profile.publicViewPersonal or request.user.user.get_account_type_display == 'Staff' or request.user.user.get_account_type_display == 'Lecturer' or profile.friendViewPersonalInfo and request.user.is_authenticated or profile.get_account_type_display == 'Lecturer' and request.user.is_authenticated %}
             <b>Awards</b>
-            <hr></hr>
-
-
-            <br><br><br>
-
+            <hr>
+            {% for award in award_set %}
+            <div class="row">
+              <div class="col-xs-18 col-sm-6 col-md-4">
+                <div class="thumbnail">
+                  <img src="http://placehold.it/500x300" alt="">
+                    <div class="center">
+                      <div class="caption">
+                        <br>
+                        <h4>{{award.activity.name}}</h4>
+                        <p>{{award.activity.description|truncatechars:140}}</p>
+                        <p><a href="{% url 'activities:detail' award.activity.pk %}" class="cardbutton">Go</a> </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            {% endif %}
           </div>
         </div>
       </div>
@@ -179,6 +191,37 @@ body{
   background-color: #f1f1f4;
   border-left: 2px solid #3B3D4C;
   margin-left: -2px;
+}
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.center{
+  text-align: center;
+}
+
+.fixbuttonincard{
+  margin-bottom: 10px;
+}
+.cardbutton{
+  background-color: #3B3E4C;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+.cardbutton:hover{
+  background-color: #F36E21;
+  color: white;
 }
 
 </style>
