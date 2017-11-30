@@ -53,8 +53,10 @@
 
             <br>
             <div class="edit-link">
+
               <a href="{% url 'profiles:gradeCreate' %}">Add Grade</a>
             </div>
+
             {% if request.user.user.account_type == 'LE' or request.user.user.account_type == 'SF' or request.user.user.account_type == 'ST' and profile.friendViewPersonalInfo or profile.publicViewPersonalInfo or request.user.pk == profile.pk%}
             <b>Grade</b>
             {% for grade in grade_set %}
@@ -62,18 +64,22 @@
             Credits = {{grade.creditTotal}}<br>
             GPA = {{grade.GPA}}<br>
             {% endfor %}
-            {% endif %}
 
+    
             <br><br><br>
             <div class="edit-link">
               <a href="{% url 'profiles:academicEdit' profile.pk %}">Edit</a>
             </div>
-            <b>Admisstion Type</b>
+            <b>Admission Type</b>
             <hr></hr>{{profile.admission}}
 
             <br><br><br>
             <b>Scholarship</b>
             <hr></hr>{{profile.scholarship}}
+            {% else %}
+            <b>Private Academic Profile</b>
+            {% endif %}
+
 
 
             <br><br><br>
