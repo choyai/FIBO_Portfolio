@@ -14,7 +14,9 @@ class Profile(models.Model):
     ACCOUNT_TYPES = ((student, 'Student'), (lecturer, 'Lecturer'), (staff, 'Staff'))
 
     user = models.OneToOneField(User, related_name='user', on_delete=models.CASCADE)
-    avatar = models.ImageField(verbose_name = ("Profile Picture"), upload_to =user_dir_path)
+    stID = models.CharField(max_length = 20, blank=True)
+    banner = models.ImageField(verbose_name="Banner", upload_to = user_dir_path, blank=True)
+    avatar = models.ImageField(verbose_name = ("Profile Picture"), upload_to = user_dir_path, blank=True)
     bio = models.TextField(max_length = 500, blank=True)
     birthDate = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=255, blank=True)
@@ -65,13 +67,15 @@ class Grade(models.Model):
     creditTotal = models.DecimalField(max_digits=3, decimal_places=1)
     GPA = models.DecimalField(max_digits=3, decimal_places=2)
     def get_absolute_url(self):
-            return reverse('profiles:academic', kwargs={'pk': self.pk})
+            return reverse('profiles:academic', kwargs={'pk': self.profile.pk})
 
 class EducationBackground(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
     degree = models.CharField(max_length = 100)
     major = models.CharField(max_length = 100)
     school = models.CharField(max_length = 100)
+    def get_absolute_url(self):
+        return reverse('profiles:academic', kwargs={'pk': self.profile.pk})
 
 
 class UserImage(models.Model):
@@ -81,6 +85,9 @@ class UserImage(models.Model):
     def __str__(self):
         return self.image.url
 
+def activity_dir_path(instance, filename):
+    return 'activity_{0}/{1}'.format(instance, filename)
+
 class Activity(models.Model):
     participants = models.ManyToManyField(
         Profile,
@@ -89,11 +96,12 @@ class Activity(models.Model):
         )
     supervisors = models.ManyToManyField(
         Profile,
+        through ='Supervision',
         related_name='supervisor',
-        limit_choices_to={'account_type': 'LE'},
         )
 
     name = models.CharField(max_length=250)
+    image = models.ImageField(verbose_name="Activity Picture", upload_to=activity_dir_path)
     category = models.CharField(max_length=250, blank=True, null=True)
     description = models.CharField(max_length=5000, blank=True, null=True)
     location = models.CharField(max_length=250, blank=True, null=True)
@@ -110,11 +118,12 @@ class Activity(models.Model):
 class Participation(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
     participant = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    #supervisor = models.ForeignKey
     isVerified = models.BooleanField(default = False)
 
-def activity_dir_path(instance, filename):
-    return 'activity_{0}/{1}'.format(instance, filename)
+class Supervision(models.Model):
+    activity = models.ForeignKey(Activity, on_delete=models.CASCADE)
+    supervisor = models.ForeignKey(Profile, on_delete=models.CASCADE)
+
 
 class ActivityImage(models.Model):
     activity = models.ForeignKey(Activity, on_delete=models.CASCADE)

@@ -13,8 +13,9 @@
 
     <div class="input-block">
       <br>
-      <h2 style="margin-left: 10px;">Verifiy</h2>
+      <h2 style="margin-left: 10px;">Verify</h2>
       <hr>
+      {% for part in unverified_list %}
       <div class="row">
         <div class="col-4">
         </div>
@@ -22,7 +23,7 @@
           <br><br><br><br><br><br>
           <b>ID :</b>  <!--add student id here-->
           <br>
-          <b>Student Name :{{profile.user.first_name}} {{profile.user.last_name}}</b>
+          <b>Student Name :{{part.participant.user.first_name}} {{part.participant.user.last_name}}</b>
         </div>
         <div class="col-3">
           <img src="{% static 'profiles/images/default_avatar.jpg' %}" style=" width: 186px; height: 189px;">
@@ -32,18 +33,18 @@
 
 
 
-<div class="contianer-verify">
+<div class="container-verify">
   <center>
     <table style="border-collapse: collapse;border: 3px solid grey;width:845px;">
-    
+
     <tr>
     <td style="width:300px;height:350px;"><img src="#" style="width:332px;height:229px;margin-left: 40px;"></td>
     <td style="width:300px;">
     <div class="text-left">
-      <b>NAME</b><br>xxxx<br><br>
-      <b>Category</b><br>xxxx<br><br>
-      <b>Description</b><br>xxxx<br><br>
-      <b>Date</b><br>xx/xx/xx
+      <b>NAME</b><br>{{part.activity.name}}<br><br>
+      <b>Category</b><br>{{part.activity.category}}<br><br>
+      <b>Description</b><br>{{part.activity.description|truncatechars:140}}<br><br>
+      <b>Date</b><br>{{part.activity.startDate}} to {{part.activity.endDate}}
     </div>
     </td>
 
@@ -55,9 +56,10 @@
 </div>
 <br>
   <div class="buttonblock">
-    <button type="submit" class="orangebutton">Verified</button>
+    <button type="submit" class="orangebutton">Verify</button>
     <button type="submit" class="graybutton">Back</button>
   </div>
+  {% endfor %}
 </div>
 
   </div>
