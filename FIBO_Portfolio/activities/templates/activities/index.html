@@ -29,13 +29,8 @@
                         <h4 class="card-title""><a href="{% url 'activities:detail' activity.pk %}" style="color:black;">{{ activity.name }}</a>
                         </h4>
                         <p class="card-text">{{activity.description}}</p>
+                        <p><a href="{% url 'activities:detail' activity.pk %}" class="cardbutton">Go</a> </p>
                     </div>
-
-                  <form action="{% url 'activities:delete' activity.pk %}" method="post" style="display: inline; text-align: right;">
-                    {% csrf_token %}
-                    <input type="hidden" name="activity_id" value="={{ activity.id }}"/>
-                    <button type="Submit" class="graybutton">Delete</button>
-                  </form>
 
               </div>
             </div>
@@ -97,20 +92,6 @@
     .orangebutton:hover{
       background-color: gray;
     }
-     .graybutton {
-      background-color: gray;
-      border: none;
-      color: white;
-      padding: 10px 28px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .graybutton:hover{
-      background-color: #F36E21;
-    }
 
     .paginationdes>ul>li>a{
         color: black;
@@ -124,6 +105,22 @@
     .activityCard>h4>a:hover{
         color: #F36E21;
     }
-
+    .card-body{
+      text-align: center;
+    }
+    .cardbutton{
+  background-color: #3B3E4C;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
+.cardbutton:hover{
+  background-color: #F36E21;
+  color: white;
+}
     </style>
 {% endblock %}
